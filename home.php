@@ -1,5 +1,5 @@
-<?php
-include('nav.html');
+<?php 
+ include('nav.html');
 ?>
 
 <!DOCTYPE html>
