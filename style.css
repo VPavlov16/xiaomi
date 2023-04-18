@@ -1,0 +1,123 @@
+@import 'https://fonts.googleapis.com/css?family=Blinker';
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration:none;
+    box-sizing: border-box;
+    font-family: Blinker;
+}
+
+body{
+    background-color: white;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #eeeceb;
+    width: 4.8em;
+    overflow: hidden;
+    transition: width 0.3s linear;
+    
+}
+
+nav:hover{
+    width: 14em;
+    transition: all 0.5s ease;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item{
+    position: relative;
+    top: -1.6em;
+    margin-left: 4.5em;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+.logo{
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    display: flex;
+    top: 14px;
+    margin-left: 0.8em;
+    transition: all 0.1s ease-in-out;
+}
+
+.xiaomi{
+    width: 45px;
+    height: 45px;
+    margin-top: 1em;
+    margin-left: 0em;
+}
+
+.xlogo{
+    position: relative;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    top: -2em;
+    margin-left: 4.5em;
+    transition: 0.2s ease;   
+}
+
+.xlogo:hover{
+    color:  #ff6900;
+}
+
+.logo-a{
+    position: relative;
+    color: dimgray;
+    width: 300px;
+    padding: 15px; 
+}
+
+.list-a{
+    position: relative;
+    color: dimgray;
+    width: 300px;
+    padding: 15px;    
+}
+
+.list{
+    margin: 0.5em;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.list:hover{
+    background-color: #ff6a0033;
+    border-radius: 4em;
+    transform: scale(1.03);
+}
+
+.list:hover span{
+    color:  #ff6900;
+    font-size: 18px;     
+}
+
+.searchbar{
+    position: relative;
+    top: -1.7em;
+    margin-left: 4.5em;
+    white-space: nowrap;
+    font-size: 16px;
+    width: 120px;
+    height: 20px;
+    border-radius: 2em;
+}
+
+input[type=text] {
+    text-align: center;
+}
+
+::placeholder{
+    text-align: center;
+}
