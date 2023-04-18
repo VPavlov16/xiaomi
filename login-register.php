@@ -100,8 +100,8 @@ require('log.php')
     <div class="form-container" id="login-form">
         <h2>Login</h2>
         <form method="post">
-            <input type="text" name="email"  placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="email" maxlength="10" placeholder="Email">
+            <input type="password" name="password" maxlength="10" placeholder="Password">
             <input type="submit" name="submit1" value="Login">
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? Register</p>
@@ -110,10 +110,10 @@ require('log.php')
     <div class="form-container" id="register-form">
         <h2>Register</h2>
         <form method="post">
-            <input type="text" name="fname" placeholder="First Name">
-            <input type="text" name="lname" placeholder="Last Name">
+            <input type="text" name="fname" maxlength="10" placeholder="First Name">
+            <input type="text" name="lname" maxlength="10" placeholder="Last Name">
             <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password"  placeholder="Password">
             <input type="submit" name="submit" value="Register">
         </form>
         <p class="switch-form" id="btn-login">Already have an account? Login</p>
