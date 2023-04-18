@@ -1,3 +1,8 @@
+<?php
+
+require('db.php');
+
+?>
 <html>
 
 <head>
@@ -90,27 +95,27 @@
 </head>
 
 <body>
+    
     <div class="form-container" id="login-form">
         <h2>Login</h2>
-        <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <input type="submit" value="Login">
+        <form method="post">
+            <input type="text" name="email"  placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Login">
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? Register</p>
     </div>
 
     <div class="form-container" id="register-form">
         <h2>Register</h2>
-        <form>
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="submit" value="Register">
+        <form method="post">
+            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="lname" placeholder="Last Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="submit" value="Register">
         </form>
         <p class="switch-form" id="btn-login">Already have an account? Login</p>
-        </div>
-        
+    </div>
         </body>
         </html>
