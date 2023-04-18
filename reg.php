@@ -19,7 +19,7 @@
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$email = $_POST['email'];
-        $password = $_POST['password'];	
+        $password = hash('sha256',$_POST['password']);	
 		// заявка към базата, с която се записват полетата
 
 		$sql = "INSERT INTO registers ( fname, lname, email, pass) VALUES (?,?,?,?)";

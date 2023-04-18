@@ -1,6 +1,7 @@
 <?php
 
-require('db.php');
+require('reg.php');
+require('log.php')
 
 ?>
 <html>
@@ -101,7 +102,7 @@ require('db.php');
         <form method="post">
             <input type="text" name="email"  placeholder="Email">
             <input type="password" name="password" placeholder="Password">
-            <input type="submit" name="submit" value="Login">
+            <input type="submit" name="submit1" value="Login">
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? Register</p>
     </div>
