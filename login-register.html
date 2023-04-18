@@ -1,20 +1,18 @@
-<DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Register Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, orange, black);
+            background: linear-gradient(180deg, orange, black);
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .form-container {
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
             width: 300px;
             margin: 0 auto;
@@ -25,25 +23,39 @@
 
         .form-container h2 {
             color: orange;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
         .form-container input[type="text"],
-        .form-container input[type="password"] {
+        .form-container input[type="password"],
+        .form-container input[type="email"] {
             width: 100%;
             padding: 12px;
             margin-top: 8px;
             margin-bottom: 20px;
             border: none;
-            border-bottom: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f6f6f6;
+            color: #333;
+        }
+
+        .form-container input[type="text"]::placeholder,
+        .form-container input[type="password"]::placeholder,
+        .form-container input[type="email"]::placeholder {
+            color: #999;
         }
 
         .form-container input[type="submit"] {
             background-color: orange;
-            color: white;
+            color: #fff;
             padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         .form-container input[type="submit"]:hover {
@@ -53,35 +65,52 @@
         .form-container .switch-form {
             color: orange;
             cursor: pointer;
+            font-size: 14px;
         }
-
-        
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Show login form by default
+            $("#register-form").hide();
+
+            // Switch to register form
+            $("#btn-register").click(function() {
+                $("#login-form").hide();
+                $("#register-form").show();
+            });
+
+            // Switch to login form
+            $("#btn-login").click(function() {
+                $("#register-form").hide();
+                $("#login-form").show();
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div class="form-container">
+    <div class="form-container" id="login-form">
         <h2>Login</h2>
         <form>
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
             <input type="submit" value="Login">
         </form>
-        <p class="switch-form">Don't have an account? Register</p>
+        <p class="switch-form" id="btn-register">Don't have an account? Register</p>
     </div>
 
-    <script>
-        document.querySelector(".switch-form").addEventListener("click", function () {
-            document.querySelector("h2").textContent = "Register";
-            document.querySelector("form").innerHTML = `
-            <input type="text" placeholder="Username">
+    <div class="form-container" id="register-form">
+        <h2>Register</h2>
+        <form>
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="email" placeholder="Email">
             <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
             <input type="submit" value="Register">
-            `;
-            document.querySelector(".switch-form").textContent = "Already have an account? Login";
-        });
-    </script>
-</body>
-
-</html>
+        </form>
+        <p class="switch-form" id="btn-login">Already have an account? Login</p>
+        </div>
+        
+        </body>
+        </html>
