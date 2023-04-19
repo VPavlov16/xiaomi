@@ -7,87 +7,163 @@
     <title>Document</title>
 
     <style>
-        .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+    /* style.css */
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.card {
-  padding: 1rem;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.navbar-toggle {
+    display: none;
 }
 
-.card-img {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
+.navbar-toggle-label {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 999;
 }
 
-.card-img img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
+.toggle-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.card:hover .card-img img {
-  transform: scale(1.1);
+.navbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    padding-top: 100px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 998;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.card h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.card p.price {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.menu-item {
+    display: inline-block;
+    margin: 10px;
 }
 
-.card a.learn-more {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #ff6600;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s ease-in-out;
+.dropdown {
+    position: relative;
 }
 
-.card a.learn-more:hover {
-  background-color: #ff8800;
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
 }
 
+.dropdown-item {
+    display: block;
+    margin: 5px 0;
+}
 
-    </style>
+.content {
+    padding: 20px;
+}
+
+    </style> 
+    
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    navbarToggle.addEventListener('change', function() {
+        if (this.checked) {
+            navbarMenu.style.opacity = '1';
+            navbarMenu.style.pointerEvents = 'auto';
+        } else {
+            navbarMenu.style.opacity = '0';
+            navbarMenu.style.pointerEvents = 'none';
+        }
+    });
+
+    // Close dropdown on click outside
+    document.addEventListener('click', function(event) {const targetElement = event.target;
+        if (!targetElement.matches('.navbar-toggle') && !targetElement.closest('.navbar-menu')) {
+            navbarToggle.checked = false;
+            navbarMenu.style.opacity = '0';
+            navbarMenu.style.pointerEvents = 'none';
+        }
+    });
+
+    // Toggle dropdown
+    const dropdownItems = document.querySelectorAll('.dropdown');
+    dropdownItems.forEach(function(dropdownItem) {
+        dropdownItem.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const dropdownMenu = this.querySelector('.dropdown-menu');
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'block';
+            }
+        });
+    });
+});
+    </script>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-        <img src="vehicles\scooter3.png" alt="Product 1">
-          <h3>Product 1</h3>
-          
-          <p class="price">$19.99</p>
-          
-          <a href="#" class="learn-more">Buy now</a>
-        </div>
-        <div class="card">
-          <img src="image2.jpg" alt="Product 2">
-          <h3>Product 2</h3>
-          <p class="price">$29.99</p>
-          <a href="#" class="learn-more">Buy now</a>
-        </div>
-        <div class="card">
-          <img src="image3.jpg" alt="Product 3">
-          <h3>Product 3</h3>
-          <p class="price">$39.99</p>
-          <a href="#" class="learn-more">Buy now</a>
-        </div>
-      </div>
-      
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Hamburger Menu with Dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+    <label for="navbar-toggle" class="navbar-toggle-label">
+        <span class="toggle-icon"></span>
+        <span class="toggle-icon"></span>
+        <span class="toggle-icon"></span>
+    </label>
+    <nav class="navbar-menu">
+        <ul class="menu-list">
+            <li class="menu-item">Home</li>
+            <li class="menu-item">About</li>
+            <li class="menu-item dropdown">
+                Services
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Web Design</li>
+                    <li class="dropdown-item">Graphic Design</li>
+                    <li class="dropdown-item">Digital Marketing</li>
+                </ul>
+            </li>
+            <li class="menu-item">Contact</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <!-- Content goes here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
+     
 </body>
 </html>

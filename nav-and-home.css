@@ -7,12 +7,17 @@
     border: none;
     text-decoration:none;
     box-sizing: border-box;
-    font-family: Blinker;
+    font-family: Blinker;    
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
     background-color: white;
     margin-left: 76.8px;
+}
+
+::selection{
+    color: #ff6900;
 }
 
 nav{
@@ -98,6 +103,10 @@ nav:hover{
 }
 
 
+li:focus,li:active{
+    color: #ff6900;
+}
+
 .list:hover{
     background-color: #ff6a0033;
     border-radius: 4em;
@@ -127,3 +136,28 @@ input[type=text] {
 ::placeholder{
     text-align: center;
 }
+
+
+/*<---------------------------------------------------------------------->*/
+
+@media screen and (max-height: 692px) {
+    body {
+        margin-left: 0px;
+    }
+
+    .navbar{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin-left: 0px;
+    }
+
+    .navbar{
+        display: none;
+    }
+}
+
+/*<---------------------------------------------------------------------->*/
