@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<div class='product-list'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<a href='product-details.php?id=" . $row["id"] . "' class='product-link'>"; // Add product link with product id as query parameter
+        echo "<a href='products\product.html'" . $row["id"] . "' class='product-link'>"; // Add product link with product id as query parameter
         echo "<div class='product-item'>";
         echo "<h2>" . $row["title"] . "</h2>";
         echo "<img src='vehicles\\" . $row['pic'] . "' alt='" . $row['title'] . "' class='product-image'/>";
