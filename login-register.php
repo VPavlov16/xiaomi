@@ -32,7 +32,7 @@ require('log.php')
         }
 
         .form-container h2 {
-            color: orange;
+            color: coral;
             font-size: 28px;
             margin-bottom: 20px;
         }
@@ -57,7 +57,7 @@ require('log.php')
         }
 
         .form-container input[type="submit"] {
-            background-color: orange;
+            background-color: coral;
             color: #fff;
             padding: 12px 20px;
             border: none;
@@ -73,7 +73,7 @@ require('log.php')
         }
 
         .form-container .switch-form {
-            color: orange;
+            color: coral;
             cursor: pointer;
             font-size: 14px;
         }
