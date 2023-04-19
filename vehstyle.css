@@ -37,16 +37,3 @@
     max-height: 100%;
 }
 
-  a.product-link {
-    display: block;
-    margin-top: 20px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    float: left;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #ccc;
-    width: calc(33.33% - 10px);
-    margin-bottom: 10px;
-}
