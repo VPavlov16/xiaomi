@@ -11,20 +11,24 @@ require('log.php')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(180deg, orange, black);
+            background-image: url("images/mi-bg.webp");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center;
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .form-container {
-            background-color: #fff;
+            background-color: rgb(0, 0, 0,0.5);
             border-radius: 10px;
             width: 300px;
             margin: 0 auto;
             padding: 20px;
-            margin-top: 100px;
+            margin-top: 13em;
             text-align: center;
+            place-items:center;
         }
 
         .form-container h2 {
