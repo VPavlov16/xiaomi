@@ -1,3 +1,3 @@
 # xiaomi
 
-tova ne e readme
+tova ne e redmi
