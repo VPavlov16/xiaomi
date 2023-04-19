@@ -1,23 +1,34 @@
 <?php
-	// връзка с базата
 
-	$servername = "localhost";
-	$username = "root";
-	$password = "123456789";
-	$database = "xiaomi";
+$servername = "localhost";
+$username = "root";
+$password = "123456789";
+$dbname = "xiaomi";
 
-	try {
-		$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		// echo "Connected successfully";
-	} catch(PDOException $e) {
-		echo "Connection failed: " . $e->getMessage();
-	}
-	
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-	// зарежда колите от базата
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    $data = $connection->query("SELECT * FROM vehicles")->fetchAll();
-	
+$sql = "SELECT * FROM vehicles";
 
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<div class='product-list'>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='product-item'>";
+        echo "<h2>" . $row["title"] . "</h2>";
+        echo "<p>Motor power: " . $row["motorPower"] . "</p>";
+        echo "<p>Top speed: " . $row["topSpeed"] . "</p>";
+        echo "<p>Price: " . $row["price"] . " лв.</p>";
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "No products found.";
+}
+
+$conn->close();
 ?>
