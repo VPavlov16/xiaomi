@@ -20,8 +20,9 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='product-item'>";
         echo "<h2>" . $row["title"] . "</h2>";
-        echo "<p>Motor power: " . $row["motorPower"] . "</p>";
-        echo "<p>Top speed: " . $row["topSpeed"] . "</p>";
+        echo "<img src='vehicles\\" . $row['pic'] . "' alt='" . $row['title'] . "' class='product-image'/>";
+        echo "<p>Motor power: " . $row["motorPower"] . "W</p>";
+        echo "<p>Top speed: " . $row["topSpeed"] . " km/h</p>";
         echo "<p>Price: " . $row["price"] . " лв.</p>";
         echo "</div>";
     }
