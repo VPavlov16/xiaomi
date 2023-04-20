@@ -62,12 +62,35 @@ nav:hover{
     transition: all 0.1s ease-in-out;
 }
 
-.xiaomi{
-    width: 45px;
-    height: 45px;
-    margin-top: 1em;
-    margin-left: 0em;
+.logo-a{
+    position: relative;
+    color: dimgray;
+    width: 300px;
+    padding: 15px; 
 }
+
+.xiaomi-div{
+    width: 55px;
+    height: 55px;
+    margin-top: 0em;
+    margin-left: 0.5em;
+    overflow: hidden;
+    border-radius: 1.2em;
+    scale: 80%;
+    
+}
+
+.xiaomi-logo{
+    background-color: #ff6900;
+    transform: translateX(-50%); 
+    transition: transform 0.3s ease;
+}
+
+.xiaomi-div:hover .xiaomi-logo {
+    transform: translateX(0%);
+}
+
+
 
 .xlogo{
     position: relative;
@@ -83,12 +106,7 @@ nav:hover{
     color:  #ff6900;
 }
 
-.logo-a{
-    position: relative;
-    color: dimgray;
-    width: 300px;
-    padding: 15px; 
-}
+
 
 .list-a{
     position: relative;
