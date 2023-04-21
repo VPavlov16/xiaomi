@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `mobile devices`
+-- Table structure for table `mobdev`
 --
 
-DROP TABLE IF EXISTS `mobile devices`;
+DROP TABLE IF EXISTS `mobdev`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `mobile devices` (
+CREATE TABLE `mobdev` (
   `idMobile Devices` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
@@ -39,12 +39,12 @@ CREATE TABLE `mobile devices` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mobile devices`
+-- Dumping data for table `mobdev`
 --
 
-LOCK TABLES `mobile devices` WRITE;
-/*!40000 ALTER TABLE `mobile devices` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mobile devices` ENABLE KEYS */;
+LOCK TABLES `mobdev` WRITE;
+/*!40000 ALTER TABLE `mobdev` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mobdev` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `orders_has_mobile devices` (
   PRIMARY KEY (`Orders_idOrders`,`Mobile Devices_idMobile Devices`),
   KEY `fk_Orders_has_Mobile Devices_Mobile Devices1_idx` (`Mobile Devices_idMobile Devices`),
   KEY `fk_Orders_has_Mobile Devices_Orders_idx` (`Orders_idOrders`),
-  CONSTRAINT `fk_Orders_has_Mobile Devices_Mobile Devices1` FOREIGN KEY (`Mobile Devices_idMobile Devices`) REFERENCES `mobile devices` (`idMobile Devices`),
+  CONSTRAINT `fk_Orders_has_Mobile Devices_Mobile Devices1` FOREIGN KEY (`Mobile Devices_idMobile Devices`) REFERENCES `mobdev` (`idMobile Devices`),
   CONSTRAINT `fk_Orders_has_Mobile Devices_Orders` FOREIGN KEY (`Orders_idOrders`) REFERENCES `orders` (`idOrders`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -307,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-22  0:35:30
+-- Dump completed on 2023-04-22  0:43:54
