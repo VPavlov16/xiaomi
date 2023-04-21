@@ -112,7 +112,7 @@ CREATE TABLE `orders_has_smart devices` (
   KEY `fk_Orders_has_Smart devices_Smart devices1_idx` (`Smart devices_idSmart devices`),
   KEY `fk_Orders_has_Smart devices_Orders1_idx` (`Orders_idOrders`),
   CONSTRAINT `fk_Orders_has_Smart devices_Orders1` FOREIGN KEY (`Orders_idOrders`) REFERENCES `orders` (`idOrders`),
-  CONSTRAINT `fk_Orders_has_Smart devices_Smart devices1` FOREIGN KEY (`Smart devices_idSmart devices`) REFERENCES `smart devices` (`idSmart devices`)
+  CONSTRAINT `fk_Orders_has_Smart devices_Smart devices1` FOREIGN KEY (`Smart devices_idSmart devices`) REFERENCES `smart_devices` (`idSmart devices`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -207,29 +207,31 @@ INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee
 UNLOCK TABLES;
 
 --
--- Table structure for table `smart devices`
+-- Table structure for table `smart_devices`
 --
 
-DROP TABLE IF EXISTS `smart devices`;
+DROP TABLE IF EXISTS `smart_devices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `smart devices` (
+CREATE TABLE `smart_devices` (
   `idSmart devices` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
-  `Suction power` varchar(45) NOT NULL,
+  `suction_power` int NOT NULL,
+  `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`idSmart devices`),
   UNIQUE KEY `idSmart devices_UNIQUE` (`idSmart devices`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `smart devices`
+-- Dumping data for table `smart_devices`
 --
 
-LOCK TABLES `smart devices` WRITE;
-/*!40000 ALTER TABLE `smart devices` DISABLE KEYS */;
-/*!40000 ALTER TABLE `smart devices` ENABLE KEYS */;
+LOCK TABLES `smart_devices` WRITE;
+/*!40000 ALTER TABLE `smart_devices` DISABLE KEYS */;
+INSERT INTO `smart_devices` VALUES (1,'Mi Robot Vacuum-Mop 2 Lite',338,2200,'mbvacuum-mop2lite.png'),(2,'Mi Robot Vacuum-Mop 2 pro',672,3000,'mbvacuum-mop2pro.png'),(3,'Mi Robot Vacuum-Mop 2 ultra',950,4000,'mbvacuum-mop2ultra.png'),(4,'Xiaomi Robot Vacuum E10',450,4000,'xirobot_vacuumE10.png'),(5,'Xiaomi Robot Vacuum S10',600,4000,'xirobot_vacuumS10.png'),(6,'Xiaomi Robot Vacuum-Mop 2S',590,2500,'xirobot_vacuum-mop2s.png');
+/*!40000 ALTER TABLE `smart_devices` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -278,11 +280,12 @@ CREATE TABLE `wearable` (
   `idWearable` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
-  `Display` varchar(45) NOT NULL,
-  `Battery` varchar(45) NOT NULL,
+  `display` varchar(45) NOT NULL,
+  `battery` int NOT NULL,
+  `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`idWearable`),
   UNIQUE KEY `idWearable_UNIQUE` (`idWearable`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,6 +294,7 @@ CREATE TABLE `wearable` (
 
 LOCK TABLES `wearable` WRITE;
 /*!40000 ALTER TABLE `wearable` DISABLE KEYS */;
+INSERT INTO `wearable` VALUES (1,'Mi Smart Band 7',100,'490×192',180,'mi_smartbrand7.png'),(2,'Redmi Smart Band 2 Strap',16,'172x320',210,'redmisb2_strap.png'),(3,'Redmi watch 2 lite',120,'360x320',262,'redmiwatch2_lite.png'),(4,'Redmi watch 3',200,'450x390',262,'redmiwatch3.png'),(5,'Xiaomi Watch S1',450,'466x466',470,'xiaomiwatch_s1.png'),(6,'Xiaomi Watch S1 active',370,'466x466',470,'xiaomiwatch_s1active.png');
 /*!40000 ALTER TABLE `wearable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -303,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-20  0:10:52
+-- Dump completed on 2023-04-22  0:35:30
