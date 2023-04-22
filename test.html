@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,157 +13,27 @@ body {
     padding: 0;
 }
 
-.navbar-toggle {
-    display: none;
-}
+    /* Photo inside the container */
+    .photo-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%; /* Set initial width (e.g., 50% for 1:1) */
+      height: 100%; /* Set initial height (e.g., 100% for 1:1) */
+      background-color: orange;
+      transition: transform 0.3s ease; /* Add transition effect for smooth animation */
+    }
 
-.navbar-toggle-label {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.toggle-icon {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.navbar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f8f8f8;
-    padding-top: 100px;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 998;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-item {
-    display: inline-block;
-    margin: 10px;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px;
-    width: 100%;
-}
-
-.dropdown-item {
-    display: block;
-    margin: 5px 0;
-}
-
-.content {
-    padding: 20px;
-}
-
-    </style> 
-    
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggle = document.getElementById('navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-
-    navbarToggle.addEventListener('change', function() {
-        if (this.checked) {
-            navbarMenu.style.opacity = '1';
-            navbarMenu.style.pointerEvents = 'auto';
-        } else {
-            navbarMenu.style.opacity = '0';
-            navbarMenu.style.pointerEvents = 'none';
-        }
-    });
-
-    // Close dropdown on click outside
-    document.addEventListener('click', function(event) {const targetElement = event.target;
-        if (!targetElement.matches('.navbar-toggle') && !targetElement.closest('.navbar-menu')) {
-            navbarToggle.checked = false;
-            navbarMenu.style.opacity = '0';
-            navbarMenu.style.pointerEvents = 'none';
-        }
-    });
-
-    // Toggle dropdown
-    const dropdownItems = document.querySelectorAll('.dropdown');
-    dropdownItems.forEach(function(dropdownItem) {
-        dropdownItem.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const dropdownMenu = this.querySelector('.dropdown-menu');
-            if (dropdownMenu.style.display === 'block') {
-                dropdownMenu.style.display = 'none';
-            } else {
-                dropdownMenu.style.display = 'block';
-            }
-        });
-    });
-});
-    </script>
+    /* Hover effect */
+    .photo-container:hover img {
+      transform: translateX(100%); /* Move the photo to the right on hover */
+    }
+  </style>
 </head>
 <body>
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Hamburger Menu with Dropdown</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
-    <label for="navbar-toggle" class="navbar-toggle-label">
-        <span class="toggle-icon"></span>
-        <span class="toggle-icon"></span>
-        <span class="toggle-icon"></span>
-    </label>
-    <nav class="navbar-menu">
-        <ul class="menu-list">
-            <li class="menu-item">Home</li>
-            <li class="menu-item">About</li>
-            <li class="menu-item dropdown">
-                Services
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">Web Design</li>
-                    <li class="dropdown-item">Graphic Design</li>
-                    <li class="dropdown-item">Digital Marketing</li>
-                </ul>
-            </li>
-            <li class="menu-item">Contact</li>
-        </ul>
-    </nav>
-    <div class="content">
-        <!-- Content goes here -->
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-
-    
-     
+  <!-- HTML with the photo -->
+  <div class="photo-container">
+    <img src="images\mi-logo.svg" alt="Photo"> <!-- Replace with your photo image -->
+  </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+require('nav.html');
 require('reg.php');
 require('log.php')
 
@@ -33,7 +33,7 @@ require('log.php')
 </head>
 
 <body>
-    
+    <div class="login-form">
     <div class="form-container" id="login-form">
         <h2>Login</h2>
         <form method="post">
@@ -43,7 +43,7 @@ require('log.php')
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? <mark class = "marked" >Register</mark></p>
     </div>
-
+</div>
     <div class="form-container" id="register-form">
         <h2>Register</h2>
         <form method="post">
