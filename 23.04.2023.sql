@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: xiaomi
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,14 +28,15 @@ CREATE TABLE `mobdev` (
   `price` double NOT NULL,
   `CPU` varchar(45) NOT NULL,
   `GPU` varchar(45) NOT NULL,
-  `Storage` int NOT NULL,
-  `Ram` int NOT NULL,
-  `Front camera` int NOT NULL,
-  `Rear camera` int NOT NULL,
-  `Description` text NOT NULL,
+  `storage` int NOT NULL,
+  `ram` int NOT NULL,
+  `front_camera` int NOT NULL,
+  `rear_camera` int NOT NULL,
+  `description` text NOT NULL,
+  `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`idMobile Devices`),
   UNIQUE KEY `idMobile Devices_UNIQUE` (`idMobile Devices`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +45,7 @@ CREATE TABLE `mobdev` (
 
 LOCK TABLES `mobdev` WRITE;
 /*!40000 ALTER TABLE `mobdev` DISABLE KEYS */;
+INSERT INTO `mobdev` VALUES (1,'Xiaomi Mi 11',1440,'Snapdragon 888','Adreno 660',128,8,20,108,'Xiaomi Mi 11 is a flagship mobile phone with a powerful Snapdragon 888 processor, a large 6.81-inch AMOLED display, and a stunning 108MP camera.','mi11.jpg'),(2,'Xiaomi Redmi Note 10 Pro',450,'Snapdragon 732G','Adreno 618',128,6,16,64,'Xiaomi Redmi Note 10 Pro is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Snapdragon 732G processor, and a high-resolution 64MP quad-camera setup.','note10pro.jpg'),(3,'Xiaomi Redmi Note 11S',540,'MediaTek Dimensity 900U','Mali-G78 MC4',128,6,20,64,'Xiaomi Redmi Note 11S is a mid-range mobile phone with a large 6.43-inch AMOLED display, a powerful MediaTek Dimensity 900U processor, and a high-resolution 64MP quad-camera setup.','note11s.png'),(4,'Xiaomi Redmi Note 12',499,'MediaTek Dimensity 1200','Mali-G77 MC9',256,8,16,108,'Xiaomi Redmi Note 12 is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful MediaTek Dimensity 1200 processor, and a high-resolution 108MP quad-camera setup.','note12.png'),(5,'Xiaomi Redmi Note 12 Pro',699,'Qualcomm Snapdragon 870','Adreno 650',256,12,16,108,'Xiaomi Redmi Note 12 Pro is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful Qualcomm Snapdragon 870 processor, and a high-resolution 108MP quad-camera setup.','note12pro.png'),(6,'Xiaomi Mi 13',1950,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',512,16,32,108,'Xiaomi Mi 13 is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13.png'),(7,'Xiaomi Mi 13 Lite',1000,'Qualcomm Snapdragon 778G','Adreno 642L',128,6,16,64,'Xiaomi Mi 13 Lite is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Qualcomm Snapdragon 778G processor, and a high-resolution 64MP quad-camera setup.','xiaomi13lite.png'),(9,'Xiaomi Mi 13 Pro',2550,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',512,16,32,108,'Xiaomi Mi 13 Pro is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13pro.png');
 /*!40000 ALTER TABLE `mobdev` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,6 +209,32 @@ INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee
 UNLOCK TABLES;
 
 --
+-- Table structure for table `smart devices`
+--
+
+DROP TABLE IF EXISTS `smart devices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `smart devices` (
+  `idSmart devices` int NOT NULL AUTO_INCREMENT,
+  `Model` varchar(45) NOT NULL,
+  `price` double NOT NULL,
+  `Suction power` varchar(45) NOT NULL,
+  PRIMARY KEY (`idSmart devices`),
+  UNIQUE KEY `idSmart devices_UNIQUE` (`idSmart devices`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `smart devices`
+--
+
+LOCK TABLES `smart devices` WRITE;
+/*!40000 ALTER TABLE `smart devices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `smart devices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `smart_devices`
 --
 
@@ -307,4 +335,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-22  0:43:54
+-- Dump completed on 2023-04-23 22:54:51

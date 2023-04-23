@@ -164,7 +164,7 @@ input[type=text] {
     }
 
     .navbar{
-        display: none;
+     display: none;
     }
 }
 
@@ -174,7 +174,7 @@ input[type=text] {
     }
 
     .navbar{
-        display: none;
+       display: none;
     }
 }
 
