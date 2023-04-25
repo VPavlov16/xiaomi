@@ -8,7 +8,7 @@
 <body>
 
 <?php
-    require('nav.html');
+    require('nav.php');
 ?>
 
 

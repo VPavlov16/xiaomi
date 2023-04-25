@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-include('nav.html');
+include('nav.php');
 include('adWear.php');
 ?>
 </body>

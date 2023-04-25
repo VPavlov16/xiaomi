@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
         echo "<p class = 'card-info'>Display: " . $row["display"] . " px</p>";
         echo "<p class = 'card-info'>Battery: " . $row["battery"] . " mAh</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
+        echo "<button class='button button2'>Add to cart</button>";
         echo "</div>";
         echo "</a>";
     }

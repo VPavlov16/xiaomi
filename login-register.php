@@ -35,7 +35,7 @@ require('log.php')
 <body>
 
 <?php
-    require('nav.html');
+    require('nav.php');
 ?>
     <div class="login-form">
     <div class="form-container" id="login-form">
