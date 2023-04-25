@@ -7,9 +7,9 @@
 	try {
 		$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connected successfully";
+		//echo "Connected successfully";
 	} catch(PDOException $e) {
-		echo "Connection failed: " . $e->getMessage();
+		//echo "Connection failed: " . $e->getMessage();
 	}
 
 	if ( isset( $_POST['submit'] ) ) {
@@ -21,17 +21,20 @@
         $battery = $_POST['battery'];
        
         $file = $_FILES['pic'];
-        $fileName = $_FILES['pic'] ['name'];
-        $fileTemp = $_FILES['pic'] ['temp'];
-        $fileType = $_FILES['pic'] ['type'];
+        $fileName = $file['name'];
+        $fileTemp = $file['tmp_name'];
+        $fileType = $file['type'];
+        $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
 		// заявка към базата, с която се записват полетата
 
            
-            $sql = "INSERT INTO wearable ( Model, price, display, battery,pic) VALUES (?,?,?,?,?)";
-		$connection->prepare($sql)->execute([$model,$price, $display, $battery,$fileTemp]);
+            $sql = "INSERT INTO wearable ( Model, price, display, battery, pic) VALUES (?,?,?,?,?)";
+            $stmt = $connection->prepare($sql);
+            $stmt->execute([$model, $price, $display, $battery, $fileName]);
 
-        
-        move_uploaded_file($fileTemp,"wearable/".$fileName.".jpg");
+
+            move_uploaded_file($fileTemp, "wearable/" . $fileName);
+       // move_uploaded_file($fileTemp,"wearable/".$fileName.".jpg");
         
 	}
  ?>
@@ -52,7 +55,7 @@
     </style>
 </head>
 <body>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
    <div class="panel">
     <input type="text" name="model" maxlength="30" placeholder="Model">
     <br>
@@ -66,7 +69,7 @@
     <input type="text" name="battery" maxlength="30" placeholder="Battery">
     <br>
     <br>
-    <input id="text" type="file" name="pic">
+    <input id="text" type="file" name="pic" value="asd">
     <br>
     <br>
 
