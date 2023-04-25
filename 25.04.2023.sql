@@ -195,7 +195,7 @@ CREATE TABLE `registers` (
   `email` varchar(45) NOT NULL DEFAULT 'a',
   `pass` varchar(255) NOT NULL DEFAULT 'a1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,34 +204,8 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e');
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e'),(10,'Venelin','Pavlov','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `smart devices`
---
-
-DROP TABLE IF EXISTS `smart devices`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `smart devices` (
-  `idSmart devices` int NOT NULL AUTO_INCREMENT,
-  `Model` varchar(45) NOT NULL,
-  `price` double NOT NULL,
-  `Suction power` varchar(45) NOT NULL,
-  PRIMARY KEY (`idSmart devices`),
-  UNIQUE KEY `idSmart devices_UNIQUE` (`idSmart devices`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `smart devices`
---
-
-LOCK TABLES `smart devices` WRITE;
-/*!40000 ALTER TABLE `smart devices` DISABLE KEYS */;
-/*!40000 ALTER TABLE `smart devices` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -335,4 +309,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-23 22:54:51
+-- Dump completed on 2023-04-25 12:16:04
