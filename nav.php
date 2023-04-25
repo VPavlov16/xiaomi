@@ -1,8 +1,11 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
 if(isset($_SESSION['user'])){
     debug_to_console($_SESSION['user']);
-}
+} 
+
 function debug_to_console($data) {
     $output = $data;
     if (is_array($output))
@@ -92,10 +95,10 @@ function debug_to_console($data) {
 
         <div class="list">
             <li>
-                <a href="login-register.php" class="list-a">
-                    <img src="images\user.png" alt="logo" class="logo">
-                    <span class="nav-item">Profile</span>
-                </a>
+                 <a href="<?php echo isset($_SESSION['user']) ? 'profi.php' : 'login-register.php'; ?>" class="list-a">
+                  <img src="images\user.png" alt="logo" class="logo">
+                  <span class="nav-item"><?php echo isset($_SESSION['user']) ? 'Profile' : 'Login/Register'; ?></span>
+                 </a>
             </li>
             </div>
         </ul>
