@@ -32,6 +32,7 @@
 </head>
 <body>
     <button onclick="window.location.href='adPhonePanel.php';" class="button button2">Post a mobile device</button>
+    <button onclick="window.location.href='myAccount.php';" class="button button2">My account</button>
     
 </body>
 </html>

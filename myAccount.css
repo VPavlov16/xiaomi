@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Blinker; 
+}
+
+body{
+    background-image: url("images/account bg.jpg");
+    background-color: #cccccc;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #f6f6f6;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 35px;
+}
+
+.header {
+    text-align: center;
+    color: #ff7f50; 
+    margin-bottom: 20px;
+    word-wrap: inherit;
+}

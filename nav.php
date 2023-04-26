@@ -94,7 +94,7 @@ function debug_to_console($data) {
             <li>
                 <a href="login-register.php" class="list-a">
                     <img src="images\user.png" alt="logo" class="logo">
-                    <span class="nav-item">Profile</span>
+                    <span class="nav-item">My account</span>
                 </a>
             </li>
             </div>

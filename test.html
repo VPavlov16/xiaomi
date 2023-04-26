@@ -7,33 +7,82 @@
     <title>Document</title>
 
     <style>
-    /* style.css */
-body {
-    margin: 0;
-    padding: 0;
+  body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
 }
 
-    /* Photo inside the container */
-    .photo-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%; /* Set initial width (e.g., 50% for 1:1) */
-      height: 100%; /* Set initial height (e.g., 100% for 1:1) */
-      background-color: orange;
-      transition: transform 0.3s ease; /* Add transition effect for smooth animation */
-    }
+.container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f6f6f6; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
-    /* Hover effect */
-    .photo-container:hover img {
-      transform: translateX(100%); /* Move the photo to the right on hover */
-    }
+.header {
+    text-align: center;
+    color: #ff7f50; /* Orange color for the title */
+    margin-top: 0;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Darker color for the labels */
+    font-weight: bold; /* Bold font weight for the labels */
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff7f50; /* Orange color for the submit button */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold; /* Bold font weight for the submit button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-submit:hover {
+    background-color: #e55e3c; /* Darker shade of orange on hover */
+}
+
   </style>
 </head>
 <body>
-  <!-- HTML with the photo -->
-  <div class="photo-container">
-    <img src="images\mi-logo.svg" alt="Photo"> <!-- Replace with your photo image -->
-  </div>
+    <div class="container">
+        <h1 class="header">Account Information</h1>
+        <form class="form">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <input type="submit" value="Save Changes" class="btn-submit">
+        </form>
+    </div>
+
+    <label for="myParagraph">This is a label for the paragraph:</label>
+<p id="myParagraph">This is a paragraph.</p>
+
+</body>
+</html>
 </body>
 </html>
