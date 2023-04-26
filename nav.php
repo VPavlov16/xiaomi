@@ -4,7 +4,6 @@ if(session_status() == PHP_SESSION_NONE){
 }
 if(isset($_SESSION['user'])){
     debug_to_console($_SESSION['user']);
-    debug_to_console($_SESSION['user'][0]);
 } 
 
 function debug_to_console($data) {
