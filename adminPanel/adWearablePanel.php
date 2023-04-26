@@ -33,7 +33,7 @@
             $stmt->execute([$model, $price, $display, $battery, $fileName]);
 
 
-            move_uploaded_file($fileTemp, "wearable/" . $fileName);
+            move_uploaded_file($fileTemp, "../wearable/" . $fileName);
        // move_uploaded_file($fileTemp,"wearable/".$fileName.".jpg");
         
 	}

@@ -28,6 +28,7 @@ CREATE TABLE `mobdev` (
   `price` double NOT NULL,
   `CPU` varchar(45) NOT NULL,
   `GPU` varchar(45) NOT NULL,
+  `battery` int NOT NULL DEFAULT '4000',
   `storage` int NOT NULL,
   `ram` int NOT NULL,
   `front_camera` int NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE `mobdev` (
   `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idMobile Devices_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,7 @@ CREATE TABLE `mobdev` (
 
 LOCK TABLES `mobdev` WRITE;
 /*!40000 ALTER TABLE `mobdev` DISABLE KEYS */;
-INSERT INTO `mobdev` VALUES (1,'Xiaomi Mi 11',1440,'Snapdragon 888','Adreno 660',128,8,20,108,'Xiaomi Mi 11 is a flagship mobile phone with a powerful Snapdragon 888 processor, a large 6.81-inch AMOLED display, and a stunning 108MP camera.','mi11.jpg'),(2,'Xiaomi Redmi Note 10 Pro',450,'Snapdragon 732G','Adreno 618',128,6,16,64,'Xiaomi Redmi Note 10 Pro is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Snapdragon 732G processor, and a high-resolution 64MP quad-camera setup.','note10pro.jpg'),(3,'Xiaomi Redmi Note 11S',540,'MediaTek Dimensity 900U','Mali-G78 MC4',128,6,20,64,'Xiaomi Redmi Note 11S is a mid-range mobile phone with a large 6.43-inch AMOLED display, a powerful MediaTek Dimensity 900U processor, and a high-resolution 64MP quad-camera setup.','note11s.png'),(4,'Xiaomi Redmi Note 12',499,'MediaTek Dimensity 1200','Mali-G77 MC9',256,8,16,108,'Xiaomi Redmi Note 12 is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful MediaTek Dimensity 1200 processor, and a high-resolution 108MP quad-camera setup.','note12.png'),(5,'Xiaomi Redmi Note 12 Pro',699,'Qualcomm Snapdragon 870','Adreno 650',256,12,16,108,'Xiaomi Redmi Note 12 Pro is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful Qualcomm Snapdragon 870 processor, and a high-resolution 108MP quad-camera setup.','note12pro.png'),(6,'Xiaomi Mi 13',1950,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',512,16,32,108,'Xiaomi Mi 13 is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13.png'),(7,'Xiaomi Mi 13 Lite',1000,'Qualcomm Snapdragon 778G','Adreno 642L',128,6,16,64,'Xiaomi Mi 13 Lite is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Qualcomm Snapdragon 778G processor, and a high-resolution 64MP quad-camera setup.','xiaomi13lite.png'),(9,'Xiaomi Mi 13 Pro',2550,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',512,16,32,108,'Xiaomi Mi 13 Pro is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13pro.png');
+INSERT INTO `mobdev` VALUES (1,'Xiaomi Mi 11',1440,'Snapdragon 888','Adreno 660',4000,128,8,20,108,'Xiaomi Mi 11 is a flagship mobile phone with a powerful Snapdragon 888 processor, a large 6.81-inch AMOLED display, and a stunning 108MP camera.','mi11.jpg'),(2,'Xiaomi Redmi Note 10 Pro',450,'Snapdragon 732G','Adreno 618',4000,128,6,16,64,'Xiaomi Redmi Note 10 Pro is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Snapdragon 732G processor, and a high-resolution 64MP quad-camera setup.','note10pro.jpg'),(3,'Xiaomi Redmi Note 11S',540,'MediaTek Dimensity 900U','Mali-G78 MC4',4000,128,6,20,64,'Xiaomi Redmi Note 11S is a mid-range mobile phone with a large 6.43-inch AMOLED display, a powerful MediaTek Dimensity 900U processor, and a high-resolution 64MP quad-camera setup.','note11s.png'),(4,'Xiaomi Redmi Note 12',499,'MediaTek Dimensity 1200','Mali-G77 MC9',4000,256,8,16,108,'Xiaomi Redmi Note 12 is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful MediaTek Dimensity 1200 processor, and a high-resolution 108MP quad-camera setup.','note12.png'),(5,'Xiaomi Redmi Note 12 Pro',699,'Qualcomm Snapdragon 870','Adreno 650',4000,256,12,16,108,'Xiaomi Redmi Note 12 Pro is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful Qualcomm Snapdragon 870 processor, and a high-resolution 108MP quad-camera setup.','note12pro.png'),(6,'Xiaomi Mi 13',1950,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13.png'),(7,'Xiaomi Mi 13 Lite',1000,'Qualcomm Snapdragon 778G','Adreno 642L',4000,128,6,16,64,'Xiaomi Mi 13 Lite is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Qualcomm Snapdragon 778G processor, and a high-resolution 64MP quad-camera setup.','xiaomi13lite.png'),(9,'Xiaomi Mi 13 Pro',2550,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 Pro is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13pro.png'),(10,'asd',1233,'asd','asd',123,355,12,123,123,'fdvbdvdvcdfdfgvfdfgdffgsdljbfksdmnf;sdnf;nsdfnsdjkfslfkdsjnfsdgjklvdskljgdsnklio;gd','emko.jpg');
 /*!40000 ALTER TABLE `mobdev` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,7 +225,7 @@ CREATE TABLE `smart_devices` (
   `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idSmart devices_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +260,7 @@ CREATE TABLE `vehicles` (
   `price` decimal(10,2) NOT NULL DEFAULT '23.00',
   `pic` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +289,7 @@ CREATE TABLE `wearable` (
   `pic` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idWearable_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -310,4 +311,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-26 10:59:11
+-- Dump completed on 2023-04-26 11:48:35

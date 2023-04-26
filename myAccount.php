@@ -73,7 +73,10 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
     <br>
     <button onclick=logout() class='button button2'>Log out</button>
     <br>
-    <button onclick="window.location.href='adWearablePanel.php';" class="button button2 admin">Post a mobile device</button>
+    <button onclick="window.location.href='adminPanel/adWearablePanel.php';" class="button button2 admin">Post a wearable device</button>
+    <button onclick="window.location.href='adminPanel/adMobdevPanel.php';" class="button button2 admin">Post a mobile device</button>
+    <button onclick="window.location.href='adminPanel/adVehPanel.php';" class="button button2 admin">Post a vehicle</button>
+    <button onclick="window.location.href='adminPanel/adSmdevPanel.php';" class="button button2 admin">Post a smart device</button>
     </div>
 </body>
 </html>
