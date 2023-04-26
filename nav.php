@@ -4,6 +4,7 @@ if(session_status() == PHP_SESSION_NONE){
 }
 if(isset($_SESSION['user'])){
     debug_to_console($_SESSION['user']);
+    debug_to_console($_SESSION['user'][0]);
 } 
 
 function debug_to_console($data) {
@@ -95,7 +96,7 @@ function debug_to_console($data) {
 
         <div class="list">
             <li>
-                 <a href="<?php echo isset($_SESSION['user']) ? 'profi.php' : 'login-register.php'; ?>" class="list-a">
+                 <a href="<?php echo isset($_SESSION['user']) ? 'myAccount.php' : 'login-register.php'; ?>" class="list-a">
                   <img src="images\user.png" alt="logo" class="logo">
                   <span class="nav-item"><?php echo isset($_SESSION['user']) ? 'Profile' : 'Login/Register'; ?></span>
                  </a>
