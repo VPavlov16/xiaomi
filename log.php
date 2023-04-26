@@ -5,6 +5,7 @@ $username = "root";
 $password = "123456789";
 $database = "xiaomi";
 
+
 try {
   $connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
   $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,7 +23,8 @@ if ( isset( $_POST['submit1'] ) ) {
 	$userInfo = $stmt->fetchAll();
 	
 	if ( $userInfo ) {
-		$_SESSION['user'] = [$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email']];
+		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type']];
+		
 	
 		header("location: home.php");
 		exit;
