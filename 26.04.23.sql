@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `mobdev`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mobdev` (
-  `idMobile Devices` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
   `CPU` varchar(45) NOT NULL,
@@ -34,8 +34,8 @@ CREATE TABLE `mobdev` (
   `rear_camera` int NOT NULL,
   `description` text NOT NULL,
   `pic` varchar(45) NOT NULL,
-  PRIMARY KEY (`idMobile Devices`),
-  UNIQUE KEY `idMobile Devices_UNIQUE` (`idMobile Devices`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idMobile Devices_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -86,7 +86,7 @@ CREATE TABLE `orders_has_mobile devices` (
   PRIMARY KEY (`Orders_idOrders`,`Mobile Devices_idMobile Devices`),
   KEY `fk_Orders_has_Mobile Devices_Mobile Devices1_idx` (`Mobile Devices_idMobile Devices`),
   KEY `fk_Orders_has_Mobile Devices_Orders_idx` (`Orders_idOrders`),
-  CONSTRAINT `fk_Orders_has_Mobile Devices_Mobile Devices1` FOREIGN KEY (`Mobile Devices_idMobile Devices`) REFERENCES `mobdev` (`idMobile Devices`),
+  CONSTRAINT `fk_Orders_has_Mobile Devices_Mobile Devices1` FOREIGN KEY (`Mobile Devices_idMobile Devices`) REFERENCES `mobdev` (`id`),
   CONSTRAINT `fk_Orders_has_Mobile Devices_Orders` FOREIGN KEY (`Orders_idOrders`) REFERENCES `orders` (`idOrders`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -114,7 +114,7 @@ CREATE TABLE `orders_has_smart devices` (
   KEY `fk_Orders_has_Smart devices_Smart devices1_idx` (`Smart devices_idSmart devices`),
   KEY `fk_Orders_has_Smart devices_Orders1_idx` (`Orders_idOrders`),
   CONSTRAINT `fk_Orders_has_Smart devices_Orders1` FOREIGN KEY (`Orders_idOrders`) REFERENCES `orders` (`idOrders`),
-  CONSTRAINT `fk_Orders_has_Smart devices_Smart devices1` FOREIGN KEY (`Smart devices_idSmart devices`) REFERENCES `smart_devices` (`idSmart devices`)
+  CONSTRAINT `fk_Orders_has_Smart devices_Smart devices1` FOREIGN KEY (`Smart devices_idSmart devices`) REFERENCES `smart_devices` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -168,7 +168,7 @@ CREATE TABLE `orders_has_wearable` (
   KEY `fk_Orders_has_Wearable_Wearable1_idx` (`Wearable_idWearable`),
   KEY `fk_Orders_has_Wearable_Orders1_idx` (`Orders_idOrders`),
   CONSTRAINT `fk_Orders_has_Wearable_Orders1` FOREIGN KEY (`Orders_idOrders`) REFERENCES `orders` (`idOrders`),
-  CONSTRAINT `fk_Orders_has_Wearable_Wearable1` FOREIGN KEY (`Wearable_idWearable`) REFERENCES `wearable` (`idWearable`)
+  CONSTRAINT `fk_Orders_has_Wearable_Wearable1` FOREIGN KEY (`Wearable_idWearable`) REFERENCES `wearable` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -195,7 +195,7 @@ CREATE TABLE `registers` (
   `email` varchar(45) NOT NULL DEFAULT 'a',
   `pass` varchar(255) NOT NULL DEFAULT 'a1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +204,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e'),(10,'Venelin','Pavlov','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e'),(10,'Venelin','Pavlov','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),(11,'a','s','imi@abv.bg','b3440b114d53365b37df79cacfe85af6f327faf074efd6d05a8940a427f4180c');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,13 +216,13 @@ DROP TABLE IF EXISTS `smart_devices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `smart_devices` (
-  `idSmart devices` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
   `suction_power` int NOT NULL,
   `pic` varchar(45) NOT NULL,
-  PRIMARY KEY (`idSmart devices`),
-  UNIQUE KEY `idSmart devices_UNIQUE` (`idSmart devices`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idSmart devices_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -279,15 +279,15 @@ DROP TABLE IF EXISTS `wearable`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wearable` (
-  `idWearable` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Model` varchar(45) NOT NULL,
   `price` double NOT NULL,
   `display` varchar(45) NOT NULL,
   `battery` int NOT NULL,
-  `pic` varchar(45) NOT NULL,
-  PRIMARY KEY (`idWearable`),
-  UNIQUE KEY `idWearable_UNIQUE` (`idWearable`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `pic` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idWearable_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,4 +309,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-25 12:16:04
+-- Dump completed on 2023-04-26  9:12:21
