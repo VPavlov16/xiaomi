@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<div class='product-list'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>"; 
+      //  echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>"; 
         echo "<div class='product-item'>";
         echo "<h2>" . $row["Model"] . "</h2>";
         echo "<img src='smart devices\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/>";

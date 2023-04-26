@@ -1,5 +1,5 @@
 <?php 
-require("nav.php");
+include('nav.php');
 
 ?>
 
@@ -12,14 +12,6 @@ require("nav.php");
     <title>Document</title>
 </head>
 <body>
-   <div class="panel">
-    <input type="text" name="Model" maxlength="30" placeholder="Model">
-    <input type="text" name="password" maxlength="30" placeholder="Password">
-    <input type="submit" name="submit1" value="Login">
-    
-
-   </div>
-    
     
 </body>
 </html>
