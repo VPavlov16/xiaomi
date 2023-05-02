@@ -31,6 +31,7 @@ nav{
     overflow: hidden;
     animation: fadeInRight 1.1s ;
     transition: width 0.3s linear;
+    z-index: 99;
 }
 
 @keyframes fadeInRight {

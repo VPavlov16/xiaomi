@@ -51,53 +51,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
-    <style>
-        .panel{
-            text-align: center;
-            border: 3px;
-            border-color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="panels.css">
 </head>
 <body>
     <form method="post" enctype="multipart/form-data">
    <div class="panel">
     <input type="text" name="title" maxlength="40" required placeholder="Title">
-    <br>
-    <br>
     <input type="number" max="30" name="weight" required  placeholder="Weight">
-    <br>
-    <br>
     <input type="number" max="100" name="mileage" required placeholder="Mileage">
-    <br>
-    <br>
     <input type="number" max="2000" name="motorPower" required placeholder="Motor Power">
-    <br>
-    <br>
     <input type="number" max="2000" name="battery" required placeholder="Battery">
-    <br>
-    <br>
     <input type="number" max="200" name="maxWeight" required placeholder="Max Weight">
-    <br>
-    <br>
-    <input type="number" max="120" name="topSpeed" required placeholder="topSpeed">
-    <br>
-    <br>
+    <input type="number" max="120" name="topSpeed" required placeholder="Top Speed">
     <input type="number" max="20" name="charge" required  placeholder="Charge time">
-    <br>
-    <br>
     <input type="number" max="12" name="tiresDiameter" required placeholder="Tires Diameter">
-    <br>
-    <br>
     <input type="text" name="color" required placeholder="Color">
-    <br>
-    <br>
     <input type="number" max="3000" name="price" required placeholder="Price">
-    <br>
-    <br>
     <input id="text" type="file" name="pic" required value="asd">
-    <br>
-    <br>
 
     <input type="submit" name="submit" value="send">
     

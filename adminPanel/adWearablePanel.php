@@ -46,39 +46,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
-    <style>
-        .panel{
-            text-align: center;
-            border: 3px;
-            border-color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="panels.css">
+
 </head>
 <body>
     <form method="post" enctype="multipart/form-data">
    <div class="panel">
     <input type="text" name="model" maxlength="30" placeholder="Model">
-    <br>
-    <br>
     <input type="number" name="price" maxlength="30" placeholder="Price">
-    <br>
-    <br>
     <input type="text" name="display" maxlength="30" placeholder="Display">
-    <br>
-    <br>
     <input type="text" name="battery" maxlength="30" placeholder="Battery">
-    <br>
-    <br>
     <input id="text" type="file" name="pic" value="asd">
-    <br>
-    <br>
-
     <input type="submit" name="submit" value="send">
-    
-
-   </div>
     </form>
-    
+     </div>
     
 </body>
 </html>

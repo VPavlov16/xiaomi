@@ -2,7 +2,7 @@
 require('nav.php');
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $database = "xiaomi";
 
 try {
@@ -32,29 +32,9 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
     <title>My account</title>
     <link rel="stylesheet" href="myAccount.css">
     <style>
-    .button {
-    background-color: #df4618; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-  }
-  
-  .button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-  .admin{
-    display: <?php echo $buttonDisplay; ?>;
-  }
-
-
+        .admin{
+            display: <?php echo $buttonDisplay; ?>;
+        }
     </style>
 </head>
 <body>
@@ -63,21 +43,21 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
     <h1 class="header">My Account</h1>
     
     <label for="firstname">First name:</label>
-    <?php echo"<p id='firstname'>".$rows[0]['fname']."</p>"?>
+    <?php echo"<p id='firstname' class='p-info'>".$rows[0]['fname']."</p>"?>
     <br>
     <label for="lastname">Last name:</label>
-    <?php echo"<p id='lastname'>".$rows[0]['lname']."</p>"?>
+    <?php echo"<p id='lastname' class='p-info'>".$rows[0]['lname']."</p>"?>
     <br>
     <label for="email">Email:</label>
-    <?php echo"<p id='email'>".$rows[0]['email']."</p>"?>
-    <br>
-    <button onclick=logout() class='button button2'>Log out</button>
-    <br>
-    <button onclick="window.location.href='adminPanel/adWearablePanel.php';" class="button button2 admin">Post a wearable device</button>
-    <button onclick="window.location.href='adminPanel/adMobdevPanel.php';" class="button button2 admin">Post a mobile device</button>
-    <button onclick="window.location.href='adminPanel/adVehPanel.php';" class="button button2 admin">Post a vehicle</button>
-    <button onclick="window.location.href='adminPanel/adSmdevPanel.php';" class="button button2 admin">Post a smart device</button>
+    <?php echo"<p id='email' class='p-info'>".$rows[0]['email']."</p>"?>
+    <div class="buttons-div">
+        <button onclick="window.location.href='adminPanel/adWearablePanel.php';" class="button button2 admin">Post a wearable device</button>
+        <button onclick="window.location.href='adminPanel/adMobdevPanel.php';" class="button button2 admin">Post a mobile device</button>
+        <button onclick="window.location.href='adminPanel/adVehPanel.php';" class="button button2 admin">Post a vehicle</button>
+        <button onclick="window.location.href='adminPanel/adSmdevPanel.php';" class="button button2 admin">Post a smart device</button>
+        <button onclick=logout() class='button button2 logout'>Log out</button>
     </div>
+</div>
 </body>
 </html>
 
