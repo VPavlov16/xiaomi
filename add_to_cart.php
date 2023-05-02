@@ -1,9 +1,11 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
 
-if (isset($_POST['product_id']) && isset($_POST['quantity'])) {
+if (isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
-    $quantity = $_POST['quantity'];
+    $quantity = 1;
     
     // Check if the product is already in the cart
     if (isset($_SESSION['cart'][$product_id])) {
