@@ -101,6 +101,14 @@ function debug_to_console($data) {
                  </a>
             </li>
             </div>
+            <div class="list">
+                <li>
+                    <a href="cart.php" class="list-a">
+                    <img src="images\cart.png" alt="logo" class="logo">
+                    <span class="nav-item">Cart</span>
+                    </a>
+                </li>
+                </div>
         </ul>
     </nav>
     

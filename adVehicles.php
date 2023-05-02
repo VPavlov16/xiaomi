@@ -25,7 +25,10 @@ if ($result->num_rows > 0) {
         echo "<p class = 'card-info'>Motor power: " . $row["motorPower"] . "W</p>";
         echo "<p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
-        echo "<button class='button button2'>Add to cart</button>";
+        echo "<form method='post' action='add_to_cart.php'>";
+        echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>";
+        echo "<button type='submit' class='button button2'>Add to cart</button>";
+        echo "</form>";
         echo "</div>";
         echo "</a>";
     }

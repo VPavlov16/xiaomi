@@ -33,7 +33,7 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
     <link rel="stylesheet" href="myAccount.css">
     <style>
     .button {
-    background-color: #df4618; /* Green */
+    background-color: #df4618; 
     border: none;
     color: white;
     padding: 15px 32px;
