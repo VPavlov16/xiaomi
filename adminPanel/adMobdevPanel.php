@@ -65,7 +65,7 @@
     <input type="number" max="200" name="frontCamera" maxlength="30" placeholder="Front Camera">
     <input type="number" max="200" name="rearCamera" maxlength="30" placeholder="Rear Camera">
     <input type="textfield" name="description" placeholder="Description">
-    <input id="text" type="file" name="pic" value="asd">
+    <input id="text" type="file" name="pic" value="asd" class="custom-input">
 
     <input type="submit" name="submit" value="send">
     

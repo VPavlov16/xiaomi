@@ -53,9 +53,9 @@
     <input type="text" name="model" maxlength="30" required placeholder="Model">
     <input type="number" name="price" max="2000" maxlength="30" required placeholder="Price">
     <input type="number" max="2000" name="suctionPower"  required placeholder="Suction Power">
-    <input id="text" type="file" name="pic" value="asd">
+    <input id="text" type="file" name="pic" value="asd" class="custom-input">
 
-    <input type="submit" name="submit" value="send">
+    <input type="submit" name="submit" value="send" >
    </div>
     </form>
     

@@ -56,8 +56,8 @@
     <input type="number" name="price" maxlength="30" placeholder="Price">
     <input type="text" name="display" maxlength="30" placeholder="Display">
     <input type="text" name="battery" maxlength="30" placeholder="Battery">
-    <input id="text" type="file" name="pic" value="asd">
-    <input type="submit" name="submit" value="send">
+    <input id="text" type="file" name="pic" value="asd" class="custom-input">
+    <input type="submit" name="submit" value="send" >
     </form>
      </div>
     

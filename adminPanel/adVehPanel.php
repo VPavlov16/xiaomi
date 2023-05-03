@@ -67,7 +67,7 @@
     <input type="number" max="12" name="tiresDiameter" required placeholder="Tires Diameter">
     <input type="text" name="color" required placeholder="Color">
     <input type="number" max="3000" name="price" required placeholder="Price">
-    <input id="text" type="file" name="pic" required value="asd">
+    <input id="text" type="file" name="pic" required value="asd" class="custom-input">
 
     <input type="submit" name="submit" value="send">
     
