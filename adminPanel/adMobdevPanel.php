@@ -67,7 +67,10 @@
     <input type="number" max="16" name="ram" maxlength="30" placeholder="RAM"  class="txt-num" required>
     <input type="number" max="200" name="frontCamera" maxlength="30" placeholder="Front Camera"  class="txt-num" required>
     <input type="number" max="200" name="rearCamera" maxlength="30" placeholder="Rear Camera"  class="txt-num" required>
-    <input type="textfield" name="description" placeholder="Description">
+    
+    <div class="div-textarea">
+        <textarea name="" id="" cols="30" data-min-rows='5' class="textarea"></textarea>    
+    </div>
     <input id="text" type="file" name="pic" value="asd" class="custom-input" required>
     
     <div class= "btn-div">
