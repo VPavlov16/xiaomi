@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "123456789";
+	$password = "fyre02";
 	$database = "xiaomi";
 
 	try {
@@ -49,14 +49,20 @@
 </head>
 <body>
     <form method="post" enctype="multipart/form-data">
-   <div class="panel">
-    <input type="text" name="model" maxlength="30" required placeholder="Model">
-    <input type="number" name="price" max="2000" maxlength="30" required placeholder="Price">
-    <input type="number" max="2000" name="suctionPower"  required placeholder="Suction Power">
-    <input id="text" type="file" name="pic" value="asd">
+    <div class="panel">
 
-    <input type="submit" name="submit" value="send">
-   </div>
+    <p class="panel-title">Add smart device</p>
+
+        <input type="text" name="model" maxlength="30" required placeholder="Model" class="txt-num" required>
+        <input type="number" name="price" max="2000" maxlength="30" required placeholder="Price" class="txt-num" required>
+        <input type="number" max="2000" name="suctionPower"  required placeholder="Suction Power" class="txt-num" required>
+        <input id="text" type="file" name="pic" value="asd" class="custom-input" required>
+
+        <div class= "btn-div">
+            <input type="submit" name="submit" value="send" class="send-btn">
+            <a href="../myAccount.php" class="cancel-btn"> Cancel </a>
+        </div>   
+    </div>
     </form>
     
     

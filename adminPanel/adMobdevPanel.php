@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "123456789";
+	$password = "fyre02";
 	$database = "xiaomi";
 
 	try {
@@ -55,21 +55,28 @@
 <body>
     <form method="post" enctype="multipart/form-data">
    <div class="panel">
-    <input type="text" name="model" maxlength="30" placeholder="Model">
-    <input type="number" name="price" maxlength="30" placeholder="Price">
-    <input type="text" name="cpu" maxlength="30" placeholder="CPU">
-    <input type="text" name="gpu" maxlength="30" placeholder="GPU">
-    <input type="number" name="battery" maxlength="30" placeholder="Battery">
-    <input type="number" max="1000" name="storage" maxlength="30" placeholder="Storage">
-    <input type="number" max="16" name="ram" maxlength="30" placeholder="RAM">
-    <input type="number" max="200" name="frontCamera" maxlength="30" placeholder="Front Camera">
-    <input type="number" max="200" name="rearCamera" maxlength="30" placeholder="Rear Camera">
-    <input type="textfield" name="description" placeholder="Description">
-    <input id="text" type="file" name="pic" value="asd">
 
-    <input type="submit" name="submit" value="send">
+   <p class="panel-title">Add mobile device</p>
+
+    <input type="text" name="model" maxlength="30" placeholder="Model"  class="txt-num" required>
+    <input type="number" name="price" maxlength="30" placeholder="Price"  class="txt-num" required>
+    <input type="text" name="cpu" maxlength="30" placeholder="CPU"  class="txt-num" required>
+    <input type="text" name="gpu" maxlength="30" placeholder="GPU"  class="txt-num" required>
+    <input type="number" name="battery" maxlength="30" placeholder="Battery"  class="txt-num" required>
+    <input type="number" max="1000" name="storage" maxlength="30" placeholder="Storage"  class="txt-num" required> 
+    <input type="number" max="16" name="ram" maxlength="30" placeholder="RAM"  class="txt-num" required>
+    <input type="number" max="200" name="frontCamera" maxlength="30" placeholder="Front Camera"  class="txt-num" required>
+    <input type="number" max="200" name="rearCamera" maxlength="30" placeholder="Rear Camera"  class="txt-num" required>
     
-
+    <div class="div-textarea">
+        <textarea name="" id="" cols="30" data-min-rows='5' class="textarea"></textarea>    
+    </div>
+    <input id="text" type="file" name="pic" value="asd" class="custom-input" required>
+    
+    <div class= "btn-div">
+        <input type="submit" name="submit" value="send" class="send-btn">
+        <a href="../myAccount.php" class="cancel-btn"> Cancel </a>
+    </div>
    </div>
     </form>
     
