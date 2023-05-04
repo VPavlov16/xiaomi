@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,8 +20,8 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='product-item'>";
         echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>"; 
-        echo "<h2>" . $row["title"] . "</h2>";
-        echo "<img src='vehicles\\" . $row['pic'] . "' alt='" . $row['title'] . "' class='product-image'/>";
+        echo "<h2>" . $row["Model"] . "</h2>";
+        echo "<img src='vehicles\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/>";
         echo "<p class = 'card-info'>Motor power: " . $row["motorPower"] . "W</p>";
         echo "<p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
