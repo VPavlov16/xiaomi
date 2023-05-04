@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "123456789";
+	$password = "fyre02";
 	$database = "xiaomi";
 
 	try {
@@ -56,21 +56,26 @@
 <body>
     <form method="post" enctype="multipart/form-data">
    <div class="panel">
-    <input type="text" name="title" maxlength="40" required placeholder="Title">
-    <input type="number" max="30" name="weight" required  placeholder="Weight">
-    <input type="number" max="100" name="mileage" required placeholder="Mileage">
-    <input type="number" max="2000" name="motorPower" required placeholder="Motor Power">
-    <input type="number" max="2000" name="battery" required placeholder="Battery">
-    <input type="number" max="200" name="maxWeight" required placeholder="Max Weight">
-    <input type="number" max="120" name="topSpeed" required placeholder="Top Speed">
-    <input type="number" max="20" name="charge" required  placeholder="Charge time">
-    <input type="number" max="12" name="tiresDiameter" required placeholder="Tires Diameter">
-    <input type="text" name="color" required placeholder="Color">
-    <input type="number" max="3000" name="price" required placeholder="Price">
+
+   <p class="panel-title">Add vehicle</p>
+
+    <input type="text" name="title" maxlength="40" required placeholder="Title"class="txt-num">
+    <input type="number" max="30" name="weight" required  placeholder="Weight" class="txt-num">
+    <input type="number" max="100" name="mileage" required placeholder="Mileage"class="txt-num">
+    <input type="number" max="2000" name="motorPower" required placeholder="Motor Power" class="txt-num">
+    <input type="number" max="2000" name="battery" required placeholder="Battery" class="txt-num">
+    <input type="number" max="200" name="maxWeight" required placeholder="Max Weight" class="txt-num">
+    <input type="number" max="120" name="topSpeed" required placeholder="Top Speed" class="txt-num">
+    <input type="number" max="20" name="charge" required  placeholder="Charge time" class="txt-num">
+    <input type="number" max="12" name="tiresDiameter" required placeholder="Tires Diameter" class="txt-num">
+    <input type="text" name="color" required placeholder="Color" class="txt-num">
+    <input type="number" max="3000" name="price" required placeholder="Price" class="txt-num">
     <input id="text" type="file" name="pic" required value="asd" class="custom-input">
 
-    <input type="submit" name="submit" value="send">
-    
+    <div class= "btn-div">
+        <input type="submit" name="submit" value="send" class="send-btn">
+        <a href="../myAccount.php" class="cancel-btn"> Cancel </a>
+    </div>      
 
    </div>
     </form>

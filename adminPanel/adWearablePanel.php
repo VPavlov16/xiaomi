@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "123456789";
+	$password = "fyre02";
 	$database = "xiaomi";
 
 	try {
@@ -73,16 +73,58 @@
 
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data">
-   <div class="panel">
-    <input type="text" name="model" maxlength="30" placeholder="Model">
-    <input type="number" name="price" maxlength="30" placeholder="Price">
-    <input type="text" name="display" maxlength="30" placeholder="Display">
-    <input type="text" name="battery" maxlength="30" placeholder="Battery">
-    <input id="text" type="file" name="pic" value="asd">
-    <input type="submit" name="submit" value="send">
+    <form method="post" enctype="multipart/form-data" class="full-form">
+        <div class="panel">
+            
+            <p class="panel-title">Add wearable product</p>
+
+            <div class= "div-txt-num">
+            <input type="text" name="model" maxlength="30" placeholder="Model" class="txt-num" required>
+            <input type="number" name="price" maxlength="30" placeholder="Price" class="txt-num" required>
+            <input type="text" name="display" maxlength="30" placeholder="Display" class="txt-num" required>
+            <input type="text" name="battery" maxlength="30" placeholder="Battery" class="txt-num" required> 
+            </div>
+
+            <div class="radios">
+                <span>GPS?</span>
+                <div class="inputs">
+                    <input type="radio" id="No" name="gps" value="No" required>
+                    <label for="No">No</label>
+                    <input type="radio" id="Yes" name="gps" value="Yes" required>
+                    <label for="Yes">Yes</label>
+                </div>
+            </div>
+
+            <div class="radios">
+                <span>Bluetooth?</span><br>
+                <div class="inputs">
+                    <input type="radio" id="No" name="Bluetooth" value="No">
+                    <label for="No">No</label>
+                    <input type="radio" id="Bluetooth 5.1" name="Bluetooth" value="Bluetooth 5.1" required>
+                    <label for="Bluetooth 5.1">Bluetooth 5.1</label>
+                    <input type="radio" id="Bluetooth 5.2" name="Bluetooth" value="Bluetooth 5.2" required>
+                    <label for="Bluetooth 5.2">Bluetooth 5.2</label>
+                </div>
+            </div>
+
+            <label for="pic">Cover Picture</label>
+            <input id="text" type="file" name="pic" value="pic" class="custom-input" required>
+            <label for="pic1">2nd Picture</label>
+            <input id="text" type="file" name="pic1" value="pic1" class="custom-input" required>
+            <label for="pic2">3th Picture</label>
+            <input id="text" type="file" name="pic2" value="pic2" class="custom-input" required>
+            <label for="pic3">4th Picture</label>
+            <input id="text" type="file" name="pic3" value="pic3" class="custom-input" required>
+            <label for="pic4">5th Picture</label>
+            <input id="text" type="file" name="pic4" value="pic4" class="custom-input" required>
+            
+            <div class= "btn-div">
+                <input type="submit" name="submit" value="send" class="send-btn">
+                <a href="../myAccount.php" class="cancel-btn"> Cancel </a>
+            </div>
+        </div>
     </form>
-     </div>
+    
     
 </body>
 </html>

@@ -21,28 +21,38 @@ body{
     align-items: center;
 }
 
+.full-form{
+    margin: 20px;
+}
+
 .panel{
     background-color: #f6f6f6;
     width: 100%;
     height: auto;
-    max-width: 350px;
+    max-width: 400px;
     max-height: 600px;
-    padding: 35px;
+    padding: 20px 35px;
     border-radius: 5px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
-input[type=text],
-input[type=number]{
+@media only screen and (max-width: 300px) {
+    .panel{
+        max-width: 260px;
+    }
+}
+
+.txt-num {
+    width: 100%;
     padding: 15px 20px;
-    margin: 20px;
     display: block;
     font-family: Roboto;
     border-radius: 5px;
+    margin: 15px 0;
 }
 
-input[type=text]:focus,
-input[type=number]:focus{
+.txt-num:focus{
     outline: solid black 1px;
 }
 
@@ -50,6 +60,9 @@ input[type=number]:focus{
     color:#f6f6f6;
     background-color: black;
     border-radius: 5px;
+    width: 100%;
+    min-width: 83px;
+    margin-bottom: 10px;
 }
 
 .custom-input::file-selector-button{
@@ -62,4 +75,73 @@ input[type=number]:focus{
 
 .custom-input::file-selector-button:hover{
     background-color: rgb(248,150,27);
+}
+
+.custom-input{
+    background-color: black;
+}
+
+.radios{
+    margin: 20px 0px;
+}
+
+input[type='radio'] {
+    accent-color: black;
+}
+
+.inputs{
+    text-indent: 1em;
+}
+
+.btn-div{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+
+.send-btn{
+    background-color: rgb(255,175,28);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all ease-in-out .3s;
+    text-transform: uppercase;
+    border: 1px solid black;
+    font-weight: 600;
+    font-size: 14px;
+    width: 50%;
+}
+
+.send-btn:hover{
+    background-color: rgb(248,150,27);
+}
+
+.cancel-btn{
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all ease-in-out .3s;
+    text-transform: uppercase;
+    border: 2px solid rgb(255,175,28);
+    font-size: 14px;
+    font-weight: 600;
+    width: 50%;
+    text-align: center;
+    color: rgb(255,175,28);
+}
+
+.cancel-btn:hover{
+    background-color: rgb(60, 60, 60);
+    color: rgb(255,175,28);
+}
+
+.panel-title{
+    text-align: center;
+    color: #ff7f50; 
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: #000000 1px solid;
 }
