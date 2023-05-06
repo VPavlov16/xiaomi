@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "fyre02";
+	$password = "123456789";
 	$database = "xiaomi";
 
 	try {
@@ -12,51 +12,64 @@
 		//echo "Connection failed: " . $e->getMessage();
 	}
 
+            $CheckIDS = $connection->prepare("SELECT id FROM wearable ORDER BY id DESC LIMIT 1"); 
+            $CheckIDS->execute();
+            $result = $CheckIDS->fetch(PDO::FETCH_ASSOC);
+            $lastid = $result["id"];
+       
+        
+
+
 	if ( isset( $_POST['submit'] ) ) {
+
+
+       
 	
-	
+        $id = $lastid +1;
+
 		$model = $_POST['model'];
 		$price = $_POST['price'];
 		$display = $_POST['display'];
         $battery = $_POST['battery'];
         $gps = $_POST['gps'];
         $bluetooth = $_POST['Bluetooth'];
-       
-        //cover
-        $_FILES['pic']['name']['tmp_name']['pic1']['name1']['tmp_name1']['pic2']['name2']['tmp_name2']['pic3']['name3']['tmp_name3']['pic4']['name4']['tmp_name4'];
-        /*
-        //1
-        $_FILES['pic1']['name1']['tmp_name1']['type1'];
-        //2
-        $_FILES['pic2']['name2']['tmp_name2']['type2'];
-        //3
-        $_FILES['pic3']['name3']['tmp_name3']['type3'];
-        //4
-        $_FILES['pic4']['name4']['tmp_name4']['type4'];
-       /*
+       //pics
         $file = $_FILES['pic'];
         $fileName = $file['name'];
         $fileTemp = $file['tmp_name'];
-        $fileType = $file['type'];
-        */
-        $fileExt = pathinfo($_FILES['name'], PATHINFO_EXTENSION);
-        $fileExt = pathinfo($_FILES['name1'], PATHINFO_EXTENSION);
-        $fileExt = pathinfo($_FILES['name2'], PATHINFO_EXTENSION);
-        $fileExt = pathinfo($_FILES['name3'], PATHINFO_EXTENSION);
-        $fileExt = pathinfo($_FILES['name4'], PATHINFO_EXTENSION);
-		// заявка към базата, с която се записват полетата
+
+        $file2 = $_FILES['pic1'];
+        $fileName2 = $file2['name'];
+        $fileTemp2 = $file2['tmp_name'];
+        
+        $file3 = $_FILES['pic2'];
+        $fileName3 = $file3['name'];
+        $fileTemp3 = $file3['tmp_name'];
+
+        $file4 = $_FILES['pic3'];
+        $fileName4 = $file4['name'];
+        $fileTemp4 = $file4['tmp_name'];
+
+        $file5 = $_FILES['pic4'];
+        $fileName5 = $file5['name'];
+        $fileTemp5 = $file5['tmp_name'];
+
+       
+            $sql2 = "INSERT INTO products (id) VALUES (?)";
+            $stmt2 = $connection->prepare($sql2);
+            $stmt2->execute([$id]);
 
            
-            $sql = "INSERT INTO wearable ( Model, price, display, battery, GPS, bluetooth, pic, pic1, pic2, pic3, pic4) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO wearable (id,Model, price, display, battery, GPS, bluetooth, pic, pic1, pic2, pic3, pic4) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $connection->prepare($sql);
-            $stmt->execute([$model, $price, $display, $battery, $gps, $bluetooth, $_FILES['pic'],$_FILES['pic1'],$_FILES['pic2'],$_FILES['pic3'],$_FILES['pic4']]);
+            $stmt->execute([$id,$model, $price, $display, $battery, $gps, $bluetooth, $fileName, $fileName2, $fileName3, $fileName4, $fileName5]);
 
 
-            move_uploaded_file($_FILES['tmp_name'], "../wearable/" .  $_FILES['name']);
-            move_uploaded_file($_FILES['tmp_name1'], "../wearable/" .  $_FILES['name1']);
-            move_uploaded_file($_FILES['tmp_name2'], "../wearable/" .  $_FILES['name2']);
-            move_uploaded_file($_FILES['tmp_name3'], "../wearable/" .  $_FILES['name3']);
-            move_uploaded_file($_FILES['tmp_name4'], "../wearable/" .  $_FILES['name4']);
+            move_uploaded_file($fileTemp, "../wearable/" .  $fileName);
+            move_uploaded_file($fileTemp2, "../wearable/" .  $fileName2);
+            move_uploaded_file($fileTemp3, "../wearable/" .  $fileName3);
+            move_uploaded_file($fileTemp4, "../wearable/" .  $fileName4);
+            move_uploaded_file($fileTemp5, "../wearable/" .  $fileName5);
        // move_uploaded_file($fileTemp,"wearable/".$fileName.".jpg");
         
 	}
