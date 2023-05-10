@@ -37,7 +37,7 @@
         $file = $_FILES['pic'];
         $fileName = $file['name'];
         $fileTemp = $file['tmp_name'];
-        $fileC = $file['tmp_name'];
+       
 
         $file2 = $_FILES['pic1'];
         $fileName2 = $file2['name'];
@@ -66,8 +66,8 @@
             $stmt->execute([$id,$model, $price, $display, $battery, $gps, $bluetooth, $fileName, $fileName2, $fileName3, $fileName4, $fileName5]);
 
 
-            move_uploaded_file($fileTemp, "../wearable/" .  $fileName);
-            move_uploaded_file($fileC, "../homeCover/" .  $fileName);
+            copy($fileTemp, "../wearable/" .  $fileName);
+            copy($fileTemp, "../homeCover/" .  $fileName);
             move_uploaded_file($fileTemp2, "../wearable/" .  $fileName2);
             move_uploaded_file($fileTemp3, "../wearable/" .  $fileName3);
             move_uploaded_file($fileTemp4, "../wearable/" .  $fileName4);

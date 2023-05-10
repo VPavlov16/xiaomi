@@ -23,7 +23,7 @@
         $file = $_FILES['pic'];
         $fileName = $file['name'];
         $fileTemp = $file['tmp_name'];
-        $fileC = $file['tmp_name'];
+      
 
         $file2 = $_FILES['pic1'];
         $fileName2 = $file2['name'];
@@ -65,8 +65,8 @@
             $stmt->execute([$id,$title, $weight, $mileage, $motorPower, $battery, $maxWeight, $topSpeed, $charge, $tiresDiameter, $color, $price, $fileName,$fileName2,$fileName3,$fileName4,$fileName5]);
 
 
-            move_uploaded_file($fileTemp, "../vehicles/" .  $fileName);
-            move_uploaded_file($fileC, "../homeCover/" .  $fileName);
+            copy($fileTemp, "../vehicles/" .  $fileName);
+            copy($fileTemp, "../homeCover/" .  $fileName);
             move_uploaded_file($fileTemp2, "../vehicles/" .  $fileName2);
             move_uploaded_file($fileTemp3, "../vehicles/" .  $fileName3);
             move_uploaded_file($fileTemp4, "../vehicles/" .  $fileName4);

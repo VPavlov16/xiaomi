@@ -22,7 +22,7 @@
         $file = $_FILES['pic'];
         $fileName = $file['name'];
         $fileTemp = $file['tmp_name'];
-        $fileC = $file['tmp_name'];
+   
 
         $file2 = $_FILES['pic1'];
         $fileName2 = $file2['name'];
@@ -61,8 +61,8 @@
             $stmt->execute([$id,$model, $price, $suctionPower,$battery,$dust,$water, $fileName, $fileName2, $fileName3, $fileName4, $fileName5]);
 
 
-            move_uploaded_file($fileTemp, "../smart devices/" .  $fileName);
-            move_uploaded_file($fileC, "../homeCover/" .  $fileName);
+            copy($fileTemp, "../smart devices/" .  $fileName);
+            copy($fileTemp, "../homeCover/" .  $fileName);
             move_uploaded_file($fileTemp2, "../smart devices/" .  $fileName2);
             move_uploaded_file($fileTemp3, "../smart devices/" .  $fileName3);
             move_uploaded_file($fileTemp4, "../smart devices/" .  $fileName4);
