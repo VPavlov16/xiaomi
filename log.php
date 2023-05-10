@@ -31,7 +31,7 @@ if ( isset( $_POST['submit1'] ) ) {
 		
 	} else {
 		
-		echo "<b style='color:red;'>Невалидни потребителски данни</b><br><br>";
+		echo "<b style='color:red;'>Невалидни потребителски данни</b>";
 	}
 }
 ?>	
