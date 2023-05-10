@@ -23,6 +23,7 @@ require('log.php')
                 $("#register-form").show();
             });
 
+            //ihg
             // Switch to login form
             $("#btn-login").click(function() {
                 $("#register-form").hide();
@@ -36,6 +37,7 @@ require('log.php')
         }
     </style>
 </head>
+ 
 
 <body>
 
