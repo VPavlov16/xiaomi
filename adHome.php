@@ -3,6 +3,15 @@ $servername = "localhost";
 $username = "root";
 $password = "123456789";
 $dbname = "xiaomi";
+$search = "";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $search = $_POST["search"];
+}
+if($search == ""){
+    $limit = 5;
+}else{
+    $limit = 100;
+}
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -10,29 +19,32 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 $sql = "SELECT * FROM (
-    SELECT id,Model, price,pic FROM xiaomi.mobdev
+    SELECT id, Model, price, pic FROM xiaomi.mobdev
+    WHERE Model LIKE '%" . $search . "%'
     ORDER BY RAND()
-    LIMIT 5
+    LIMIT ".$limit."
 ) AS t1
 UNION ALL
 SELECT * FROM (
-    SELECT id,Model, price,pic FROM xiaomi.smart_devices
+    SELECT id, Model, price, pic FROM xiaomi.smart_devices
+    WHERE Model LIKE '%" . $search . "%'
     ORDER BY RAND()
-    LIMIT 5
+    LIMIT ".$limit."
 ) AS t2
 UNION ALL
 SELECT * FROM (
-    SELECT id,Model, price,pic FROM xiaomi.vehicles
+    SELECT id, Model, price, pic FROM xiaomi.vehicles
+    WHERE Model LIKE '%" . $search . "%'
     ORDER BY RAND()
-    LIMIT 5
+    LIMIT ".$limit."
 ) AS t3
 UNION ALL
 SELECT * FROM (
-    SELECT id,Model, price,pic FROM xiaomi.wearable
+    SELECT id, Model, price, pic FROM xiaomi.wearable
+    WHERE Model LIKE '%" . $search . "%'
     ORDER BY RAND()
-    LIMIT 5
+    LIMIT ".$limit."
 ) AS t4;";
 
 $result = $conn->query($sql);
@@ -54,5 +66,6 @@ if ($result->num_rows > 0) {
     echo "No products found.";
 }
 $conn->close();
+    
 
 ?>

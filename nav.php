@@ -41,10 +41,12 @@ function debug_to_console($data) {
 
             <div class="list">
                 <li>
+                <form method="post" action="home.php">
                     <a href="#" class="list-a">
                         <img src="images\search.png" alt="logo" class="logo">
-                        <input type="text" placeholder="Search.." class="searchbar">
-                    </a>
+                        <input type="text" name="search" placeholder="Search.." class="searchbar">
+                    </a> 
+                    </form>
                     </li> 
                 </div>
 
