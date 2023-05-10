@@ -14,25 +14,25 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM (
     SELECT id,Model, price,pic FROM xiaomi.mobdev
     ORDER BY RAND()
-    LIMIT 3
+    LIMIT 5
 ) AS t1
 UNION ALL
 SELECT * FROM (
     SELECT id,Model, price,pic FROM xiaomi.smart_devices
     ORDER BY RAND()
-    LIMIT 3
+    LIMIT 5
 ) AS t2
 UNION ALL
 SELECT * FROM (
     SELECT id,Model, price,pic FROM xiaomi.vehicles
     ORDER BY RAND()
-    LIMIT 3
+    LIMIT 5
 ) AS t3
 UNION ALL
 SELECT * FROM (
     SELECT id,Model, price,pic FROM xiaomi.wearable
     ORDER BY RAND()
-    LIMIT 3
+    LIMIT 5
 ) AS t4;";
 
 $result = $conn->query($sql);
