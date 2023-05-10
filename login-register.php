@@ -30,6 +30,11 @@ require('log.php')
             });
         });
     </script>
+    <style>
+         .wrongpass{
+            display: <?php echo $status; ?>;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,6 +48,9 @@ require('log.php')
         <form method="post">
             <input type="text" name="email" maxlength="30" placeholder="Email">
             <input type="password" name="password" maxlength="30" placeholder="Password">
+            <br>
+            <h4 class="wrongpass" >Wrong info</h4>
+            <br>
             <input type="submit" name="submit1" value="Login">
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? <mark class = "marked" >Register</mark></p>

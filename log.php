@@ -4,6 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "123456789";
 $database = "xiaomi";
+$status = "none";
 
 
 try {
@@ -24,14 +25,14 @@ if ( isset( $_POST['submit1'] ) ) {
 	
 	if ( $userInfo ) {
 		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type']];
+		$status = "none";
 		
 	
 		header("location: home.php");
 		exit;
 		
 	} else {
-		
-		echo "<b style='color:red;'>Невалидни потребителски данни</b><br><br>";
+	   $status = "inline-block";
 	}
 }
 ?>	
