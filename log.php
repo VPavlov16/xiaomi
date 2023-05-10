@@ -32,8 +32,7 @@ if ( isset( $_POST['submit1'] ) ) {
 		exit;
 		
 	} else {
-		
-		echo "<b style='color:red;'>Невалидни потребителски данни</b><br><br>";
+	   $status = "inline-block";
 	}
 }
 ?>	
