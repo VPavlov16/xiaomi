@@ -201,10 +201,13 @@ function debug_to_console($data) {
     </header>
 
     <script>
-        const hamburgerMenu = document.querySelector('.hamburger-icon');
-        hamburgerMenu.addEventListener('click', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-icon');
+    const navbar = document.querySelector('.hamburger');
+
+    hamburgerMenu.addEventListener('click', function() {
         hamburgerMenu.classList.toggle('active');
-        });
-    </script>
+    });
+</script>
+
 </body>
 </html>
