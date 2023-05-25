@@ -143,7 +143,16 @@ li:focus,li:active{
     height: 20px;
     border-radius: 2em;
 }
+/*
+   .searchbar:hover:not(:focus) .navbar{
+    width: 14em;
+   }
+  
+   .searchbar:focus {
+    background-color: red;
 
+   }
+*/
 input[type=text] {
     text-align: center;
 }
@@ -228,11 +237,7 @@ input[type=text] {
 
 
     .hamburger-icon.active + .hamburger {
-       /*display: block;
-        animation: fadeInRight .8s ;
-        transition: animation 0.1s linear;*/
         transform: translateX(0);
-
     }
 
     .hamburger ul {
