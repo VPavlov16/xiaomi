@@ -35,14 +35,10 @@ if ($result->num_rows > 0) {
         echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>";
         echo "</form>";
         echo "</a>";
-<<<<<<< HEAD
-        echo "<button class='button' name='cart' value=".$row["id"]."><i class='fa-solid fa-cart-shopping' style='padding-right:10px;'></i>Add to cart</button>";
-=======
         echo "<div class = 'buttons-div'>";
-            echo "<button class='button-cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
-            echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+        echo "<button class='button' name='cart' value=".$row["id"]."><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+        echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
         echo "</div>";
->>>>>>> 1e5a4d6525d3bab850d449e57c3b7e77c6060dcb
         echo "</div>";
     }
     echo "</div>";
