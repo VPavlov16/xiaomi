@@ -31,7 +31,10 @@ if ($result->num_rows > 0) {
         echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>";
         echo "</form>";
         echo "</a>";
-        echo "<button class='button'><i class='fa-solid fa-cart-shopping' style='padding-right:10px;'></i>Add to cart</button>";
+        echo "<div class = 'buttons-div'>";
+            echo "<button class='button-cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+            echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+        echo "</div>";
         echo "</div>";
     }
     echo "</div>";

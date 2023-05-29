@@ -40,7 +40,7 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
 <body>
 
     <div class="container">
-    <h1 class="header">My Account</h1>
+    <h1 class="heading-1">My Account</h1>
     
     <label for="firstname">First name:</label>
     <?php echo"<p id='firstname' class='p-info'>".$rows[0]['fname']."</p>"?>
@@ -50,14 +50,14 @@ $stmt = $connection->prepare("SELECT * FROM registers WHERE id = ?");
     <br>
     <label for="email">Email:</label>
     <?php echo"<p id='email' class='p-info'>".$rows[0]['email']."</p>"?>
-    <div class="buttons-div">
-        <button onclick="window.location.href='adminPanel/adWearablePanel.php';" class="button button2 admin">Post a wearable device</button>
-        <button onclick="window.location.href='adminPanel/adMobdevPanel.php';" class="button button2 admin">Post a mobile device</button>
-        <button onclick="window.location.href='adminPanel/adVehPanel.php';" class="button button2 admin">Post a vehicle</button>
-        <button onclick="window.location.href='adminPanel/adSmdevPanel.php';" class="button button2 admin">Post a smart device</button>
-        <button onclick=logout() class='button button2 logout'>Log out</button>
+        <div class="buttons-div">
+            <button onclick="window.location.href='adminPanel/adWearablePanel.php';" class="button button2 admin">Post a wearable device</button>
+            <button onclick="window.location.href='adminPanel/adMobdevPanel.php';" class="button button2 admin">Post a mobile device</button>
+            <button onclick="window.location.href='adminPanel/adVehPanel.php';" class="button button2 admin">Post a vehicle</button>
+            <button onclick="window.location.href='adminPanel/adSmdevPanel.php';" class="button button2 admin">Post a smart device</button>
+            <button onclick=logout() class='button button2 logout'>Log out</button>
+        </div>
     </div>
-</div>
 </body>
 </html>
 
