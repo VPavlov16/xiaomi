@@ -9,25 +9,36 @@
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     max-width: 100%;
-    margin: 20px 20px;
+    margin: 20px;
+    justify-content: center;
+    min-width: min-content; 
+    margin: 0;
+    
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     justify-items: center;
-
+    margin-top: 15px;
+    */
+    
 }
 
 .product-item {
     border: 1px solid #ccc;
     padding: 10px;
+    margin:20px;
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #ccc;
     cursor: pointer; 
+    min-width: auto;
     width: 100%; 
     height: auto;
-    max-width: 450px; 
+    max-width: 350px; 
     max-height: 1000px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out,transform .2s;
@@ -38,7 +49,7 @@
     box-shadow: 5px 10px 15px rgba(0,0,0,0.15);
 }
 
-.product-item h2 {
+.product-item h2{
     font-size: 20px;
     margin: 0 0 10px 0;
     white-space: nowrap;
@@ -47,7 +58,7 @@
     color: blueviolet;
 }
 
-.product-item p {
+.product-item p{
     font-size: 16px;
     margin: 0;
     text-align: center;
@@ -69,6 +80,7 @@
     height: auto;
 }
 
+
 .card-price{
     color: coral;
     font-size: 1.2rem !important;
@@ -84,7 +96,17 @@
     width: 100px;
 }
 
-.button {
+.buttons-div{
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-cart {
     background-color: coral;
     border: none;
     color: white;
@@ -93,17 +115,35 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 15px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     border-radius: 5px;
+    min-width: fit-content;
   }
   
-  .button:hover {
+  .button-cart:hover {
     background-color: rgb(211, 65, 11);
-    
   }
-  .title{
+  
+  .button-wish{
+    background-color: #252422;
+    border: none;
+    color: white;
+    padding: 10px 20px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    min-width: fit-content;
   }
+
+  .button-wish:hover {
+    background-color: #5e5e5e;
+  }
+
+ 

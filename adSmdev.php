@@ -24,7 +24,10 @@ if ($result->num_rows > 0) {
         echo "<p class = 'card-info'>Suction Power: " . $row["suction_power"] . " pA</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
         echo "</a>";
-        echo "<button class='button'><i class='fa-solid fa-cart-shopping' style='padding-right:10px;'></i>Add to cart</button>";
+        echo "<div class = 'buttons-div'>";
+            echo "<button class='button-cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+            echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+        echo "</div>";
         echo "</div>";
     }
     echo "</div>";

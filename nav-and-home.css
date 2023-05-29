@@ -169,7 +169,7 @@ input[type=text] {
 /*<---------------------------------------------------------------------->*/
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)/*,(max-height: 601px)*/ {
     body {
         margin-left: 0;
         padding-top: 74px;
@@ -192,6 +192,7 @@ input[type=text] {
     }
 
     .hamburger{
+        overflow-y: scroll;
         position: fixed;
         top: 0;
         height: 100vh;
