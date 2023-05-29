@@ -36,8 +36,8 @@ if ($result->num_rows > 0) {
         echo "</form>";
         echo "</a>";
         echo "<div class = 'buttons-div'>";
-        echo "<button class='button' name='cart' value=".$row["id"]."><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
-        echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+            echo "<button class='button-cart' name='cart' value=".$row["id"]."><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+            echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
         echo "</div>";
         echo "</div>";
     }
