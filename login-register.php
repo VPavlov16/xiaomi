@@ -23,7 +23,6 @@ require('log.php')
                 $("#register-form").show();
             });
 
-            //ihg
             // Switch to login form
             $("#btn-login").click(function() {
                 $("#register-form").hide();
@@ -51,7 +50,7 @@ require('log.php')
             <input type="text" name="email" maxlength="30" placeholder="Email">
             <input type="password" name="password" maxlength="30" placeholder="Password">
             <br>
-            <h4 class="wrongpass" >Wrong info</h4>
+            <h4 class="wronginfo" >Wrong info</h4>
             <br>
             <input type="submit" name="submit1" value="Login">
         </form>
@@ -61,10 +60,10 @@ require('log.php')
     <div class="form-container" id="register-form">
         <h2>Register</h2>
         <form method="post">
-            <input type="text" name="fname" maxlength="30" placeholder="First Name">
-            <input type="text" name="lname" maxlength="30" placeholder="Last Name">
-            <input type="email" name="email" maxlength="30"placeholder="Email">
-            <input type="password" name="password"  placeholder="Password">
+            <input type="text" name="fname" maxlength="30" placeholder="First Name" required>
+            <input type="text" name="lname" maxlength="30" placeholder="Last Name" required>
+            <input type="email" name="email" maxlength="30"placeholder="Email" required>
+            <input type="password" name="password"  placeholder="Password" required>
             <input type="submit" name="submit" value="Register">
         </form>
         <p class="switch-form" id="btn-login">Already have an account? <mark class = "marked" >Login</mark></p>
