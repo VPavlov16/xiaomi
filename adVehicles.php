@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,9 +26,12 @@ if ($result->num_rows > 0) {
         echo "<p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
         echo "</a>";
-        echo "<div class = 'buttons-div'>";
-            echo "<button class='button-cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
-            echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+        echo "<div class='buttons-div'>";
+        echo "<form method='post' action='add_to_cart.php'>"; 
+        echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
+        echo "<button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+        echo "</form>"; 
+        echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
         echo "</div>";
         echo "</div>";
 
