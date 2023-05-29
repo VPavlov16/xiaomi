@@ -2,7 +2,7 @@
 session_start();
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $database = "xiaomi";
 $status = "none";
 
@@ -24,7 +24,7 @@ if ( isset( $_POST['submit1'] ) ) {
 	$userInfo = $stmt->fetchAll();
 	
 	if ( $userInfo ) {
-		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type']];
+		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart']];
 		$status = "none";
 		
 	

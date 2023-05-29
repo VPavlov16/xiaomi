@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: xiaomi
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.30
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,6 +39,7 @@ CREATE TABLE `mobdev` (
   `pic2` varchar(45) NOT NULL,
   `pic3` varchar(45) NOT NULL,
   `pic4` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `idMobile Devices_UNIQUE` (`id`),
   CONSTRAINT `fk_id1` FOREIGN KEY (`id`) REFERENCES `products` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -87,10 +88,9 @@ DROP TABLE IF EXISTS `products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int NOT NULL,
-  `Product_type` tinyint DEFAULT NULL,
+  `Product_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `1_UNIQUE` (`Product_type`)
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,7 +100,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (100,NULL),(101,NULL),(102,NULL),(103,NULL),(104,NULL),(105,NULL),(106,NULL),(107,NULL),(200,NULL),(201,NULL),(202,NULL),(203,NULL),(204,NULL),(205,NULL),(300,NULL),(301,NULL),(302,NULL),(303,NULL),(304,NULL),(400,NULL),(401,NULL),(402,NULL),(403,NULL),(404,NULL),(405,NULL);
+INSERT INTO `products` VALUES (100,'mobdev'),(101,'mobdev'),(102,'mobdev'),(103,'mobdev'),(104,'mobdev'),(105,'mobdev'),(106,'mobdev'),(107,'mobdev'),(200,'smdev'),(201,'smdev'),(202,'smdev'),(203,'smdev'),(204,'smdev'),(205,'smdev'),(300,'vehicle'),(301,'vehicle'),(302,'vehicle'),(303,'vehicle'),(304,'vehicle'),(400,'wearable'),(401,'wearable'),(402,'wearable'),(403,'wearable'),(404,'wearable'),(405,'wearable');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,6 +152,7 @@ CREATE TABLE `smart_devices` (
   `pic2` varchar(45) NOT NULL,
   `pic3` varchar(45) NOT NULL,
   `pic4` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `fk_id_idx` (`id`),
   CONSTRAINT `fk_id2` FOREIGN KEY (`id`) REFERENCES `products` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -192,6 +193,7 @@ CREATE TABLE `vehicles` (
   `pic2` varchar(45) NOT NULL,
   `pic3` varchar(45) NOT NULL,
   `pic4` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   CONSTRAINT `fk_id3` FOREIGN KEY (`id`) REFERENCES `products` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -227,6 +229,7 @@ CREATE TABLE `wearable` (
   `pic2` varchar(45) NOT NULL,
   `pic3` varchar(45) NOT NULL,
   `pic4` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `idWearable_UNIQUE` (`id`),
   CONSTRAINT `fk_id4` FOREIGN KEY (`id`) REFERENCES `products` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -241,6 +244,10 @@ LOCK TABLES `wearable` WRITE;
 INSERT INTO `wearable` VALUES (400,'Mi Smart Band 7',100,'490×192',180,'No','Bluetooth 5.2','mi_smartbrand7.png','mi_smartbrand7(1).png','mi_smartbrand7(2).png','mi_smartbrand7(3).png','mi_smartbrand7(4).png'),(401,'Redmi Smart Band 2 Strap',16,'172x320',0,'No','No','redmisb2_strap.png','redmisb2_strap(1).png','redmisb2_strap(2).png','redmisb2_strap(3).png','redmisb2_strap(4).png'),(402,'Redmi watch 2 lite',120,'360x320',262,'Yes','Bluetooth 5.1','redmiwatch2_lite.png','redmiwatch2_lite(1).png','redmiwatch2_lite(2).png','redmiwatch2_lite(3).png','redmiwatch2_lite(4).png'),(403,'Redmi watch 3',200,'450x390',262,'Yes','Bluetooth 5.2','redmiwatch3.png','redmiwatch3(1).png','redmiwatch3(2).png','redmiwatch3(3).png','redmiwatch3(4).png'),(404,'Xiaomi Watch S1',450,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1.png','xiaomiwatch_s1(1).png','xiaomiwatch_s1(2).png','xiaomiwatch_s1(3).png','xiaomiwatch_s1(4).png'),(405,'Xiaomi Watch S1 active',370,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1active.png','xiaomiwatch_s1active(1).png','xiaomiwatch_s1active(2).png','xiaomiwatch_s1active(3).png','xiaomiwatch_s1active(4).png');
 /*!40000 ALTER TABLE `wearable` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'xiaomi'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -251,4 +258,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-10  8:40:52
+-- Dump completed on 2023-05-26 13:35:02
