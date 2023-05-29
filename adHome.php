@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $dbname = "xiaomi";
 $search = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -52,14 +52,20 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<div class='product-list'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>"; 
         echo "<div class='product-item'>";
+        echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>";
         echo "<h2>" . $row["Model"] . "</h2>";
         echo "<img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/>";
-        echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
-        echo "<button class='button button2'><i class='fa-solid fa-cart-shopping' style='padding-right:10px;'></i>Add to cart</button>";
-        echo "</div>";
+        echo "<p class='card-price'>Price: " . $row["price"] . " лв.</p>";
         echo "</a>";
+        echo "<div class='buttons-div'>";
+        echo "<form method='post' action='add_to_cart.php'>"; 
+        echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
+        echo "<button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+        echo "</form>"; 
+        echo "<button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+        echo "</div>";
+        echo "</div>";
     }
     echo "</div>";
 } else {

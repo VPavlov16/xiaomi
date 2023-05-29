@@ -31,7 +31,7 @@ require('log.php')
         });
     </script>
     <style>
-         .wrongpass{
+         .wronginfo{
             display: <?php echo $status; ?>;
         }
     </style>
