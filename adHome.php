@@ -1,14 +1,14 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 $search = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $search = $_POST["search"];
 }
 if($search == ""){
-    $limit = 5;
+    $limit = 6;
 }else{
     $limit = 100;
 }

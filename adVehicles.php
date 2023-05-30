@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM vehicles";
+$sql = "SELECT * FROM vehicles ORDER BY RAND()";
 
 $result = $conn->query($sql);
 
@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
         echo "<img src='vehicles\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/>";
         echo "<p class = 'card-info'>Motor power: " . $row["motorPower"] . "W</p>";
         echo "<p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>";
+        echo "<p class = 'card-info'>Battery: " . $row["battery"] . " Wh</p>";
         echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
         echo "</a>";
         echo "<div class='buttons-div'>";

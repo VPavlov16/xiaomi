@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM mobdev";
+$sql = "SELECT * FROM mobdev ORDER BY RAND()";
 
 $result = $conn->query($sql);
 
