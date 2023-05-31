@@ -1,52 +1,57 @@
 <?php
+include("add_to_cart.php");
 
 require("info.php");
 $prodID = $_GET["id"];
-$table = "";
-$folder = "";
-
-
+$VehCSS = "";
+$MobCSS = "";
+$SmartCSS = "";
+$WearCSS = "";
     if($prodID >= 100 && $prodID < 200 ){
-        $table = "mobdev";
-        $folder = "mobile_devices";
+       include("pageMob.php");
+        $VehCSS = "none";
+        $MobCSS = "inline-block";
+        $SmartCSS = "none";
+        $WearCSS = "none";
     }
     if($prodID >= 200 && $prodID < 300){
-        $table = "smart_devices";
-        $folder = "smart devices";
+        include("pageSmdev.php");
+        $VehCSS = "none";
+        $MobCSS = "none";
+        $SmartCSS = "inline-block";
+        $WearCSS = "none";
     }
     if($prodID >= 300 && $prodID < 400){
-        $table = "vehicles";
-        $folder = "vehicles";
+        include("pageVeh.php");
+        $VehCSS = "inline-block";
+        $MobCSS = "none";
+        $SmartCSS = "none";
+        $WearCSS = "none";
     }
     if($prodID >= 400 && $prodID < 500){
-        $table = "wearable";
-        $folder = "wearable";
+        include("pageWear.php");
+        $VehCSS = "none";
+        $MobCSS = "none";
+        $SmartCSS = "none";
+        $WearCSS = "inline-block";
     }
-    
-
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM ".$table." WHERE id = ".$prodID.";";
-
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$title = $row['Model'];
-$price = $row['price'];
-$cover = $row['pic'];
-
-include("add_to_cart.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title><?php echo $title?></title>
     <link rel="stylesheet" type="text/css" href="product-page.css">
+    <style>
+        .adMob{
+            display: <?php echo $MobCSS; ?>;
+        }.adSmdev{
+            display: <?php echo $SmartCSS; ?>;
+        }.adVehicles{
+            display: <?php echo $VehCSS; ?>;
+        }.adWear{
+            display: <?php echo $WearCSS; ?>;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -55,7 +60,35 @@ include("add_to_cart.php");
 <div class="product-page">
     <div class="gallery">
     <div class="gallery-div">
-        <!--<img src="<?php echo $folder . "/" . $cover  ?>"alt="img" class = "trota">-->
+        <!--
+            <div class="gallery__item">
+                <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
+                <img class="gallery__img" src="<?php echo $folder . "/" . $cover  ?>"alt=""/>
+                <label for="img-1" class="gallery__thumb"><img src="<?php echo $folder . "/" . $cover  ?>" alt=""/></label>
+            </div>
+            
+            <div class="gallery__item">
+                <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
+                <img class="gallery__img" src="<?php echo $folder . "/" . $pic1  ?>" alt=""/>
+                <label for="img-2" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic1  ?>" alt=""/></label>
+            </div>
+            <div class="gallery__item">
+                <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
+                <img class="gallery__img" src="<?php echo $folder . "/" . $pic2  ?>" alt=""/>
+                <label for="img-3" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic2  ?>" alt=""/></label>
+            </div>
+            <div class="gallery__item">
+                <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
+                <img class="gallery__img" src="<?php echo $folder . "/" . $pic3  ?>" alt=""/>
+                <label for="img-4" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic3  ?>" alt=""/></label>
+            </div>
+            <div class="gallery__item">
+                <input type="radio" id="img-5" name="gallery" class="gallery__selector"/>
+                <img class="gallery__img" src="<?php echo $folder . "/" . $pic4  ?>" alt=""/>
+                <label for="img-5" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic4  ?>" alt=""/></label>
+            </div>
+        </div> 
+        -->
         <div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
@@ -85,32 +118,39 @@ include("add_to_cart.php");
                 <h2 class = "price"><?php echo $price?> BGN</h2>
                     <hr class="line">
                 <div class="product-description">
-                    <div id ="adMob">
-                        <p class='card-info'>Rear Camera: " . $row["rear_camera"] . "MP</p>
-                        <p class='card-info'>Front Camera: " . $row["front_camera"] . "MP</p>
-                        <p class='card-info'>Storage: " . $row["storage"] . "GB</p>
-                        <p class='card-info'>RAM: " . $row["ram"] . " GB</p>
+                    <div class="adMob" id ="adMob">
+                        <p class='card-info'>Rear Camera: <?php echo $RCam ?> MP</p>
+                        <p class='card-info'>Front Camera: <?php echo $FCam ?> MP</p>
+                        <p class='card-info'>Storage: <?php echo $storage ?> GB</p>
+                        <p class='card-info'>RAM: <?php echo $ram ?> GB</p>
+                        <p class='card-info'>CPU: <?php echo $cpu ?> </p>
+                        <p class='card-info'>GPU: <?php echo $gpu ?> </p>
+                        <p class='card-info'>Battery: <?php echo $batt ?> mA/h</p>
+                        <p class='card-info'>Description: <?php echo $desc ?> </p>
                     </div>  
-                    <!--<div id="adSmdev">
-                        <p class = 'card-info'>Suction Power: " . $row["suction_power"] . " pA</p>
+                    <div class="adSmdev" id="adSmdev">
+                        <p class='card-info'>Suction power: <?php echo $spower ?> pA</p>
+                        <p class='card-info'>Battery life: <?php echo $batt ?> h</p>
+                        <p class='card-info'>Dust tank: <?php echo $dust ?> ml</p>
+                        <p class='card-info'>Water tank: <?php echo $water ?> ml</p>
                     </div>
-                    <div id="adVehicles">
-                        <p class = 'card-info'>Motor power: " . $row["motorPower"] . "W</p>
-                        <p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>
-                        <p class = 'card-info'>Battery: " . $row["battery"] . " Wh</p>
+                    <div class="adVehicles" id="adVehicles">
+                        <p class='card-info'>Weight: <?php echo $weight ?> kg</p>
+                        <p class='card-info'>Mileage: <?php echo $mileage ?> km</p>
+                        <p class='card-info'>Motor power: <?php echo $power ?> W</p>
+                        <p class='card-info'>Battery life: <?php echo $battery ?> h</p>
+                        <p class='card-info'>Max weight: <?php echo $maxWeight ?> kg</p>
+                        <p class='card-info'>Top speed: <?php echo $speed ?> km/h</p>
+                        <p class='card-info'>Charge time: <?php echo $charge ?> h</p>
+                        <p class='card-info'>Tire diameter: <?php echo $tire ?> in</p>
+                        <p class='card-info'>Color: <?php echo $color ?> </p>
                     </div>
-                    <div id="adWear">
-                        <p class = 'card-info'>Display: " . $row["display"] . " px</p>
-                        <p class = 'card-info'>Battery: " . $row["battery"] . " mAh</p>
+                    <div class="adWear" id="adWear">
+                        <p class='card-info'>Display: <?php echo $display ?> px</p>
+                        <p class='card-info'>GPS: <?php echo $gps ?> </p>
+                        <p class='card-info'>Bluetooth: <?php echo $bluetooth ?> </p>
+                        <p class='card-info'>Battery: <?php echo $battery ?> mA/h</p>
                     </div>
-                    <div id="adWear">
-                        <p class = 'card-info'>Display: " . $row["display"] . " px</p>
-                        <p class = 'card-info'>Battery: " . $row["battery"] . " mAh</p>
-                    </div>
-                    <div id="adWear">
-                        <p class = 'card-info'>Display: " . $row["display"] . " px</p>
-                        <p class = 'card-info'>Battery: " . $row["battery"] . " mAh</p>
-                    </div>-->
                 </div>
                                     
                 <div class='buttons-div'>
