@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Product name</title>
-    <link rel="stylesheet" type="text/css" href="product-page.css">
+    <link rel="stylesheet" type="text/css" href="product-page.css?vs=2">
 </head>
 <body>
     <?php
@@ -36,11 +36,17 @@
                
         <div class="product-details">
             <div class="product-details-inner">
-                <h1 class = "product-name">Product Name</h1>
-                <h2 class = "price">XX.XX BGN</h2>
-                <p calss = "product-description">Description of the product goes here. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga deleniti, deserunt obcaecati, quo doloribus atque, laudantium explicabo illum cumque alias voluptas molestias repellendus nobis incidunt voluptate facere recusandae. Explicabo, error!</p>
-                <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
-                <button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
+                <h1 class="product-name">Product Name</h1>
+                <h2 class="price">XX.XX BGN</h2>
+                <span class="line">
+                <p class="product-description">Description of the product goes here. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga deleniti, deserunt obcaecati, quo doloribus atque, laudantium explicabo illum cumque alias voluptas molestias repellendus nobis incidunt voluptate facere recusandae. Explicabo, error!</p>
+                <div class='buttons-div'>
+                    <form method='post' action='add_to_cart.php'>
+                    <input type='hidden' name='product_id' value='" . $row["id"] . "'>
+                    <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
+                    </form>
+                    <button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
+                </div>
             </div>
         </div>
 
