@@ -63,7 +63,10 @@ require('log.php')
             <input type="text" name="fname" maxlength="30" placeholder="First Name" required>
             <input type="text" name="lname" maxlength="30" placeholder="Last Name" required>
             <input type="email" name="email" maxlength="30"placeholder="Email" required>
-            <input type="password" name="password"  placeholder="Password" required>
+            <input type="password" id="reg-password" name="password" maxlength="30" placeholder="Password" required>
+            <i class="fa-regular fa-eye" id="register-togglePassword"></i>
+            <br>
+            <br>
             <input type="submit" name="submit" value="Register">
         </form>
         <p class="switch-form" id="btn-login">Already have an account? <mark class = "marked" >Login</mark></p>
@@ -71,3 +74,30 @@ require('log.php')
 </div>
 </body>
 </html>
+<script>
+    const loginTogglePassword = document.querySelector("#login-togglePassword");
+    const registerTogglePassword = document.querySelector("#register-togglePassword");
+    const loginPassword = document.querySelector("#login-password");
+    const registerPassword = document.querySelector("#reg-password");
+
+    loginTogglePassword.addEventListener("click", function () {
+        const type = loginPassword.getAttribute("type") === "password" ? "text" : "password";
+        loginPassword.setAttribute("type", type);
+        if (this.className.includes("fa-regular fa-eye-slash")) {
+            this.className = "fa-regular fa-eye";
+        } else {
+            this.className = "fa-regular fa-eye-slash";
+        }
+    });
+
+    registerTogglePassword.addEventListener("click", function () {
+        const type = registerPassword.getAttribute("type") === "password" ? "text" : "password";
+        registerPassword.setAttribute("type", type);
+        if (this.className.includes("fa-regular fa-eye-slash")) {
+            this.className = "fa-regular fa-eye";
+        } else {
+            this.className = "fa-regular fa-eye-slash";
+        }
+    });
+</script>
+

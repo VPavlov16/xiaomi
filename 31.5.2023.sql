@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: xiaomi
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -100,7 +100,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (100,'mobdev'),(101,'mobdev'),(102,'mobdev'),(103,'mobdev'),(104,'mobdev'),(105,'mobdev'),(106,'mobdev'),(107,'mobdev'),(200,'smdev'),(201,'smdev'),(202,'smdev'),(203,'smdev'),(204,'smdev'),(205,'smdev'),(300,'vehicle'),(301,'vehicle'),(302,'vehicle'),(303,'vehicle'),(304,'vehicle'),(400,'wearable'),(401,'wearable'),(402,'wearable'),(403,'wearable'),(404,'wearable'),(405,'wearable');
+INSERT INTO `products` VALUES (100,'mobdev'),(101,'mobdev'),(102,'mobdev'),(103,'mobdev'),(104,'mobdev'),(105,'mobdev'),(106,'mobdev'),(107,'mobdev'),(200,'smdev'),(201,'smdev'),(202,'smdev'),(203,'smdev'),(204,'smdev'),(205,'smdev'),(300,'vehicle'),(301,'vehicle'),(302,'vehicle'),(303,'vehicle'),(304,'vehicle'),(305,NULL),(400,'wearable'),(401,'wearable'),(402,'wearable'),(403,'wearable'),(404,'wearable'),(405,'wearable');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `registers` (
   `pass` varchar(255) NOT NULL DEFAULT 'a1',
   `type` varchar(45) NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user'),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin');
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user'),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user'),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user'),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +205,7 @@ CREATE TABLE `vehicles` (
 
 LOCK TABLES `vehicles` WRITE;
 /*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
-INSERT INTO `vehicles` VALUES (300,'Scooter 4 Pro',23,40,700,350,120,30,9,10,'black',1499.99,'4Pro.png','4Pro(1).png','4Pro(2).png','4Pro(3).png','4Pro(4).png'),(301,'Mi Electric Scooter 3',13,30,600,275,100,25,8,8,'white',949.49,'scooter3.png','scooter3(1).png','scooter3(2).png','scooter3(3).png','scooter3(4).png'),(302,'Mi Electric Scooter Essential',12,20,250,187,100,20,8,8,'black',799.99,'essential.png','essential(1).png','essential(2).png','essential(3).png','essential(4).png'),(303,'Mi Electric Scooter Pro 2 Mercedes AMG F1 Team Edition',14,40,600,275,100,25,9,9,'black',1299.99,'pro2Amg.png','pro2Amg(1).png','pro2Amg(2).png','pro2Amg(3).png','pro2Amg(4).png'),(304,'Mi Electric Scooter Pro 2',14,45,300,474,100,25,8,9,'black',1279.99,'pro2.png','pro2(1).png','pro2(2).png','pro2(3).png','pro2(4).png');
+INSERT INTO `vehicles` VALUES (300,'Scooter 4 Pro',23,40,700,350,120,30,9,10,'black',1499.99,'4Pro.png','4Pro(1).png','4Pro(2).png','4Pro(3).png','4Pro(4).png'),(301,'Mi Electric Scooter 3',13,30,600,275,100,25,8,8,'white',949.49,'scooter3.png','scooter3(1).png','scooter3(2).png','scooter3(3).png','scooter3(4).png'),(302,'Mi Electric Scooter Essential',12,20,250,187,100,20,8,8,'black',799.99,'essential.png','essential(1).png','essential(2).png','essential(3).png','essential(4).png'),(303,'Mi Electric Scooter Pro 2 Mercedes AMG F1 Team Edition',14,40,600,275,100,25,9,9,'black',1299.99,'pro2Amg.png','pro2Amg(1).png','pro2Amg(2).png','pro2Amg(3).png','pro2Amg(4).png'),(304,'Mi Electric Scooter Pro 2',14,45,300,474,100,25,8,9,'black',1279.99,'pro2.png','pro2(1).png','pro2(2).png','pro2(3).png','pro2(4).png'),(305,'SCOOTER 4 ULTRA',24,70,940,561,120,25,7,10,'grey/orange',1849.00,'Screenshot_1.png','Screenshot_2.png','Screenshot_3.png','Screenshot_4.png','Screenshot_5.png');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,10 +244,6 @@ LOCK TABLES `wearable` WRITE;
 INSERT INTO `wearable` VALUES (400,'Mi Smart Band 7',100,'490×192',180,'No','Bluetooth 5.2','mi_smartbrand7.png','mi_smartbrand7(1).png','mi_smartbrand7(2).png','mi_smartbrand7(3).png','mi_smartbrand7(4).png'),(401,'Redmi Smart Band 2 Strap',16,'172x320',0,'No','No','redmisb2_strap.png','redmisb2_strap(1).png','redmisb2_strap(2).png','redmisb2_strap(3).png','redmisb2_strap(4).png'),(402,'Redmi watch 2 lite',120,'360x320',262,'Yes','Bluetooth 5.1','redmiwatch2_lite.png','redmiwatch2_lite(1).png','redmiwatch2_lite(2).png','redmiwatch2_lite(3).png','redmiwatch2_lite(4).png'),(403,'Redmi watch 3',200,'450x390',262,'Yes','Bluetooth 5.2','redmiwatch3.png','redmiwatch3(1).png','redmiwatch3(2).png','redmiwatch3(3).png','redmiwatch3(4).png'),(404,'Xiaomi Watch S1',450,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1.png','xiaomiwatch_s1(1).png','xiaomiwatch_s1(2).png','xiaomiwatch_s1(3).png','xiaomiwatch_s1(4).png'),(405,'Xiaomi Watch S1 active',370,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1active.png','xiaomiwatch_s1active(1).png','xiaomiwatch_s1active(2).png','xiaomiwatch_s1active(3).png','xiaomiwatch_s1active(4).png');
 /*!40000 ALTER TABLE `wearable` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'xiaomi'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -258,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-26 13:35:02
+-- Dump completed on 2023-05-31  8:33:18
