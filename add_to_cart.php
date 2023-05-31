@@ -12,7 +12,7 @@ if (isset($_SESSION['user']) && isset($_POST['product_id'])  ) {
 
     header("Location: ".$_SERVER['HTTP_REFERER']);
     exit();
-}else{
+}elseif (!isset($_SESSION['user']) && isset($_POST['product_id'])  ){
     echo '<script>alert("You cannot add items to the cart! Register first!");</script>';
     echo '<script>window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";</script>';
     exit();
