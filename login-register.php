@@ -50,7 +50,10 @@ require('log.php')
         <h2>Login</h2>
         <form method="post">
             <input type="text" name="email" maxlength="30" placeholder="Email">
-            <input type="password" name="password" maxlength="30" placeholder="Password">
+            <input type="password" name="password" id="login-password" maxlength="30" placeholder="Password">
+            <i class="fa-regular fa-eye" id="login-togglePassword"></i>
+            <br>
+            <br>
             <p class="wronginfo" >Incorrect email or password</p>
             <input type="submit" name="submit1" value="Login">
         </form>
