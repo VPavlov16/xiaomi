@@ -53,10 +53,10 @@ include("add_to_cart.php");
         require('nav.php');
     ?>
 <div class="product-page">
-
+    <div class="gallery">
     <div class="gallery-div">
-        <img src="<?php echo $folder . "/" . $cover  ?>"alt="img" class = "trota">
-        <!--<div class="gallery__item">
+        <!--<img src="<?php echo $folder . "/" . $cover  ?>"alt="img" class = "trota">-->
+        <div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
                 <label for="img-1" class="gallery__thumb"><img src="https://picsum.photos/id/1015/150/100.jpg" alt=""/></label>
@@ -75,9 +75,10 @@ include("add_to_cart.php");
                 <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="https://picsum.photos/id/106/600/400.jpg" alt=""/>
                 <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
-            </div>-->
+            </div>
         </div> 
-               
+        </div>   
+         
         <div class="product-details">
             <div class="product-details-inner">
                 <h1 class = "product-name"><?php echo $title?></h1>
