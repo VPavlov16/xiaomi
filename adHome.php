@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $dbname = "xiaomi";
 $search = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

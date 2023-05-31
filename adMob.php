@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
