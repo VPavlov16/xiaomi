@@ -53,6 +53,9 @@ require('log.php')
             <input type="password" name="password" id="login-password" maxlength="30" placeholder="Password">
             <i class="fa-regular fa-eye" id="login-togglePassword"></i>
             <br>
+            <label for="remember_me">Remember me </label>
+            <input type="checkbox" id="remember_me" name="remember_me">
+            
             <br>
             <p class="wronginfo" >Incorrect email or password</p>
             <input type="submit" name="submit1" value="Login">

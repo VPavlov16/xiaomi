@@ -7,6 +7,8 @@ $dbname = "xiaomi";
 $prodID = $_GET["id"];
 $table = "";
 $folder = "";
+
+
     if($prodID >= 100 && $prodID < 200 ){
         $table = "mobdev";
         $folder = "mobile_devices";
@@ -41,11 +43,12 @@ $title = $row['Model'];
 $price = $row['price'];
 $cover = $row['pic'];
 
+include("add_to_cart.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product name</title>
+    <title><?php echo $title?></title>
     <link rel="stylesheet" type="text/css" href="product-page.css">
 </head>
 <body>
