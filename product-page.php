@@ -1,7 +1,51 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "123456789";
+$dbname = "xiaomi";
+$prodID = $_GET["id"];
+$table = "";
+$folder = "";
+    if($prodID >= 100 && $prodID < 200 ){
+        $table = "mobdev";
+        $folder = "mobile_devices";
+    }
+    if($prodID >= 200 && $prodID < 300){
+        $table = "smdev";
+        $folder = "smart devices";
+    }
+    if($prodID >= 300 && $prodID < 400){
+        $table = "vehicles";
+        $folder = "vehicles";
+    }
+    if($prodID >= 400 && $prodID < 500){
+        $table = "wearable";
+        $folder = "wearable";
+    }
+    
+
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM ".$table." WHERE id = ".$prodID.";";
+
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$title = $row['Model'];
+$price = $row['price'];
+$cover = $row['pic'];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product name</title>
+    <title><?php echo $title?></title>
     <link rel="stylesheet" type="text/css" href="product-page.css">
 </head>
 <body>
@@ -11,7 +55,7 @@
 <div class="product-page">
 
     <div class="gallery">
-        <img src="vehicles\4ProBG.png" alt="img" class = "trota">
+        <img src="<?php echo $folder . "/" . $cover  ?>"alt="img" class = "trota">
         <!--<div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
@@ -36,8 +80,8 @@
                
         <div class="product-details">
             <div class="product-details-inner">
-                <h1 class = "product-name">Product Name</h1>
-                <h2 class = "price">XX.XX BGN</h2>
+                <h1 class = "product-name"><?php echo $title?></h1>
+                <h2 class = "price"><?php echo $price?> BGN</h2>
                 <p calss = "product-description">Description of the product goes here. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga deleniti, deserunt obcaecati, quo doloribus atque, laudantium explicabo illum cumque alias voluptas molestias repellendus nobis incidunt voluptate facere recusandae. Explicabo, error!</p>
                 <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
                 <button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
