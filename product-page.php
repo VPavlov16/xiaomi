@@ -83,8 +83,8 @@ include("add_to_cart.php");
                
         <div class="product-details">
             <div class="product-details-inner">
-                <h1 class = "product-name">Product Name</h1>
-                <h2 class = "price">XX.XX BGN</h2>
+                <h1 class = "product-name"><?php echo $title?></h1>
+                <h2 class = "price"><?php echo $price?> BGN</h2>
                     <hr class="line">
                 <div class="product-description">
                     <div id ="adMob">
@@ -117,7 +117,7 @@ include("add_to_cart.php");
                                     
                 <div class='buttons-div'>
                     <form method='post' action='add_to_cart.php'>
-                        <input type='hidden' name='product_id' value='" . $row["id"] . "'>
+                        <input type='hidden' name='product_id' value="<?php echo $prodID ?>">
                         <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
                         </form>
                         <button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
