@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $dbname = "xiaomi";
 $search = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
         echo "<a href='product-page.php?id=" . $row["id"] . "' class='product-link'>";
         echo "<h2>" . $row["Model"] . "</h2>";
         echo "<img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/>";
-        echo "<p class='card-price'>Price: " . $row["price"] . " лв.</p>";
+        echo "<p class='card-price'>Price: " . $row["price"] . " BGN</p>";
         echo "</a>";
         echo "<div class='buttons-div'>";
         echo "<form method='post' action='add_to_cart.php'>"; 

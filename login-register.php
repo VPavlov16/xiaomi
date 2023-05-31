@@ -33,6 +33,8 @@ require('log.php')
     <style>
          .wronginfo{
             display: <?php echo $status; ?>;
+            margin-bottom: 20px;
+            color: red;
         }
     </style>
 </head>
@@ -49,9 +51,7 @@ require('log.php')
         <form method="post">
             <input type="text" name="email" maxlength="30" placeholder="Email">
             <input type="password" name="password" maxlength="30" placeholder="Password">
-            <br>
-            <h4 class="wronginfo" >Wrong info</h4>
-            <br>
+            <p class="wronginfo" >Incorrect email or password</p>
             <input type="submit" name="submit1" value="Login">
         </form>
         <p class="switch-form" id="btn-register">Don't have an account? <mark class = "marked" >Register</mark></p>

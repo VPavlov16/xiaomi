@@ -46,17 +46,27 @@ body {
     padding: 12px;
     margin-top: 8px;
     margin-bottom: 20px;
-    border: none;
+    border: 1px solid #ff990000 ;
     border-radius: 5px;
     background-color: #f6f6f6;
     color: #333;
     text-align: center;
+    transition: all .3s cubic-bezier(0.56, 0, 0.48, 1);
 }
 
 .form-container input[type="text"]::placeholder,
 .form-container input[type="password"]::placeholder,
 .form-container input[type="email"]::placeholder {
     color: #999;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container input[type="email"]:focus {
+    scale: 1.05;
+    border: 1px solid #ff9800;
+    -webkit-box-shadow: 0px 0px 17px 0px #ff990070;
+    box-shadow: 0px 0px 17px 0px #ff990070;
 }
 
 .form-container input[type="submit"] {

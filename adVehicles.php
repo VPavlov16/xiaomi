@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "123456789";
+$password = "fyre02";
 $dbname = "xiaomi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
         echo "<p class = 'card-info'>Motor power: " . $row["motorPower"] . "W</p>";
         echo "<p class = 'card-info'>Top speed: " . $row["topSpeed"] . " km/h</p>";
         echo "<p class = 'card-info'>Battery: " . $row["battery"] . " Wh</p>";
-        echo "<p class = 'card-price'>Price: " . $row["price"] . " лв.</p>";
+        echo "<p class = 'card-price'>Price: " . $row["price"] . " BGN</p>";
         echo "</a>";
         echo "<div class='buttons-div'>";
         echo "<form method='post' action='add_to_cart.php'>"; 
