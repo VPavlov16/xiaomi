@@ -1,9 +1,6 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "123456789";
-$dbname = "xiaomi";
+require("info.php");
 
 try {
   $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

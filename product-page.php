@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "123456789";
-$dbname = "xiaomi";
+require("info.php");
 $prodID = $_GET["id"];
 $table = "";
 $folder = "";
@@ -14,7 +11,7 @@ $folder = "";
         $folder = "mobile_devices";
     }
     if($prodID >= 200 && $prodID < 300){
-        $table = "smdev";
+        $table = "smart_devices";
         $folder = "smart devices";
     }
     if($prodID >= 300 && $prodID < 400){
