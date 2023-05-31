@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "fyre02";
+$password = "123456789";
 $dbname = "xiaomi";
 $prodID = $_GET["id"];
 $table = "";

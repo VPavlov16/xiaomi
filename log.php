@@ -1,9 +1,6 @@
 <?php 
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "fyre02";
-$database = "xiaomi";
+require("info.php");
 $status = "none";
 
 

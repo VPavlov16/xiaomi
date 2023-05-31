@@ -1,8 +1,5 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "fyre02";
-	$database = "xiaomi";
+	require("info.php");
 
 	try {
 		$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);

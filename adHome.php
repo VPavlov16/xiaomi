@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "fyre02";
-$dbname = "xiaomi";
+require("info.php");
 $search = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $search = $_POST["search"];
