@@ -60,7 +60,7 @@ $WearCSS = "";
 <div class="product-page">
     <div class="gallery">
     <div class="gallery-div">
-        <!--
+       
             <div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="<?php echo $folder . "/" . $cover  ?>"alt=""/>
@@ -88,7 +88,8 @@ $WearCSS = "";
                 <label for="img-5" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic4  ?>" alt=""/></label>
             </div>
         </div> 
-        -->
+        
+        <!--
         <div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
                 <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
@@ -110,6 +111,7 @@ $WearCSS = "";
                 <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
             </div>
         </div> 
+        -->
         </div>   
          
         <div class="product-details">
