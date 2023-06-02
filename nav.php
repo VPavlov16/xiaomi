@@ -1,13 +1,20 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if(isset($_SESSION['user'])){
-    debug_to_console($_SESSION['user']);
-    debug_to_console(implode($_SESSION['user'][5]));
-} 
-
-function debug_to_console($data) {
+if (isset($_SESSION['user'])) {
+    if (isset($_COOKIE['cart_' . $_SESSION['user']['id']])) {
+        $_SESSION['user']['cart'] = unserialize($_COOKIE['cart_' . $_SESSION['user']['id']]);
+    } else {
+        $_SESSION['user']['cart'] = array();
+    }
+   
+        echo '<pre>';
+        print_r($_SESSION['user']['cart']);
+        echo '</pre>';
+}
+function debug_to_console($data)
+{
     $output = $data;
     if (is_array($output))
         $output = implode(',', $output);
@@ -96,6 +103,15 @@ function debug_to_console($data) {
             </li>
             </div>
 
+            <div class="list">
+            <li>
+                <a href="cart.php" class="list-a">
+                    <img src="images\cart.png" alt="logo" class="logo">
+                    <span class="nav-item">Cart</span>
+                </a>
+            </li>
+            </div>
+
         <div class="list">
             <li>
                  <a href="<?php echo isset($_SESSION['user']) ? 'myAccount.php' : 'login-register.php'; ?>" class="list-a">
@@ -179,6 +195,14 @@ function debug_to_console($data) {
                 </a>
             </li>
             </div>
+            <div class="list">
+            <li>
+                <a href="cart.php" class="list-a">
+                    <img src="images\cart.png" alt="logo" class="logo">
+                    <span class="nav-item">Cart</span>
+                </a>
+            </li>
+            </div>
 
         <div class="list">
             <li>
@@ -188,6 +212,7 @@ function debug_to_console($data) {
                  </a>
             </li>
             </div>
+            
         </ul>
         </nav>
         
