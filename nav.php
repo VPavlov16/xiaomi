@@ -4,10 +4,15 @@ if(session_status() == PHP_SESSION_NONE){
 }
 if(isset($_SESSION['user'])){
     debug_to_console($_SESSION['user']);
+    debug_to_console(implode($_SESSION['user'][5]));
 } 
 
 function debug_to_console($data) {
-    echo "<script>console.log('Debug Objects: " . json_encode($data) . "' );</script>";
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
 ?>
 <!DOCTYPE html>

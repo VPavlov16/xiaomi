@@ -25,8 +25,7 @@ if ( isset( $_POST['submit1'] ) ) {
 		$status = "none";
 		if (isset($_POST['remember_me'])) {
 			$token = bin2hex(random_bytes(16));
-			setcookie('remember_token', $token, time() + 604800); // Expiry time: 1 week
-	  
+			setcookie('remember_token', $token, time() + 604800); 
 			$stmt2 = $connection->prepare("UPDATE registers SET token = ? WHERE email = ?");
 			$stmt2->execute([$token, $email]);
 		  }

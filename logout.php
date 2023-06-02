@@ -17,8 +17,8 @@ if (isset($_COOKIE['remember_token'])) {
 }
 
 setcookie('remember_token', '', time() - 3600);
-$_SESSION = array();
-session_destroy();
+
+unset($_SESSION['user']);
 
 session_regenerate_id();
 
