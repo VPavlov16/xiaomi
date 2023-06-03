@@ -59,36 +59,24 @@ $WearCSS = "";
     ?>
 <div class="product-page">
     <div class="gallery">
-    <div class="gallery-div">
-       
+        <div class="gallery-div">
             <div class="gallery__item">
-                <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
-                <img class="gallery__img" src="<?php echo $folder . "/" . $cover  ?>"alt=""/>
-                <label for="img-1" class="gallery__thumb"><img src="<?php echo $folder . "/" . $cover  ?>" alt=""/></label>
-            </div>
-            
-            <div class="gallery__item">
-                <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
-                <img class="gallery__img" src="<?php echo $folder . "/" . $pic1  ?>" alt=""/>
-                <label for="img-2" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic1  ?>" alt=""/></label>
-            </div>
-            <div class="gallery__item">
-                <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
-                <img class="gallery__img" src="<?php echo $folder . "/" . $pic2  ?>" alt=""/>
-                <label for="img-3" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic2  ?>" alt=""/></label>
-            </div>
-            <div class="gallery__item">
-                <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
-                <img class="gallery__img" src="<?php echo $folder . "/" . $pic3  ?>" alt=""/>
-                <label for="img-4" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic3  ?>" alt=""/></label>
-            </div>
-            <div class="gallery__item">
-                <input type="radio" id="img-5" name="gallery" class="gallery__selector"/>
-                <img class="gallery__img" src="<?php echo $folder . "/" . $pic4  ?>" alt=""/>
-                <label for="img-5" class="gallery__thumb"><img src="<?php echo $folder . "/" . $pic4  ?>" alt=""/></label>
-            </div>
-        </div> 
-        
+            <img class="gallery__img" src="<?php echo $folder . '/' . $cover ?>" alt=""/>
+        </div>
+        <div class="gallery__item">
+            <img class="gallery__img" src="<?php echo $folder . '/' . $pic1 ?>" alt=""/>
+        </div>
+        <div class="gallery__item">
+            <img class="gallery__img" src="<?php echo $folder . '/' . $pic2 ?>" alt=""/>
+        </div>
+        <div class="gallery__item">
+            <img class="gallery__img" src="<?php echo $folder . '/' . $pic3 ?>" alt=""/>
+        </div>
+        <div class="gallery__item">
+            <img class="gallery__img" src="<?php echo $folder . '/' . $pic4 ?>" alt=""/>
+        </div>
+    </div> 
+</div> 
         <!--
         <div class="gallery__item">
                 <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
@@ -112,7 +100,7 @@ $WearCSS = "";
             </div>
         </div> 
         -->
-        </div>   
+          
          
         <div class="product-details">
             <div class="product-details-inner">
@@ -144,7 +132,7 @@ $WearCSS = "";
                         <p class='card-info'>Max weight: <?php echo $maxWeight ?> kg</p>
                         <p class='card-info'>Top speed: <?php echo $speed ?> km/h</p>
                         <p class='card-info'>Charge time: <?php echo $charge ?> h</p>
-                        <p class='card-info'>Tire diameter: <?php echo $tire ?> in</p>
+                        <p class='card-info'>Tire diameter: <?php echo $tire ?> inch</p>
                         <p class='card-info'>Color: <?php echo $color ?> </p>
                     </div>
                     <div class="adWear" id="adWear">
