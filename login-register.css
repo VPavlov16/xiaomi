@@ -105,3 +105,11 @@ body {
         max-width: 250px;
     }
   }
+
+  .fa-eye, .fa-eye-slash{  
+    position: relative; 
+    float: right;
+    cursor: pointer;
+    top: -48px;
+    left: -10px;
+  }

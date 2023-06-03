@@ -11,6 +11,7 @@ require('log.php')
     <link href="https://fonts.googleapis.com/css?family=Blinker" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="login-register.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images\logo-xiaomi.png"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -53,7 +54,7 @@ require('log.php')
             <input type="password" name="password" id="login-password" maxlength="30" placeholder="Password">
             <i class="fa-regular fa-eye" id="login-togglePassword"></i>
             <br>
-            <label for="remember_me">Remember me </label>
+            <label for="remember_me">Remember me</label>
             <input type="checkbox" id="remember_me" name="remember_me">
             
             <br>
@@ -71,8 +72,6 @@ require('log.php')
             <input type="email" name="email" maxlength="30"placeholder="Email" required>
             <input type="password" id="reg-password" name="password" maxlength="30" placeholder="Password" required>
             <i class="fa-regular fa-eye" id="register-togglePassword"></i>
-            <br>
-            <br>
             <input type="submit" name="submit" value="Register">
         </form>
         <p class="switch-form" id="btn-login">Already have an account? <mark class = "marked" >Login</mark></p>

@@ -42,7 +42,7 @@ body{
 .navbar:hover{
     width: 14em;
     transition: all 0.5s ease;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.533);
 }
 
 .nav-item{
