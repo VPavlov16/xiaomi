@@ -48,6 +48,7 @@ require("info.php");
 <body>
 <div class="product-list">
   <?php
+  if (isset($_SESSION['user'])){
   $conn = new mysqli($servername, $username, $password, $dbname);
 
   if ($conn->connect_error) {
@@ -56,7 +57,6 @@ require("info.php");
 
   $cartIds = $_SESSION['user']['cart'];
 
-  // Prepare an array to store the queried item details
   $itemDetails = array();
   $totalPrice = 0;
 
@@ -107,7 +107,11 @@ require("info.php");
       echo "No products found.";
   }
 
+
   $conn->close();
+}else{
+  echo "<h1>LOGIN FIRST</h1>";
+}
   ?>
 </div>
 </body>

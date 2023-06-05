@@ -10,9 +10,8 @@ if (isset($_SESSION['user']) && isset($_POST['product_id'])) {
 
     $_SESSION['user']['cart'][] = $productId;
 
-    // Store cart data in a cookie
-    setcookie('cart_' . $_SESSION['user']['id'], serialize($_SESSION['user']['cart']), time() + 604800, '/'); // 86400 seconds = 1 day
-
+    // kolichkata se pazi v biskvitka 🍪
+    setcookie('cart_' . $_SESSION['user']['id'], serialize($_SESSION['user']['cart']), time() + 604800, '/'); //1 sedmica
     header("Location: ".$_SERVER['HTTP_REFERER']);
     exit();
 } elseif (!isset($_SESSION['user']) && isset($_POST['product_id'])) {
