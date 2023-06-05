@@ -125,6 +125,7 @@ CREATE TABLE `registers` (
   `type` varchar(45) NOT NULL DEFAULT 'user',
   `token` varchar(255) DEFAULT NULL,
   `cart` varchar(255) DEFAULT NULL,
+  `wishlist` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -135,7 +136,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin',NULL,'a:3:{i:0;s:3:\"107\";i:1;s:3:\"104\";i:2;s:3:\"305\";}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL);
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin',NULL,'a:6:{i:0;s:3:\"107\";i:1;s:3:\"104\";i:2;s:3:\"305\";i:3;s:3:\"105\";i:4;s:3:\"105\";i:5;s:3:\"101\";}','a:3:{i:0;s:3:\"102\";i:1;s:3:\"302\";i:2;s:3:\"202\";}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-05 11:16:51
+-- Dump completed on 2023-06-05 13:02:40

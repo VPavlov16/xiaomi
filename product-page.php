@@ -134,7 +134,10 @@ $WearCSS = "";
                             <input type='hidden' name='product_id' value="<?php echo $prodID ?>">
                             <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
                             </form>
-                            <button class='button-wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
+                            <form method='post' action='add_to_wish.php'>
+                            <input type='hidden' name='product_id' value="<?php echo $prodID ?>">
+                            <button class='button-wish' name='wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
+                            </form>
                     </div>
 
                 </div>

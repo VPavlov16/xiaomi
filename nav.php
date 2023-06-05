@@ -100,6 +100,15 @@ function debug_to_console($data){
             </li>
             </div>
 
+            <div class="list">
+            <li>
+                <a href="wishlist.php" class="list-a">
+                    <img src="images\heart.png" alt="logo" class="logo">
+                    <span class="nav-item">Wishlist</span>
+                </a>
+            </li>
+            </div>
+
         <div class="list">
             <li>
                  <a href="<?php echo isset($_SESSION['user']) ? 'myAccount.php' : 'login-register.php'; ?>" class="list-a">
@@ -188,6 +197,15 @@ function debug_to_console($data){
                 <a href="cart.php" class="list-a">
                     <img src="images\cart.png" alt="logo" class="logo">
                     <span class="nav-item">Cart</span>
+                </a>
+            </li>
+            </div>
+
+            <div class="list">
+            <li>
+                <a href="wishlist.php" class="list-a">
+                    <img src="images\heart.png" alt="logo" class="logo">
+                    <span class="nav-item">Wishlist</span>
                 </a>
             </li>
             </div>

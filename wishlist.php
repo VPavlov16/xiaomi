@@ -55,12 +55,12 @@ require("info.php");
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $cartIds = $_SESSION['user']['cart'];
+  $wishIds = $_SESSION['user']['wish'];
 
   $itemDetails = array();
   $totalPrice = 0;
 
-  foreach ($cartIds as $id) {
+  foreach ($wishIds as $id) {
       $sql = "SELECT * FROM (
           SELECT id, Model, price, pic FROM xiaomi.mobdev
           WHERE id = " . $id . "
@@ -103,7 +103,6 @@ require("info.php");
       }
       echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
       echo "</table>";
-      echo "<button onclick='window.location.href='';' class='button button2'>Finish order</button>";
   } else {
       echo "No products found.";
   }

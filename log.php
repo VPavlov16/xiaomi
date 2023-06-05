@@ -21,12 +21,18 @@ if ( isset( $_POST['submit1'] ) ) {
 	$userInfo = $stmt->fetchAll();
 	
 	if ( $userInfo ) {
-		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart']];
+		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart'],$userInfo[0]['wish']];
 
 		if (!empty($userInfo[0]['cart'])) {
             $_SESSION['user']['cart'] = unserialize($userInfo[0]['cart']);
         } else {
             $_SESSION['user']['cart'] = array();
+        }
+		
+		if (!empty($userInfo[0]['wish'])) {
+            $_SESSION['user']['wish'] = unserialize($userInfo[0]['wish']);
+        } else {
+            $_SESSION['user']['wish'] = array();
         }
 		$status = "none";
 		if (isset($_POST['remember_me'])) {
