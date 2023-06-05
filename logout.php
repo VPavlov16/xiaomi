@@ -22,14 +22,14 @@ if (isset($_COOKIE['remember_token'])) {
     $stmt->execute([$token]);
 }
 
-setcookie('remember_token', '', time() - 3600);
+// Clear cart cookie after logout
+setcookie('cart', '', time() - 1);
 
 unset($_SESSION['user']);
 
 session_regenerate_id();
 
-// Clear cart cookie after logout
-setcookie('cart', '', time() - 3600);
+
 
 exit();
 ?>

@@ -2,19 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['user'])) {
-    if (isset($_COOKIE['cart_' . $_SESSION['user']['id']])) {
-        $_SESSION['user']['cart'] = unserialize($_COOKIE['cart_' . $_SESSION['user']['id']]);
-    } else {
-        $_SESSION['user']['cart'] = array();
-    }
-   
-        echo '<pre>';
-        print_r($_SESSION['user']['cart']);
-        echo '</pre>';
-}
-function debug_to_console($data)
-{
+function debug_to_console($data){
     $output = $data;
     if (is_array($output))
         $output = implode(',', $output);
