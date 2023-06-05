@@ -43,6 +43,21 @@ require("info.php");
       text-align: right;
       font-weight: bold;
     }
+    .button-cart {
+    background-color: coral;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    min-width: fit-content;
+  }
   </style>
 </head>
 <body>
@@ -99,6 +114,12 @@ require("info.php");
           echo "<td><a href='product-page.php?id=" . $row["id"] . "' class='product-link'><span class='product-model'>" . $row["Model"] . "</span></a></td>";
           echo "<td><img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/></td>";
           echo "<td class='card-price'>" . $row["price"] . " BGN</td>";
+          echo "<td>";
+          echo "<form method='post' action='removeWish.php'>";
+          echo "<button name='remove' value = '".$row['id']."' class='button-cart'>REMOVE</button>";
+          echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
+          echo "</form>";
+          echo "</td>";
           echo "</tr>";
       }
       echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
