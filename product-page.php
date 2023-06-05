@@ -42,6 +42,7 @@ $WearCSS = "";
     <title><?php echo $title?></title>
     <link rel="stylesheet" type="text/css" href="product-page.css">
     <link rel="shortcut icon" type="image/x-icon" href="images\logo-xiaomi.png"/>
+
     <style>
         .adMob{
             display: <?php echo $MobCSS; ?>;
@@ -64,7 +65,9 @@ $WearCSS = "";
         <div class="gallery">
                 <div class="gallery__container">
                     <div class="expanded-image-container">
-                        <img id="expanded-image" class="expanded-image" src="<?php echo $folder . '/' . $cover ?>" alt="Expanded Image">
+                        <div class="expanded-image">
+                            <img id="expanded-image" class="rounded" src="<?php echo $folder . '/' . $cover ?>" alt="Expanded Image">
+                        </div>
                     </div>
                     <div class="gallery__row">
                         <div class="gallery__item" onclick="expandImage('<?php echo $folder . '/' . $cover ?>')">
@@ -89,7 +92,7 @@ $WearCSS = "";
             <div class="product-details">
                 <div class="product-details-inner">
                     <h1 class = "product-name"><?php echo $title?></h1>
-                    <h2 class = "price"><?php echo $price?> BGN</h2>
+                    <h2 class = "price"> <mark><?php echo $price?> BGN</mark></h2>
                     <hr class="line">
 
                     <div class="product-description">
@@ -174,6 +177,7 @@ $WearCSS = "";
         // Show the first image in the expanded view by default
         expandImage('<?php echo $folder . '/' . $cover ?>');
     </script>
+
 
 </body>
 </html>
