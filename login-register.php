@@ -53,11 +53,9 @@ require('log.php')
             <input type="text" name="email" maxlength="30" placeholder="Email">
             <input type="password" name="password" id="login-password" maxlength="30" placeholder="Password">
             <i class="fa-regular fa-eye" id="login-togglePassword"></i>
-            <br>
-            <label for="remember_me">Remember me</label>
+            <label for="remember_me" class="remember">Remember me</label>
             <input type="checkbox" id="remember_me" name="remember_me">
-            
-            <br>
+            <br><br><br>
             <p class="wronginfo" >Incorrect email or password</p>
             <input type="submit" name="submit1" value="Login">
         </form>
@@ -71,6 +69,7 @@ require('log.php')
             <input type="text" name="lname" maxlength="30" placeholder="Last Name" required>
             <input type="email" name="email" maxlength="30"placeholder="Email" required>
             <input type="password" id="reg-password" name="password" maxlength="30" placeholder="Password" required>
+            
             <i class="fa-regular fa-eye" id="register-togglePassword"></i>
             <input type="submit" name="submit" value="Register">
         </form>

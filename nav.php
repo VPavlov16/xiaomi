@@ -83,24 +83,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
             </div>
 
-            <div class="list">
-            <li>
-                <a href="cart.php" class="list-a">
-                    <img src="images\cart.png" alt="logo" class="logo">
-                    <span class="nav-item">Cart</span>
-                </a>
-            </li>
-            </div>
-
-            <div class="list">
-            <li>
-                <a href="wishlist.php" class="list-a">
-                    <img src="images\heart.png" alt="logo" class="logo">
-                    <span class="nav-item">Wishlist</span>
-                </a>
-            </li>
-            </div>
-
+           
         <div class="list">
             <li>
                  <a href="<?php echo isset($_SESSION['user']) ? 'myAccount.php' : 'login-register.php'; ?>" class="list-a">
@@ -108,7 +91,13 @@ if (session_status() == PHP_SESSION_NONE) {
                   <span class="nav-item"><?php echo isset($_SESSION['user']) ? 'Profile' : 'Login/Register'; ?></span>
                  </a>
             </li>
-            </div>
+            </div> 
+            
+        <div class="btn-div">
+            <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping'></i></button>        
+            <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart'></i></button>
+        </div>
+
         </ul>
     </nav>
 
@@ -166,39 +155,9 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
             </div>
 
-        <div class="list">
-            <li>
-                <a href="wearable.php" class="list-a">
-                    <img src="images\watch.png" alt="logo" class="logo">
-                    <span class="nav-item">Wearable</span>
-                </a>
-            </li>
-            </div>
-
-        <div class="list">
-            <li>
-                <a href="smdev.php" class="list-a">
-                    <img src="images\lightbulb.png" alt="logo" class="logo">
-                    <span class="nav-item">Smart devices</span>
-                </a>
-            </li>
-            </div>
-            <div class="list">
-            <li>
-                <a href="cart.php" class="list-a">
-                    <img src="images\cart.png" alt="logo" class="logo">
-                    <span class="nav-item">Cart</span>
-                </a>
-            </li>
-            </div>
-
-            <div class="list">
-            <li>
-                <a href="wishlist.php" class="list-a">
-                    <img src="images\heart.png" alt="logo" class="logo">
-                    <span class="nav-item">Wishlist</span>
-                </a>
-            </li>
+            <div class="btn-div">
+                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
+                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
             </div>
 
         <div class="list">
@@ -214,6 +173,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </nav>
         
     </header>
+ 
 
     <script>
     const hamburgerMenu = document.querySelector('.hamburger-icon');
