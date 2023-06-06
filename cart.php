@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 require("nav.php");
 require("info.php");
 ?>
@@ -124,7 +126,9 @@ require("info.php");
       }
       echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
       echo "</table>";
-      echo "<button onclick='window.location.href='';' class='button-cart'>Finish order</button>";
+     ?>
+     <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
+     <?php
   } else {
       echo "No products found.";
   }

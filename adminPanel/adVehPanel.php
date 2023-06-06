@@ -1,8 +1,8 @@
 <?php
-	require("info.php");
+	require("../info.php");
 
 	try {
-		$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+		$connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//echo "Connected successfully";
 	} catch(PDOException $e) {

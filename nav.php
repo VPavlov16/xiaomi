@@ -2,13 +2,6 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-function debug_to_console($data){
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +16,6 @@ function debug_to_console($data){
     <link rel="stylesheet" href="nav-and-home.css">
 </head>
 <body>
-
     <nav class="navbar">
         <ul>
             <li>
@@ -121,7 +113,6 @@ function debug_to_console($data){
     </nav>
 
     <header class="header">
-
         <div class = "hamburger-icon">
             <span class="icon"></span>
             <span class="icon"></span>
