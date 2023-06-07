@@ -63,7 +63,9 @@ if (isset($_POST['submit'])) {
         $cartData = serialize($_SESSION['user']['cart']);
         $sql2 = "UPDATE registers SET cart = ? WHERE id = ?";
         $connection->prepare($sql2)->execute([$cartData, $userId]);
-        header("Location: home.php");
+        
+        echo "<script>window.location.href = 'home.php';</script>";
+        //header("Location: home.php");
         exit();
     }
 }
