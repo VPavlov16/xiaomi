@@ -182,13 +182,14 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
             </div>
 
-            <div class="btn-div">
-                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
-                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
-            </div>
+            
         </ul>
         </nav>
-        
+
+        <div class="btn-div">
+                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
+                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
+        </div>
     </header>
  
 
