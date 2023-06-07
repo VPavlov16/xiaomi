@@ -91,7 +91,7 @@ mark{
 }
 
 .button-cart {
-    background-color: coral;
+    background-color: #ff6900;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -108,8 +108,9 @@ mark{
   }
   
   .button-cart:hover {
-    background-color: rgb(211, 65, 11);
-  }
+      box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.599);
+      color: #252422;
+    }
   
   .button-wish{
     background-color: #252422;
@@ -128,7 +129,8 @@ mark{
   }
 
   .button-wish:hover {
-    background-color: #5e5e5e;
+    box-shadow: 0px 0px 11px 3px rgba(255, 106, 0, 0.819);
+    color: #ff6900;
   }
 
   .line{

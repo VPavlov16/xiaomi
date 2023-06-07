@@ -134,7 +134,8 @@ body{
   }
   
   .button-cart:hover {
-    background-color: rgb(211, 65, 11);
+    box-shadow: 0px 3px 19px 0px rgba(0, 0, 0, 0.599);
+    color: #252422;
   }
   
   .button-wish{
@@ -154,7 +155,7 @@ body{
   }
 
   .button-wish:hover {
-    background-color: #5e5e5e;
+    box-shadow: 0px 2px 20px 1px rgba(255, 106, 0, 0.819);
+    color: #ff6900;
   }
-
  

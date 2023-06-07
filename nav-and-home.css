@@ -68,6 +68,7 @@ body{
     color: dimgray;
     width: 300px;
     padding: 15px; 
+    padding-bottom: 0px;
 }
 
 .xiaomi-div{
@@ -109,11 +110,11 @@ body{
     position: relative;
     color: dimgray;
     width: 300px;
-    padding: 15px;    
+    padding: 12px;    
 }
 
 .list{
-    margin: 0.5em;
+    margin: 0 0.5em;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -282,11 +283,56 @@ input[type=text] {
 
 /*<---------------------------------------------------------------------->*/
 
-.btn-div{
-    
-}
+    .btn-div{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .btn-cart{
+        background-color: #ff6900;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+        border-radius: 5px;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .btn-wish{
+        background-color: #252422;
+        border: none;
+        color: white;
+        padding: 10px 21px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+        border-radius: 5px;
+        width: 100%;
+        margin: 0 10px;
+    }
 
 
-.cart-i, .wish-i{
+    .btn-cart:hover{
+        box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.599);
+        color: #252422;
+    }
 
-}
+    .btn-wish:hover{
+        box-shadow: 0px 0px 11px 3px rgba(255, 106, 0, 0.819);
+        color: #ff6900;
+    }

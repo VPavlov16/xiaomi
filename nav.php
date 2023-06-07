@@ -155,9 +155,22 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
             </div>
 
-            <div class="btn-div">
-                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
-                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
+            <div class="list">
+            <li>
+                <a href="wearable.php" class="list-a">
+                    <img src="images\watch.png" alt="logo" class="logo">
+                    <span class="nav-item">Wearable</span>
+                </a>
+            </li>
+            </div>
+
+        <div class="list">
+            <li>
+                <a href="smdev.php" class="list-a">
+                    <img src="images\lightbulb.png" alt="logo" class="logo">
+                    <span class="nav-item">Smart devices</span>
+                </a>
+            </li>
             </div>
 
         <div class="list">
@@ -168,7 +181,11 @@ if (session_status() == PHP_SESSION_NONE) {
                  </a>
             </li>
             </div>
-            
+
+            <div class="btn-div">
+                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
+                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
+            </div>
         </ul>
         </nav>
         
