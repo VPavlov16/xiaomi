@@ -1,103 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        .gallery {
-            width: 40%;
-            margin: 0 auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-up Example</title>
+  <style>
+    #openButton {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-        .gallery__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 9999;
+    }
 
-        .expanded-image-container {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+    #popupWrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-        .expanded-image {
-            display: block;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: opacity 0.3s ease-in-out;
-        }
+    #closeButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff6900;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        .gallery__row {
-            display: flex;
-            justify-content: center;
-        }
+    #popupContent p {
+      margin: 20px 0;
+    }
 
-        .gallery__item {
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .gallery__item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    #popupContent p a {
+      color: #ff6900;
+      border-bottom: dotted #ff6900 1px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="gallery">
-        <div class="gallery__container">
-            <div class="expanded-image-container">
-                <img id="expanded-image" class="expanded-image" src="mobile_devices/mi11.jpg" alt="Expanded Image">
-            </div>
-            <div class="gallery__row">
-                <div class="gallery__item" onclick="expandImage('mobile_devices/mi11.jpg')">
-                    <img src="mobile_devices/mi11.jpg" alt="Image 1">
-                </div>
-                <div class="gallery__item" onclick="expandImage('mobile_devices/mi11(1).png')">
-                    <img src="mobile_devices/mi11(1).png" alt="Image 2">
-                </div>
-                <div class="gallery__item" onclick="expandImage('mobile_devices/mi11(2).png')">
-                    <img src="mobile_devices/mi11(2).png" alt="Image 3">
-                </div>
-                <div class="gallery__item" onclick="expandImage('mobile_devices/mi11(3).png')">
-                    <img src="mobile_devices/mi11(3).png" alt="Image 4">
-                </div>
-                <div class="gallery__item" onclick="expandImage('mobile_devices/mi11(4).png')">
-                    <img src="mobile_devices/mi11(4).png" alt="Image 5">
-                </div>
-            </div>
-        </div>
+  <button id="openButton">Open Pop-up</button>
+
+  <div id="overlay"></div>
+
+  <div id="popupWrapper">
+    <div id="popupContent">
+      <h2>PLEASE LOGIN FIRST</h2>
+      <p>If you don't have an account register <a href="login-register.php">here</a>.</p>
+      <button id="closeButton">Close</button>
     </div>
+  </div>
 
-    <script>
-        // Select the first image by default
-        var firstImage = document.querySelector('.gallery__item img');
-        firstImage.classList.add('selected');
+  <script>
+    const openButton = document.getElementById('openButton');
+    const closeButton = document.getElementById('closeButton');
+    const overlay = document.getElementById('overlay');
+    const popupWrapper = document.getElementById('popupWrapper');
 
-        function expandImage(src) {
-            var expandedImage = document.getElementById('expanded-image');
-            expandedImage.style.opacity = '0';
+    openButton.addEventListener('click', openPopup);
+    closeButton.addEventListener('click', closePopup);
+    overlay.addEventListener('click', outsideClick);
 
-            setTimeout(function() {
-                expandedImage.src = src;
-                expandedImage.style.opacity = '1';
-            }, 300);
+    function openPopup() {
+      overlay.style.opacity = '1';
+      overlay.style.visibility = 'visible';
 
-            // Remove the "selected" class from all images
-            var galleryItems = document.querySelectorAll('.gallery__item img');
-            galleryItems.forEach(function(item) {
-                item.classList.remove('selected');
-            });
+      popupWrapper.style.opacity = '1';
+      popupWrapper.style.visibility = 'visible';
+    }
 
-            // Add the "selected" class to the clicked image
-            var clickedImage = event.target;
-            clickedImage.classList.add('selected');
-        }
+    function closePopup() {
+      overlay.style.opacity = '0';
+      overlay.style.visibility = 'hidden';
 
-        // Show the first image in the expanded view by default
-        expandImage('mobile_devices/mi11.jpg');
-    </script>
+      popupWrapper.style.opacity = '0';
+      popupWrapper.style.visibility = 'hidden';
+    }
+
+    function outsideClick(e) {
+      if (e.target === overlay) {
+        closePopup();
+      }
+    }
+  </script>
 </body>
+
 </html>

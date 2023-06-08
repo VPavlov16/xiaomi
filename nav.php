@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="images\logo-xiaomi.png"/>
-    <link rel="stylesheet" href="nav-and-home.css">
+    <link rel="stylesheet" href="nav-and-home.css?v=<?= time() ?>">
 </head>
 <body>
     <nav class="navbar">
@@ -187,19 +187,71 @@ if (session_status() == PHP_SESSION_NONE) {
         </nav>
 
         <div class="btn-div">
-                <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
-                <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
+            <div class="btn-div-inner">
+                    <button class='btn-wish-ham' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
+                    <button class='btn-cart-ham' name='cart'  onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
+            </div>
         </div>
     </header>
+
+
+    <button id="openButton">Open Pop-up</button>
+
+    <div id="overlay"></div>
+
+    <div id="popupWrapper">
+        <div id="popupContent">
+            <h2>PLEASE LOGIN FIRST</h2>
+            <p>If you don't have an account register <a href="login-register.php">here</a>.</p>
+            <button id="closeButton">Close</button>
+        </div>
+    </div>
+
  
 
     <script>
+
+
     const hamburgerMenu = document.querySelector('.hamburger-icon');
     const navbar = document.querySelector('.hamburger');
 
         hamburgerMenu.addEventListener('click', function() {
         hamburgerMenu.classList.toggle('active');
     });
+
+
+        const openButton = document.getElementById('openButton');
+        const closeButton = document.getElementById('closeButton');
+        const overlay = document.getElementById('overlay');
+        const popupWrapper = document.getElementById('popupWrapper');
+
+        openButton.addEventListener('click', openPopup);
+        closeButton.addEventListener('click', closePopup);
+        overlay.addEventListener('click', outsideClick);
+
+        function openPopup() {
+        overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
+
+        popupWrapper.style.opacity = '1';
+        popupWrapper.style.visibility = 'visible';
+        }
+
+        function closePopup() {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+
+        popupWrapper.style.opacity = '0';
+        popupWrapper.style.visibility = 'hidden';
+        }
+
+        function outsideClick(e) {
+        if (e.target === overlay) {
+            closePopup();
+        }
+        }
+
+
 </script>
 
 </body>
