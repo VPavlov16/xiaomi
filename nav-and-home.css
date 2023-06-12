@@ -226,14 +226,6 @@ input[type=text] {
 
     /*<---------------------------------------------------------------------->*/
    
-    #openButton {
-        padding: 10px 20px;
-        font-size: 18px;
-        background: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
       
       #overlay {
         position: fixed;

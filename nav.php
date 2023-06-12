@@ -2,6 +2,32 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+$wishLoc = "";
+$cartLoc = "";
+$wishButt = "";
+$cartButt = "";
+$wishButt2 = "";
+$cartButt2 = "";
+
+if(!isset($_SESSION['user'])){
+    $wishButt = "id='openButton' ";
+    $cartButt = "id='openButton2' ";
+    $wishButt2 = "id='openButton3' ";
+    $cartButt2 = "id='openButton4' ";
+    $wishLoc = "";
+    $cartLoc = "";
+
+}elseif(isset($_SESSION['user'])){
+    $wishButt = "";
+    $cartButt = "";
+    $wishButt2 = "";
+    $cartButt2 = "";
+    $wishLoc = "window.location.href='wishlist.php';";
+    $cartLoc = "window.location.href='cart.php';";
+
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,8 +120,8 @@ if (session_status() == PHP_SESSION_NONE) {
             </div> 
             
         <div class="btn-div">
-            <button class='btn-cart' name='cart' onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping'></i></button>        
-            <button class='btn-wish' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart'></i></button>
+            <button class='btn-cart' name='cart' <?php echo $cartButt ?> onclick="<?php echo $cartLoc ?>" ><i class='fa-solid fa-cart-shopping'></i></button>        
+            <button class='btn-wish' name='wish' <?php echo $wishButt ?> onclick="<?php echo $wishLoc ?>" ><i class='fa-regular fa-heart'></i></button>
         </div>
 
         </ul>
@@ -188,14 +214,14 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <div class="btn-div">
             <div class="btn-div-inner">
-                    <button class='btn-wish-ham' name='wish' onclick="window.location.href='wishlist.php';"><i class='fa-regular fa-heart wish-i'></i></button>
-                    <button class='btn-cart-ham' name='cart'  onclick="window.location.href='cart.php';"><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
+                    <button class='btn-wish-ham' name='wish' <?php echo $wishButt2 ?> onclick="<?php echo $wishLoc ?>" ><i class='fa-regular fa-heart wish-i'></i></button>
+                    <button class='btn-cart-ham' name='cart'<?php echo $cartButt2 ?> onclick="<?php echo $cartLoc ?>" ><i class='fa-solid fa-cart-shopping cart-i'></i></button>        
             </div>
         </div>
     </header>
 
 
-    <button id="openButton">Open Pop-up</button>
+   <!-- <button id="openButton">Open Pop-up</button>  -->
 
     <div id="overlay"></div>
 
@@ -221,11 +247,17 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
         const openButton = document.getElementById('openButton');
+        const openButton2 = document.getElementById('openButton2');
+        const openButton3 = document.getElementById('openButton3');
+        const openButton4 = document.getElementById('openButton4');
         const closeButton = document.getElementById('closeButton');
         const overlay = document.getElementById('overlay');
         const popupWrapper = document.getElementById('popupWrapper');
 
         openButton.addEventListener('click', openPopup);
+        openButton2.addEventListener('click', openPopup);
+        openButton3.addEventListener('click', openPopup);
+        openButton4.addEventListener('click', openPopup);
         closeButton.addEventListener('click', closePopup);
         overlay.addEventListener('click', outsideClick);
 
