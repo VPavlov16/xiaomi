@@ -141,26 +141,6 @@ mark{
     margin: 20px 0 0 0;
   }
 
-  @media only screen and (max-width: 1200px) {
-    .product-details {
-        width: 90% ;
-    }
-
-    .product-description{
-        margin: 20px 0;
-    }
-
-    .carousel{
-      display: block;
-    } 
-    
-    
-  }
-
-  .carousel{
-    display: none;
-  }
-
   .card-info{
     margin-bottom: 5px;
   }
@@ -243,6 +223,46 @@ mark{
   transform: scale(1.02);
   box-shadow: 5px 10px 15px rgba(0,0,0,0.15);
 }
-.carousel{
-    display: none;
-}
+
+/*-------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1200px) {
+    .product-details {
+        width: 90%;
+        padding-top: 0;
+    }
+
+    .product-description{
+        margin: 20px 0;
+    }
+
+
+    /**/
+    .gallery{
+      width: 100%;
+      max-width: 600px;
+      margin: 0 15px;
+    }
+
+    .expanded-image{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      aspect-ratio: none;
+    }
+
+    .gallery__item img {
+      border-radius: 10px;
+    } 
+
+    .gallery__row {
+      margin-top: 15px;
+      overflow: visible;
+    }
+
+    .gallery__item {
+      margin: 5px;
+    }
+
+
+  }
