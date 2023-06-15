@@ -9,7 +9,6 @@ try {
     //echo "Connection failed: " . $e->getMessage();
 }
 
-// Save cart in cookies before unsetting the session
 if (isset($_SESSION['user']['cart'])) {
     $cartData = serialize($_SESSION['user']['cart']);
     setcookie('cart', $cartData, time() + 604800);
@@ -22,7 +21,6 @@ if (isset($_COOKIE['remember_token'])) {
     $stmt->execute([$token]);
 }
 
-// Clear cart cookie after logout
 setcookie('cart', '', time() - 1);
 
 unset($_SESSION['user']);
