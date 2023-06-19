@@ -2,10 +2,6 @@
 session_start();
 require("info.php");
 
-if(!isset($_SESSION['user'])){
-    echo '<script>alert("You cannot add items to the cart! Login first!");</script>';
-    echo '<script>window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";</script>';
-}else{
 try {
     $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -45,7 +41,10 @@ if (isset($_POST['product_id'])) {
 
         header("Location: ".$_SERVER['HTTP_REFERER']);
         exit();
-    } 
-}
+    } else {
+        echo '<script>alert("You cannot add items to the cart! Login first!");</script>';
+        echo '<script>window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";</script>';
+        exit();
+    }
 }
 ?>
