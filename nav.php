@@ -221,8 +221,6 @@ if(!isset($_SESSION['user'])){
     </header>
 
 
-   <!-- <button id="openButton">Open Pop-up</button>  -->
-
     <div id="overlay"></div>
 
     <div id="popupWrapper">
@@ -233,7 +231,6 @@ if(!isset($_SESSION['user'])){
         </div>
     </div>
 
- 
 
     <script>
 

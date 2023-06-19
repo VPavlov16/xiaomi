@@ -42,6 +42,7 @@ $WearCSS = "";
     <title><?php echo $title?></title>
     <link rel="stylesheet" type="text/css" href="product-page.css">
     <link rel="shortcut icon" type="image/x-icon" href="images\logo-xiaomi.png"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <style>
         .adMob{
@@ -93,30 +94,48 @@ $WearCSS = "";
         </div>
 
 
-       <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
+        <div class="gallery-swipe ">
+            <div class="swiper-container">
+
+               
+                    <div class="swiper-wrapper">  
+
+                        <div class="swiper-slide">
+                            <img src="<?php echo $folder . '/' . $cover ?>" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="<?php echo $folder . '/' . $pic1 ?>" alt="Image 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="<?php echo $folder . '/' . $pic2 ?>" alt="Image 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="<?php echo $folder . '/' . $pic3 ?>" alt="Image 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="<?php echo $folder . '/' . $pic4 ?>" alt="Image 5">
+                        </div> 
+
+                    </div>                        
+                    
+                    <div class="pagination-prev-outer">
+                        <div class="pagination-prev"><img src="images\next.png" alt=""></div>
+                    </div>
+
+                    <div class="pagination-next-outer">
+                        <div class="pagination-next"><img src="images\next.png" alt=""></div>
+                    </div>
+
+                    <div class="pagination-outer">
+                        <div class="swiper-pagination"></div>
+                    </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            
+
+                    
         </div>
 
-    -->
-
+            
             <div class="product-details">
                 <div class="product-details-inner">
                     <h1 class = "product-name"><?php echo $title?></h1>
@@ -173,10 +192,35 @@ $WearCSS = "";
 
                 </div>
             </div>
-    </div>
+</div>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
+
+        
+    var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.pagination-next',
+        prevEl: '.pagination-prev',
+    },
+    loop: true,
+    autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+    },
+    });
+
+
+//-------------------------------------------------------------------------------//
+
+                
         // Select the first image by default
         var firstImage = document.querySelector('.gallery__item img');
         firstImage.classList.add('selected');
@@ -203,6 +247,10 @@ $WearCSS = "";
 
         // Show the first image in the expanded view by default
         expandImage('<?php echo $folder . '/' . $cover ?>');
+
+
+
+
     </script>
 
 
