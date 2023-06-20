@@ -222,7 +222,6 @@ if(!isset($_SESSION['user'])){
 
 
     <div id="overlay"></div>
-
     <div id="popupWrapper">
         <div id="popupContent">
             <h2>PLEASE LOGIN FIRST</h2>
