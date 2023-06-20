@@ -20,8 +20,10 @@ if (isset($_COOKIE['remember_token'])) {
     $stmt = $connection->prepare("UPDATE registers SET token = NULL WHERE token = ?");
     $stmt->execute([$token]);
 }
-
+setcookie('remember_email', '', time() - 1);
+setcookie('remember_token', '', time() - 1);
 setcookie('cart', '', time() - 1);
+setcookie('wishlist', '', time() - 1);
 
 unset($_SESSION['user']);
 

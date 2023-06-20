@@ -2,6 +2,39 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+require("info.php");
+$status = "none";
+
+
+try {
+  $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+  //echo "Connection failed: " . $e->getMessage();
+}
+if (isset($_COOKIE['remember_email']) && isset($_COOKIE['remember_token'])) {
+    $email = $_COOKIE['remember_email'];
+    $token = $_COOKIE['remember_token'];
+
+    $stmt = $connection->prepare("SELECT * FROM registers WHERE email = ? AND token = ?");
+    $stmt->execute([$email, $token]);
+    $userInfo = $stmt->fetchAll();
+    if ( $userInfo ) {
+		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart'],$userInfo[0]['wishlist']];
+
+		if (!empty($userInfo[0]['cart'])) {
+            $_SESSION['user']['cart'] = unserialize($userInfo[0]['cart']);
+        } else {
+            $_SESSION['user']['cart'] = array();
+        }
+		
+		if (!empty($userInfo[0]['wishlist'])) {
+            $_SESSION['user']['wishlist'] = unserialize($userInfo[0]['wishlist']);
+        } else {
+            $_SESSION['user']['wishlist'] = array();
+        }
+}
+}
 $wishLoc = "";
 $cartLoc = "";
 $wishButt = "";
