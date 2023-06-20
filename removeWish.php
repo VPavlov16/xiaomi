@@ -3,13 +3,13 @@ session_start();
 require("info.php");
     $productId = $_POST['remove'];
 
-    if (!empty($_SESSION['user']['wish'])) {
-        if (($key = array_search($productId, $_SESSION['user']['wish'])) !== false) {
-            unset($_SESSION['user']['wish'][$key]);
+    if (!empty($_SESSION['user']['wishlist'])) {
+        if (($key = array_search($productId, $_SESSION['user']['wishlist'])) !== false) {
+            unset($_SESSION['user']['wishlist'][$key]);
         }
 
         $userId = $_SESSION['user'][0];
-        $cartData = serialize($_SESSION['user']['wish']);
+        $cartData = serialize($_SESSION['user']['wishlist']);
 
         try {
             $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

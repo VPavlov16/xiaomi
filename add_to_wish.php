@@ -16,9 +16,9 @@ if (isset($_SESSION['user'])) {
     $cartData = $stmt->fetchColumn();
 
     if ($cartData !== false) {
-        $_SESSION['user']['wish'] = unserialize($cartData);
+        $_SESSION['user']['wishlist'] = unserialize($cartData);
     } else {
-        $_SESSION['user']['wish'] = array();
+        $_SESSION['user']['wishlist'] = array();
     }
 }
 
@@ -27,14 +27,14 @@ if (isset($_POST['product_id'])) {
        
         $productId = $_POST['product_id'];
 
-        if (!isset($_SESSION['user']['wish'])) {
-            $_SESSION['user']['wish'] = array();
+        if (!isset($_SESSION['user']['wishlist'])) {
+            $_SESSION['user']['wishlist'] = array();
         }
 
-        $_SESSION['user']['wish'][] = $productId;
+        $_SESSION['user']['wishlist'][] = $productId;
 
         $userId = $_SESSION['user'][0];
-        $cartData = serialize($_SESSION['user']['wish']);
+        $cartData = serialize($_SESSION['user']['wishlist']);
 
         $stmt = $connection->prepare("UPDATE registers SET wishlist = ? WHERE id = ?");
         $stmt->execute([$cartData, $userId]);

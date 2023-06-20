@@ -70,7 +70,7 @@ require("info.php");
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $wishIds = $_SESSION['user']['wish'];
+  $wishIds = $_SESSION['user']['wishlist'];
 
   $itemDetails = array();
   $totalPrice = 0;

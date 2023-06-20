@@ -10,7 +10,6 @@ try {
 } catch(PDOException $e) {
   //echo "Connection failed: " . $e->getMessage();
 }
-
 if ( isset( $_POST['submit1'] ) ) {
 
 	$email = $_POST['email'];
@@ -21,7 +20,7 @@ if ( isset( $_POST['submit1'] ) ) {
 	$userInfo = $stmt->fetchAll();
 	
 	if ( $userInfo ) {
-		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart'],$userInfo[0]['wish']];
+		$_SESSION['user'] = [$userInfo[0]['id'],$userInfo[0]['fname'],$userInfo[0]['lname'],$userInfo[0]['email'],$userInfo[0]['type'],$userInfo[0]['cart'],$userInfo[0]['wishlist']];
 
 		if (!empty($userInfo[0]['cart'])) {
             $_SESSION['user']['cart'] = unserialize($userInfo[0]['cart']);
@@ -29,21 +28,28 @@ if ( isset( $_POST['submit1'] ) ) {
             $_SESSION['user']['cart'] = array();
         }
 		
-		if (!empty($userInfo[0]['wish'])) {
-            $_SESSION['user']['wish'] = unserialize($userInfo[0]['wish']);
+		if (!empty($userInfo[0]['wishlist'])) {
+            $_SESSION['user']['wishlist'] = unserialize($userInfo[0]['wishlist']);
         } else {
-            $_SESSION['user']['wish'] = array();
+            $_SESSION['user']['wishlist'] = array();
         }
 		$status = "none";
 		if (isset($_POST['remember_me'])) {
 			$token = bin2hex(random_bytes(16));
-			setcookie('remember_token', $token, time() + 604800); 
+			setcookie('remember_token', $token, time() + 604800);
+			setcookie('remember_email', $email, time() + 604800);
+			
+		
 			$stmt2 = $connection->prepare("UPDATE registers SET token = ? WHERE email = ?");
 			$stmt2->execute([$token, $email]);
 
 			if (!empty($_SESSION['user']['cart'])) {
                 $cartData = serialize($_SESSION['user']['cart']);
                 setcookie('cart', $cartData, time() + 604800);
+            }
+			if (!empty($_SESSION['user']['wishlist'])) {
+                $cartData = serialize($_SESSION['user']['wishlist']);
+                setcookie('wishlist', $cartData, time() + 604800);
             }
 		  }
 	
