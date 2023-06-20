@@ -59,39 +59,31 @@ require("info.php");
   }
 
   if (!empty($itemDetails)) {
-      echo "<table class = 'cart-table'>";
-      echo "<tr><th>Model</th><th>Image</th><th>Price</th></tr>";
-      foreach ($itemDetails as $row) {
-          echo "<tr>";
-          echo "<td><a href='product-page.php?id=" . $row["id"] . "' class='product-link'><span class='product-model'>" . $row["Model"] . "</span></a></td>";
-          echo "<td><img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/></td>";
-          echo "<td class='card-price'>" . $row["price"] . " BGN</td>";
-          echo "<td>";
-          echo "<form method='post' action='removeCart.php'>";
-          echo "<button name='remove' value = '".$row['id']."' class='button-cart'><img src='images/recycle-bin2.png' alt='bin'>
-          </button>";
-          echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
-          echo "</form>";
-          echo "</td>";
-          echo "</tr>";
-      }
-      echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
-      echo "</table>";
-     ?>
-     
-      <div class="button-container">
-        <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
-      </div>   
-
-      <?php
-  } else {
-      echo "No products found.";
-  }
-
-
-  $conn->close();
-}else{
-  echo "<h1>LOGIN FIRST</h1>";
+    echo "<div class='container-table'>";
+    echo "<table class='cart-table'>";
+    echo "<tr><th>Model</th><th>Image</th><th>Price</th><th></th></tr>";
+    foreach ($itemDetails as $row) {
+        echo "<tr>";
+        echo "<td><a href='product-page.php?id=" . $row["id"] . "' class='product-link'><span class='product-model'>" . $row["Model"] . "</span></a></td>";
+        echo "<td><img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/></td>";
+        echo "<td class='card-price'>" . $row["price"] . " BGN</td>";
+        echo "<td>";
+        echo "<form method='post' action='removeCart.php'>";
+        echo "<button name='remove' value='" . $row['id'] . "' class='button-cart'><img src='images/recycle-bin2.png' alt='bin'></button>";
+        echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>";
+        echo "</form>";
+        echo "</td>";
+        echo "</tr>";
+    }
+    echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
+    echo "</table>";
+    echo "<div class='button-container'>";
+    echo "<button onclick='window.location.href='finishOrder.php'' class='button-finish'>Finish order</button>";
+    echo "</div>";
+    echo "</div>";
+} else {
+    echo "No products found.";
+}
 }
   ?>
 </div>
