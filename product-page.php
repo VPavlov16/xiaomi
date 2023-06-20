@@ -61,6 +61,60 @@ $WearCSS = "";
     <?php
         require('nav.php');
     ?>
+    <div id="overlay"></div>
+    <div id="popupWrapper">
+        <div id="popupContent">
+            <h2>PLEASE LOGIN FIRST</h2>
+            <p>If you don't have an account register <a href="login-register.php">here</a>.</p>
+            <button id="closeButton">Close</button>
+        </div>
+    </div>
+
+
+    <script>
+
+
+    const hamburgerMenu = document.querySelector('.hamburger-icon');
+    const navbar = document.querySelector('.hamburger');
+
+        hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('active');
+    });
+
+
+        const openButton = document.getElementById('openButton');
+        const closeButton = document.getElementById('closeButton');
+        const overlay = document.getElementById('overlay');
+        const popupWrapper = document.getElementById('popupWrapper');
+
+        openButton.addEventListener('click', openPopup);
+        closeButton.addEventListener('click', closePopup);
+        overlay.addEventListener('click', outsideClick);
+
+        function openPopup() {
+        overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
+
+        popupWrapper.style.opacity = '1';
+        popupWrapper.style.visibility = 'visible';
+        }
+
+        function closePopup() {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+
+        popupWrapper.style.opacity = '0';
+        popupWrapper.style.visibility = 'hidden';
+        }
+
+        function outsideClick(e) {
+        if (e.target === overlay) {
+            closePopup();
+        }
+        }
+
+
+</script>
 
 <div class="product-page">
 
@@ -178,18 +232,23 @@ $WearCSS = "";
                         </div>
 
                     </div>
-                                        
-                    <div class='buttons-div'>
-                        <form method='post' action='add_to_cart.php'>
-                            <input type='hidden' name='product_id' value="<?php echo $prodID ?>">
-                            <button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>
-                            </form>
-                            <form method='post' action='add_to_wish.php'>
-                            <input type='hidden' name='product_id' value="<?php echo $prodID ?>">
-                            <button class='button-wish' name='wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>
-                            </form>
-                    </div>
-
+                    <?php
+                    echo "<div class='buttons-div'>";
+                    if(isset($_SESSION['user'])){
+                    echo "<form method='post' action='add_to_cart.php'>"; 
+                    echo "<input type='hidden' name='product_id' value='" . $prodID . "'>"; 
+                    echo "<button class='button-cart' name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+                    echo "</form>"; 
+                    echo "<form method='post' action='add_to_wish.php'>"; 
+                    echo "<input type='hidden' name='product_id' value='" . $prodID . "'>"; 
+                    echo "<button class='button-wish' name='wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+                    echo "</form>";    
+                    } else {
+                        echo "<button class='button-cart' onclick=\"openPopup()\" name='cart'><i class='fa-solid fa-cart-shopping' style='padding-right:5px;'></i>Add to cart</button>";
+                        echo "<button class='button-wish' onclick=\"openPopup()\" name='wish'><i class='fa-regular fa-heart' style='padding-right:5px;'></i>Add to wishlist</button>";
+                    }
+                    echo "</div>";
+                    ?>
                 </div>
             </div>
 </div>
