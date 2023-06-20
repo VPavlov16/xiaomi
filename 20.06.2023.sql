@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: xiaomi
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `mobdev`;
 CREATE TABLE `mobdev` (
   `id` int NOT NULL,
   `Model` varchar(45) NOT NULL,
-  `price` double NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `CPU` varchar(45) NOT NULL,
   `GPU` varchar(45) NOT NULL,
   `battery` int NOT NULL DEFAULT '4000',
@@ -51,7 +51,7 @@ CREATE TABLE `mobdev` (
 
 LOCK TABLES `mobdev` WRITE;
 /*!40000 ALTER TABLE `mobdev` DISABLE KEYS */;
-INSERT INTO `mobdev` VALUES (100,'Xiaomi Mi 11',1440,'Snapdragon 888','Adreno 660',4000,128,8,20,108,'Xiaomi Mi 11 is a flagship mobile phone with a powerful Snapdragon 888 processor, a large 6.81-inch AMOLED display, and a stunning 108MP camera.','mi11.jpg','mi11(1).png','mi11(2).png','mi11(3).png','mi11(4).png'),(101,'Xiaomi Redmi Note 10 Pro',450,'Snapdragon 732G','Adreno 618',4000,128,6,16,64,'Xiaomi Redmi Note 10 Pro is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Snapdragon 732G processor, and a high-resolution 64MP quad-camera setup.','note10pro.jpg','note10pro(1).png','note10pro(2).png','note10pro(3).png','note10pro(4).png'),(102,'Xiaomi Redmi Note 11S',540,'MediaTek Dimensity 900U','Mali-G78 MC4',4000,128,6,20,64,'Xiaomi Redmi Note 11S is a mid-range mobile phone with a large 6.43-inch AMOLED display, a powerful MediaTek Dimensity 900U processor, and a high-resolution 64MP quad-camera setup.','note11s.png','note11s(1).png','note11s(2).png','note11s(3).png','note11s(4).png'),(103,'Xiaomi Redmi Note 12',499,'MediaTek Dimensity 1200','Mali-G77 MC9',4000,256,8,16,108,'Xiaomi Redmi Note 12 is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful MediaTek Dimensity 1200 processor, and a high-resolution 108MP quad-camera setup.','note12.png','note12(1).png','note12(2).png','note12(3).png','note12(4).png'),(104,'Xiaomi Redmi Note 12 Pro',699,'Qualcomm Snapdragon 870','Adreno 650',4000,256,12,16,108,'Xiaomi Redmi Note 12 Pro is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful Qualcomm Snapdragon 870 processor, and a high-resolution 108MP quad-camera setup.','note12pro.png','note12pro(1).png','note12pro(2).png','note12pro(3).png','note12pro(4).png'),(105,'Xiaomi Mi 13',1950,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13.png','xiaomi13(1).png','xiaomi13(2).png','xiaomi13(3).png','xiaomi13(4).png'),(106,'Xiaomi Mi 13 Lite',1000,'Qualcomm Snapdragon 778G','Adreno 642L',4000,128,6,16,64,'Xiaomi Mi 13 Lite is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Qualcomm Snapdragon 778G processor, and a high-resolution 64MP quad-camera setup.','xiaomi13lite.png','xiaomi13lite(1).png','xiaomi13lite(2).png','xiaomi13lite(3).png','xiaomi13lite(4).png'),(107,'Xiaomi Mi 13 Pro',2550,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 Pro is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13pro.png','xiaomi13pro(1).png','xiaomi13pro(2).png','xiaomi13pro(3).png','xiaomi13pro(4).png');
+INSERT INTO `mobdev` VALUES (100,'Xiaomi Mi 11',1440.00,'Snapdragon 888','Adreno 660',4000,128,8,20,108,'Xiaomi Mi 11 is a flagship mobile phone with a powerful Snapdragon 888 processor, a large 6.81-inch AMOLED display, and a stunning 108MP camera.','mi11.jpg','mi11(1).png','mi11(2).png','mi11(3).png','mi11(4).png'),(101,'Xiaomi Redmi Note 10 Pro',450.00,'Snapdragon 732G','Adreno 618',4000,128,6,16,64,'Xiaomi Redmi Note 10 Pro is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Snapdragon 732G processor, and a high-resolution 64MP quad-camera setup.','note10pro.jpg','note10pro(1).png','note10pro(2).png','note10pro(3).png','note10pro(4).png'),(102,'Xiaomi Redmi Note 11S',540.00,'MediaTek Dimensity 900U','Mali-G78 MC4',4000,128,6,20,64,'Xiaomi Redmi Note 11S is a mid-range mobile phone with a large 6.43-inch AMOLED display, a powerful MediaTek Dimensity 900U processor, and a high-resolution 64MP quad-camera setup.','note11s.png','note11s(1).png','note11s(2).png','note11s(3).png','note11s(4).png'),(103,'Xiaomi Redmi Note 12',499.00,'MediaTek Dimensity 1200','Mali-G77 MC9',4000,256,8,16,108,'Xiaomi Redmi Note 12 is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful MediaTek Dimensity 1200 processor, and a high-resolution 108MP quad-camera setup.','note12.png','note12(1).png','note12(2).png','note12(3).png','note12(4).png'),(104,'Xiaomi Redmi Note 12 Pro',699.00,'Qualcomm Snapdragon 870','Adreno 650',4000,256,12,16,108,'Xiaomi Redmi Note 12 Pro is a high-end mobile phone with a large 6.81-inch AMOLED display, a powerful Qualcomm Snapdragon 870 processor, and a high-resolution 108MP quad-camera setup.','note12pro.png','note12pro(1).png','note12pro(2).png','note12pro(3).png','note12pro(4).png'),(105,'Xiaomi Mi 13',1950.00,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13.png','xiaomi13(1).png','xiaomi13(2).png','xiaomi13(3).png','xiaomi13(4).png'),(106,'Xiaomi Mi 13 Lite',1000.00,'Qualcomm Snapdragon 778G','Adreno 642L',4000,128,6,16,64,'Xiaomi Mi 13 Lite is a mid-range mobile phone with a large 6.67-inch AMOLED display, a powerful Qualcomm Snapdragon 778G processor, and a high-resolution 64MP quad-camera setup.','xiaomi13lite.png','xiaomi13lite(1).png','xiaomi13lite(2).png','xiaomi13lite(3).png','xiaomi13lite(4).png'),(107,'Xiaomi Mi 13 Pro',2550.00,'Qualcomm Snapdragon 8 Gen 1','Adreno 730',4000,512,16,32,108,'Xiaomi Mi 13 Pro is a premium mobile phone with a large 6.7-inch AMOLED display, a powerful Qualcomm Snapdragon 8 Gen 1 processor, and a high-resolution 108MP quad-camera setup.','xiaomi13pro.png','xiaomi13pro(1).png','xiaomi13pro(2).png','xiaomi13pro(3).png','xiaomi13pro(4).png');
 /*!40000 ALTER TABLE `mobdev` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,10 +70,9 @@ CREATE TABLE `orders` (
   `lname` varchar(45) NOT NULL,
   `address` text NOT NULL,
   `phone` varchar(45) NOT NULL,
-  `price` double NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idOrders_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +81,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (47,'2023-06-06','s:3:\"405\";','Страхил','Тодоров','ул.Хан Аспарух №46','0898780258',370),(48,'2023-06-06','s:3:\"204\";','Страхил','Тодоров','ул.Хан Аспарух №46','0898780258',600);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +127,7 @@ CREATE TABLE `registers` (
   `cart` varchar(255) DEFAULT NULL,
   `wishlist` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +136,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin',NULL,'a:0:{}','a:0:{}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL);
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin',NULL,'a:5:{i:0;s:3:\"107\";i:2;s:3:\"305\";i:5;s:3:\"101\";i:7;s:3:\"104\";i:8;s:3:\"104\";}','a:10:{i:0;s:3:\"102\";i:1;s:3:\"302\";i:2;s:3:\"202\";i:3;s:3:\"205\";i:4;s:3:\"204\";i:5;s:3:\"101\";i:6;s:3:\"107\";i:7;s:3:\"102\";i:8;s:3:\"402\";i:9;s:3:\"401\";}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,'a:0:{}','a:0:{}'),(13,'0000','0000','0000@gmail.com','9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0','user',NULL,'a:2:{i:0;s:3:\"303\";i:1;s:3:\"305\";}','a:8:{i:0;s:3:\"203\";i:1;s:3:\"405\";i:2;s:3:\"403\";i:3;s:3:\"404\";i:4;s:3:\"402\";i:5;s:3:\"400\";i:6;s:3:\"302\";i:7;s:3:\"305\";}');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +150,7 @@ DROP TABLE IF EXISTS `smart_devices`;
 CREATE TABLE `smart_devices` (
   `id` int NOT NULL,
   `Model` varchar(45) NOT NULL,
-  `price` double NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `suction_power` int NOT NULL,
   `battery_life` int NOT NULL,
   `dust_tank` int NOT NULL,
@@ -174,7 +172,7 @@ CREATE TABLE `smart_devices` (
 
 LOCK TABLES `smart_devices` WRITE;
 /*!40000 ALTER TABLE `smart_devices` DISABLE KEYS */;
-INSERT INTO `smart_devices` VALUES (200,'Mi Robot Vacuum-Mop 2 Lite',338,2200,90,450,270,'mbvacuum-mop2lite.png','mbvacuum-mop2lite(1).png','mbvacuum-mop2lite(2).png','mbvacuum-mop2lite(3).png','mbvacuum-mop2lite(4).png'),(201,'Mi Robot Vacuum-Mop 2 pro',672,3000,180,450,250,'mbvacuum-mop2pro.png','mbvacuum-mop2pro(1).png','mbvacuum-mop2pro(2).png','mbvacuum-mop2pro(3).png','mbvacuum-mop2pro(4).png'),(202,'Mi Robot Vacuum-Mop 2 ultra',950,4000,180,550,200,'mbvacuum-mop2ultra.png','mbvacuum-mop2ultra(1).png','mbvacuum-mop2ultra(2).png','mbvacuum-mop2ultra(3).png','mbvacuum-mop2ultra(4).png'),(203,'Xiaomi Robot Vacuum E10',450,4000,110,400,200,'xirobot_vacuumE10.png','xirobot_vacuumE10(1).png','xirobot_vacuumE10(2).png','xirobot_vacuumE10(3).png','xirobot_vacuumE10(4).png'),(204,'Xiaomi Robot Vacuum S10',600,4000,130,300,170,'xirobot_vacuumS10.png','xirobot_vacuumS10(1).png','xirobot_vacuumS10(2).png','xirobot_vacuumS10(3).png','xirobot_vacuumS10(4).png'),(205,'Xiaomi Robot Vacuum-Mop 2S',590,2500,170,550,250,'xirobot_vacuum-mop2s.png','xirobot_vacuum-mop2s(1).png','xirobot_vacuum-mop2s(2).png','xirobot_vacuum-mop2s(3).png','xirobot_vacuum-mop2s(4).png');
+INSERT INTO `smart_devices` VALUES (200,'Mi Robot Vacuum-Mop 2 Lite',338.00,2200,90,450,270,'mbvacuum-mop2lite.png','mbvacuum-mop2lite(1).png','mbvacuum-mop2lite(2).png','mbvacuum-mop2lite(3).png','mbvacuum-mop2lite(4).png'),(201,'Mi Robot Vacuum-Mop 2 pro',672.00,3000,180,450,250,'mbvacuum-mop2pro.png','mbvacuum-mop2pro(1).png','mbvacuum-mop2pro(2).png','mbvacuum-mop2pro(3).png','mbvacuum-mop2pro(4).png'),(202,'Mi Robot Vacuum-Mop 2 ultra',950.00,4000,180,550,200,'mbvacuum-mop2ultra.png','mbvacuum-mop2ultra(1).png','mbvacuum-mop2ultra(2).png','mbvacuum-mop2ultra(3).png','mbvacuum-mop2ultra(4).png'),(203,'Xiaomi Robot Vacuum E10',450.00,4000,110,400,200,'xirobot_vacuumE10.png','xirobot_vacuumE10(1).png','xirobot_vacuumE10(2).png','xirobot_vacuumE10(3).png','xirobot_vacuumE10(4).png'),(204,'Xiaomi Robot Vacuum S10',600.00,4000,130,300,170,'xirobot_vacuumS10.png','xirobot_vacuumS10(1).png','xirobot_vacuumS10(2).png','xirobot_vacuumS10(3).png','xirobot_vacuumS10(4).png'),(205,'Xiaomi Robot Vacuum-Mop 2S',590.00,2500,170,550,250,'xirobot_vacuum-mop2s.png','xirobot_vacuum-mop2s(1).png','xirobot_vacuum-mop2s(2).png','xirobot_vacuum-mop2s(3).png','xirobot_vacuum-mop2s(4).png');
 /*!40000 ALTER TABLE `smart_devices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +227,7 @@ DROP TABLE IF EXISTS `wearable`;
 CREATE TABLE `wearable` (
   `id` int NOT NULL,
   `Model` varchar(45) NOT NULL,
-  `price` double NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `display` varchar(45) NOT NULL,
   `battery` int DEFAULT NULL,
   `GPS` varchar(45) DEFAULT NULL,
@@ -251,7 +249,7 @@ CREATE TABLE `wearable` (
 
 LOCK TABLES `wearable` WRITE;
 /*!40000 ALTER TABLE `wearable` DISABLE KEYS */;
-INSERT INTO `wearable` VALUES (400,'Mi Smart Band 7',100,'490×192',180,'No','Bluetooth 5.2','mi_smartbrand7.png','mi_smartbrand7(1).png','mi_smartbrand7(2).png','mi_smartbrand7(3).png','mi_smartbrand7(4).png'),(401,'Redmi Smart Band 2 Strap',16,'172x320',0,'No','No','redmisb2_strap.png','redmisb2_strap(1).png','redmisb2_strap(2).png','redmisb2_strap(3).png','redmisb2_strap(4).png'),(402,'Redmi watch 2 lite',120,'360x320',262,'Yes','Bluetooth 5.1','redmiwatch2_lite.png','redmiwatch2_lite(1).png','redmiwatch2_lite(2).png','redmiwatch2_lite(3).png','redmiwatch2_lite(4).png'),(403,'Redmi watch 3',200,'450x390',262,'Yes','Bluetooth 5.2','redmiwatch3.png','redmiwatch3(1).png','redmiwatch3(2).png','redmiwatch3(3).png','redmiwatch3(4).png'),(404,'Xiaomi Watch S1',450,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1.png','xiaomiwatch_s1(1).png','xiaomiwatch_s1(2).png','xiaomiwatch_s1(3).png','xiaomiwatch_s1(4).png'),(405,'Xiaomi Watch S1 active',370,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1active.png','xiaomiwatch_s1active(1).png','xiaomiwatch_s1active(2).png','xiaomiwatch_s1active(3).png','xiaomiwatch_s1active(4).png');
+INSERT INTO `wearable` VALUES (400,'Mi Smart Band 7',100.00,'490×192',180,'No','Bluetooth 5.2','mi_smartbrand7.png','mi_smartbrand7(1).png','mi_smartbrand7(2).png','mi_smartbrand7(3).png','mi_smartbrand7(4).png'),(401,'Redmi Smart Band 2 Strap',16.00,'172x320',0,'No','No','redmisb2_strap.png','redmisb2_strap(1).png','redmisb2_strap(2).png','redmisb2_strap(3).png','redmisb2_strap(4).png'),(402,'Redmi watch 2 lite',120.00,'360x320',262,'Yes','Bluetooth 5.1','redmiwatch2_lite.png','redmiwatch2_lite(1).png','redmiwatch2_lite(2).png','redmiwatch2_lite(3).png','redmiwatch2_lite(4).png'),(403,'Redmi watch 3',200.00,'450x390',262,'Yes','Bluetooth 5.2','redmiwatch3.png','redmiwatch3(1).png','redmiwatch3(2).png','redmiwatch3(3).png','redmiwatch3(4).png'),(404,'Xiaomi Watch S1',450.00,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1.png','xiaomiwatch_s1(1).png','xiaomiwatch_s1(2).png','xiaomiwatch_s1(3).png','xiaomiwatch_s1(4).png'),(405,'Xiaomi Watch S1 active',370.00,'466x466',470,'Yes','Bluetooth 5.2','xiaomiwatch_s1active.png','xiaomiwatch_s1active(1).png','xiaomiwatch_s1active(2).png','xiaomiwatch_s1active(3).png','xiaomiwatch_s1active(4).png');
 /*!40000 ALTER TABLE `wearable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -264,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-07  0:38:43
+-- Dump completed on 2023-06-20 12:06:56

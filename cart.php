@@ -10,57 +10,7 @@ require("info.php");
 <html>
 <head>
   <title>Cart</title>
-  <style>
-    .product-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    table {
-      border-collapse: collapse;
-      width: 80%;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    .product-image {
-      width: 80px;
-    }
-    .product-link {
-      text-decoration: none;
-      color: #333;
-    }
-    .product-model {
-      font-weight: bold;
-    }
-    .card-price {
-      font-weight: bold;
-    }
-    .total-price {
-      margin-top: 20px;
-      text-align: right;
-      font-weight: bold;
-    }
-    .button-cart {
-    background-color: coral;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    border-radius: 5px;
-    min-width: fit-content;
-  }
-  </style>
+  <link rel="stylesheet" href="cart-wish.css">
 </head>
 <body>
 <div class="product-list">
@@ -109,7 +59,7 @@ require("info.php");
   }
 
   if (!empty($itemDetails)) {
-      echo "<table>";
+      echo "<table class = 'cart-table'>";
       echo "<tr><th>Model</th><th>Image</th><th>Price</th></tr>";
       foreach ($itemDetails as $row) {
           echo "<tr>";
@@ -118,7 +68,8 @@ require("info.php");
           echo "<td class='card-price'>" . $row["price"] . " BGN</td>";
           echo "<td>";
           echo "<form method='post' action='removeCart.php'>";
-          echo "<button name='remove' value = '".$row['id']."' class='button-cart'>REMOVE</button>";
+          echo "<button name='remove' value = '".$row['id']."' class='button-cart'><img src='images/recycle-bin2.png' alt='bin'>
+          </button>";
           echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
           echo "</form>";
           echo "</td>";
@@ -127,8 +78,12 @@ require("info.php");
       echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
       echo "</table>";
      ?>
-     <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
-     <?php
+     
+      <div class="button-container">
+        <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
+      </div>   
+
+      <?php
   } else {
       echo "No products found.";
   }

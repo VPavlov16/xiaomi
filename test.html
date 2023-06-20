@@ -1,106 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiper Gallery</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <title>Cart</title>
   <style>
-    .footer {
-  background-color: #FF7F50;
-  padding: 40px 0;
-  color: #FFFFFF;
-}
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 20px;
+      gap: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .product-image {
+      width: 80px;
+    }
+    .product-link {
+      text-decoration: none;
+      color: #333;
+    }
+    .product-card {
+      width: calc(33.33% - 20px);
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product-model {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .card-price {
+      font-weight: bold;
+    }
+    .total-price {
+      margin-top: 20px;
+      text-align: right;
+      font-weight: bold;
+    }
+    .button-cart {
+      background-color: coral;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      transition-duration: 0.4s;
+      border-radius: 5px;
+      min-width: fit-content;
+    }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+    /* Sliding Cart Styles */
+    .cart-container {
+      position: fixed;
+      top: 0;
+      right: -300px; /* Initial position */
+      width: 300px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease-in-out;
+      overflow-y: scroll;
+    }
 
-.footer-heading {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    .cart-open {
+      right: 0; /* Slide in the cart */
+    }
 
-.footer-text {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
+    .cart-content {
+      padding: 20px;
+    }
 
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    @media only screen and (max-width: 768px) {
+      .product-list {
+        justify-content: center;
+      }
+      .product-card {
+        width: calc(50% - 20px);
+      }
+    }
 
-.footer-link {
-  display: block;
-  margin-bottom: 5px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.social-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-link {
-  display: inline-block;
-  margin-right: 10px;
-  color: #FFFFFF;
-  font-size: 24px;
-  text-decoration: none;
-}
-
-.social-link:hover {
-  opacity: 0.8;
-}
-
+    @media only screen and (max-width: 480px) {
+      .product-card {
+        width: 100%;
+      }
+    }
   </style>
+  <script>
+    document.addEventListener('click', function(event) {
+      var cartContainer = document.querySelector('.cart-container');
+      var targetElement = event.target;
+
+      if (!cartContainer.contains(targetElement) && !targetElement.classList.contains('button-cart')) {
+        cartContainer.classList.remove('cart-open');
+      }
+    });
+
+    function toggleCart() {
+      var cartContainer = document.querySelector('.cart-container');
+      cartContainer.classList.toggle('cart-open');
+    }
+  </script>
 </head>
 <body>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-content">
-        <h3 class="footer-heading">Contact Us</h3>
-        <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero ac ex consequat rutrum.</p>
-        <ul class="footer-links">
-          <li><a href="#" class="footer-link">Home</a></li>
-          <li><a href="#" class="footer-link">About</a></li>
-          <li><a href="#" class="footer-link">Services</a></li>
-          <li><a href="#" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h3 class="footer-heading">Follow Us</h3>
-        <ul class="social-links">
-          <li><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a></li>
-        </ul>
+  <button onclick="toggleCart()" class='button-cart'>Toggle Cart</button>
+  <div class="cart-container">
+    <div class="cart-content">
+      <div class="product-list">
+        <?php
+  if (isset($_SESSION['user'])){
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  $cartIds = $_SESSION['user']['cart'];
+
+  $itemDetails = array();
+  $totalPrice = 0;
+
+  foreach ($cartIds as $id) {
+      $sql = "SELECT * FROM (
+          SELECT id, Model, price, pic FROM xiaomi.mobdev
+          WHERE id = " . $id . "
+      ) AS t1
+      UNION ALL
+      SELECT * FROM (
+          SELECT id, Model, price, pic FROM xiaomi.smart_devices
+          WHERE id = " . $id . "
+      ) AS t2
+      UNION ALL
+      SELECT * FROM (
+          SELECT id, Model, price, pic FROM xiaomi.vehicles
+          WHERE id = " . $id . "
+      ) AS t3
+      UNION ALL
+      SELECT * FROM (
+          SELECT id, Model, price, pic FROM xiaomi.wearable
+          WHERE id = " . $id . "
+      ) AS t4;";
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $itemDetails[] = $row;
+              // Calculate the total price
+              $totalPrice += $row["price"];
+          }
+      }
+  }
+
+  if (!empty($itemDetails)) {
+      echo "<table>";
+      echo "<tr><th>Model</th><th>Image</th><th>Price</th></tr>";
+      foreach ($itemDetails as $row) {
+          echo "<tr>";
+          echo "<td><a href='product-page.php?id=" . $row["id"] . "' class='product-link'><span class='product-model'>" . $row["Model"] . "</span></a></td>";
+          echo "<td><img src='homeCover\\" . $row['pic'] . "' alt='" . $row['Model'] . "' class='product-image'/></td>";
+          echo "<td class='card-price'>" . $row["price"] . " BGN</td>";
+          echo "<td>";
+          echo "<form method='post' action='removeCart.php'>";
+          echo "<button name='remove' value = '".$row['id']."' class='button-cart'>REMOVE</button>";
+          echo "<input type='hidden' name='product_id' value='" . $row["id"] . "'>"; 
+          echo "</form>";
+          echo "</td>";
+          echo "</tr>";
+      }
+      echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
+      echo "</table>";
+     ?>
+     <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
+     <?php
+  } else {
+      echo "No products found.";
+  }
+
+
+  $conn->close();
+}else{
+  echo "<h1>LOGIN FIRST</h1>";
+}
+  ?>
       </div>
     </div>
-  </footer>
-  
-
-  <script>
-    
-  </script>
+  </div>
 </body>
 </html>
