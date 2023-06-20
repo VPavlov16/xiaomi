@@ -61,7 +61,7 @@ require("info.php");
   if (!empty($itemDetails)) {
     echo "<div class='container-table'>";
       echo "<table class = 'cart-table'>";
-      echo "<div class ='tr-heading'><tr><th>Model</th><th></th><th>Price</th><th></th></tr></div>";
+      echo "<tr class ='tr-heading'><th>Model</th><th></th><th>Price</th><th></th></tr>";
       foreach ($itemDetails as $row) {
           echo "<tr>";
           echo "<td><a href='product-page.php?id=" . $row["id"] . "' class='product-link'><span class='product-model'>" . $row["Model"] . "</span></a></td>";
@@ -76,13 +76,13 @@ require("info.php");
           echo "</td>";
           echo "</tr>";
       }
-      echo "<tr><td colspan='2'></td><td class='total-price'>Total Price: " . $totalPrice . " BGN</td></tr>";
+      echo "<tr><td class='total-price' colspan='4'>Total Price: " . $totalPrice . " BGN</td></tr>";
       echo "</table>";
       echo "</div>";
 
      ?>
     <div class="button-container">
-      <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Finish order</button>
+      <button onclick="window.location.href='finishOrder.php'" class='button-cart'>Proceed to checkout</button>
     </div>     
     <?php
   } else {
