@@ -53,9 +53,11 @@
         $fileTemp5 = $file5['tmp_name'];
 
        
-            $sql2 = "INSERT INTO products (id) VALUES (?)";
-            $stmt2 = $connection->prepare($sql2);
-            $stmt2->execute([$id]);
+        $type = "wearable";
+        
+        $sql2 = "INSERT INTO products (id, Product_type) VALUES (?,?)";
+        $stmt2 = $connection->prepare($sql2);
+        $stmt2->execute([$id,$type]);
 
            
             $sql = "INSERT INTO wearable (id,Model, price, display, battery, GPS, bluetooth, pic, pic1, pic2, pic3, pic4) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";

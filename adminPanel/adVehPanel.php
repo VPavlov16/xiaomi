@@ -39,9 +39,11 @@
         $fileTemp5 = $file5['tmp_name'];
 
        
-            $sql2 = "INSERT INTO products (id) VALUES (?)";
-            $stmt2 = $connection->prepare($sql2);
-            $stmt2->execute([$id]);
+        $type = "vehicle";
+        
+        $sql2 = "INSERT INTO products (id, Product_type) VALUES (?,?)";
+        $stmt2 = $connection->prepare($sql2);
+        $stmt2->execute([$id,$type]);
 	
 	
 		$title = $_POST['title'];
