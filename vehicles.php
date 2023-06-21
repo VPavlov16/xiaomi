@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Products</title>
+    <title>Vehichles</title>
     <link rel="stylesheet" type="text/css" href="vehstyle.css">
     <link rel="shortcut icon" type="image/x-icon" href="images\logo-xiaomi.png"/>
 
