@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Products</title>
+    <title>Vehicles</title>
     <link rel="stylesheet" type="text/css" href="vehstyle.css">
 </head>
 <body>
