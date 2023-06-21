@@ -280,7 +280,6 @@ $WearCSS = "";
 //-------------------------------------------------------------------------------//
 
                 
-        // Select the first image by default
         var firstImage = document.querySelector('.gallery__item img');
         firstImage.classList.add('selected');
 
@@ -293,18 +292,15 @@ $WearCSS = "";
                 expandedImage.style.opacity = '1';
             }, 300);
 
-            // Remove the "selected" class from all images
             var galleryItems = document.querySelectorAll('.gallery__item img');
             galleryItems.forEach(function(item) {
                 item.classList.remove('selected');
             });
 
-            // Add the "selected" class to the clicked image
             var clickedImage = event.target;
             clickedImage.classList.add('selected');
         }
 
-        // Show the first image in the expanded view by default
         expandImage('<?php echo $folder . '/' . $cover ?>');
 
 

@@ -48,8 +48,8 @@
         $file5 = $_FILES['pic4'];
         $fileName5 = $file5['name'];
         $fileTemp5 = $file5['tmp_name'];
+
         $type = "mobdev";
-        
         $sql2 = "INSERT INTO products (id, Product_type) VALUES (?,?)";
         $stmt2 = $connection->prepare($sql2);
         $stmt2->execute([$id,$type]);

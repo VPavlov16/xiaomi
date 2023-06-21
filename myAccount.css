@@ -21,13 +21,15 @@ body{
 }
 
 .container{
-    background-color: #f6f6f6;
+    background-color: #eeeceb;
     width: 100%;
     max-width: 400px;
     height: auto;
     padding: 35px;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 15px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.255);
+
 }
 
 .heading-1 {
@@ -38,9 +40,9 @@ body{
 }
 
 .button {
-    background-color: rgb(255,175,28);
+    background-color: black;
     border: none;
-    color: black;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -53,21 +55,13 @@ body{
     border-radius: 5px;
   }
   
-  .button:hover {
-    background-color: rgb(227, 156, 24);
-  }
+  .button:hover{
+    box-shadow: 0px 0px 11px 3px #ff6900d1;
+    color: #ff6900;
+}
 
   .buttons-div{
     display: grid;
-  }
-
-  .logout{
-    background-color: rgb(0, 0, 0);
-    color: white;
-  }
-
-  .logout:hover{
-    background-color: rgb(74, 74, 74);
   }
 
   .p-info{
