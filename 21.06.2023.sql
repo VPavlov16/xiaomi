@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: xiaomi
 -- ------------------------------------------------------
--- Server version	8.0.32
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -70,9 +70,10 @@ CREATE TABLE `orders` (
   `lname` varchar(45) NOT NULL,
   `address` text NOT NULL,
   `phone` varchar(45) NOT NULL,
+  `price` double NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idOrders_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,6 +82,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (47,'2023-06-06','s:3:\"405\";','Страхил','Тодоров','ул.Хан Аспарух №46','0898780258',370),(48,'2023-06-06','s:3:\"204\";','Страхил','Тодоров','ул.Хан Аспарух №46','0898780258',600),(49,'2023-06-20','s:3:\"405\";','Венелин','rew','2101 - Елин Пелин Площада','0882253847',370);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +107,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (100,'mobdev'),(101,'mobdev'),(102,'mobdev'),(103,'mobdev'),(104,'mobdev'),(105,'mobdev'),(106,'mobdev'),(107,'mobdev'),(200,'smdev'),(201,'smdev'),(202,'smdev'),(203,'smdev'),(204,'smdev'),(205,'smdev'),(300,'vehicle'),(301,'vehicle'),(302,'vehicle'),(303,'vehicle'),(304,'vehicle'),(305,NULL),(400,'wearable'),(401,'wearable'),(402,'wearable'),(403,'wearable'),(404,'wearable'),(405,'wearable');
+INSERT INTO `products` VALUES (100,'mobdev'),(101,'mobdev'),(102,'mobdev'),(103,'mobdev'),(104,'mobdev'),(105,'mobdev'),(106,'mobdev'),(107,'mobdev'),(200,'smdev'),(201,'smdev'),(202,'smdev'),(203,'smdev'),(204,'smdev'),(205,'smdev'),(300,'vehicle'),(301,'vehicle'),(302,'vehicle'),(303,'vehicle'),(304,'vehicle'),(305,'vehicle'),(400,'wearable'),(401,'wearable'),(402,'wearable'),(403,'wearable'),(404,'wearable'),(405,'wearable');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +138,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin',NULL,'a:5:{i:0;s:3:\"107\";i:2;s:3:\"305\";i:5;s:3:\"101\";i:7;s:3:\"104\";i:8;s:3:\"104\";}','a:10:{i:0;s:3:\"102\";i:1;s:3:\"302\";i:2;s:3:\"202\";i:3;s:3:\"205\";i:4;s:3:\"204\";i:5;s:3:\"101\";i:6;s:3:\"107\";i:7;s:3:\"102\";i:8;s:3:\"402\";i:9;s:3:\"401\";}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,'a:0:{}','a:0:{}'),(13,'0000','0000','0000@gmail.com','9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0','user',NULL,'a:2:{i:0;s:3:\"303\";i:1;s:3:\"305\";}','a:8:{i:0;s:3:\"203\";i:1;s:3:\"405\";i:2;s:3:\"403\";i:3;s:3:\"404\";i:4;s:3:\"402\";i:5;s:3:\"400\";i:6;s:3:\"302\";i:7;s:3:\"305\";}');
+INSERT INTO `registers` VALUES (7,'petko','asd','imi@asd','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(8,'Registriram se','Ot telefona','tuieottelanaveni@abv.bg','4a31b3a94f8b9446588917a9e7aaa11bb13ee52d63136678623bb1667e8c1b77','user',NULL,NULL,NULL),(9,'Venelin e gei','❤️❤️❤️❤️❤️????','dhdhf@abv.bg','932679c1574b5b1e8376929acad78bac544fde36f2b7eb10f463d971d904885e','user',NULL,NULL,NULL),(10,'parolataE123','nz','edno@abv.bg','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','admin','c8fffdf977156315b27a4e54c8cbe927','a:1:{i:0;s:3:\"203\";}','a:2:{i:0;s:3:\"202\";i:1;s:3:\"100\";}'),(11,'Nikolay','Ivanov','19522@uktc-bg.com','20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a','user',NULL,NULL,NULL),(12,'1234','1234','1234@abv.bg','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,NULL,NULL),(13,'Venelin','Pavlov','19506@uktc-bg.com','03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4','user',NULL,'a:1:{i:0;s:3:\"103\";}','a:2:{i:4;s:3:\"401\";i:6;s:3:\"403\";}');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-20 12:06:56
+-- Dump completed on 2023-06-21  8:23:50
