@@ -34,7 +34,7 @@ body {
 }
 
 .form-container h2 {
-    color: orange;
+    color: #ff6900;
     font-size: 28px;
     margin-bottom: 20px;
 }
@@ -64,19 +64,17 @@ body {
 .form-container input[type="password"]:focus,
 .form-container input[type="email"]:focus {
     scale: 1.05;
-    border: 1px solid #ff9800;
-    -webkit-box-shadow: 0px 0px 17px 0px #ff990070;
-    box-shadow: 0px 0px 17px 0px #ff990070;
+    border: 1px solid #ff6900;
+    -webkit-box-shadow: 0px 0px 17px 0px #ff690070;
+    box-shadow: 0px 0px 17px 0px #ff690070;
 }
 
 input[type="checkbox"] {
-    accent-color: #ff9800;  
+    accent-color: #ff6900;  
 }
 
-
-
 .form-container input[type="submit"] {
-    background-color: orange;
+    background-color: #ff6900;
     color: #fff;
     padding: 12px 20px;
     border: none;
@@ -84,11 +82,12 @@ input[type="checkbox"] {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .form-container input[type="submit"]:hover {
-    background-color: #ff9800;
+    box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.599);
+    color: #252422;
 }
 
 .form-container .switch-form {
@@ -98,8 +97,16 @@ input[type="checkbox"] {
 }
 
 .marked {
-    color: orange;
+    color: #ff6900;
     background: white;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    transition-duration: 0.5s;
+    width: 0; 
+}
+
+.marked:hover{
+    border-bottom: 1px solid black;
 }
 
 .switch-form {
@@ -125,7 +132,7 @@ input[type="checkbox"] {
 
   .remember,#remember_me{
     float: left;    
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #ff6900;
 
   }
 
