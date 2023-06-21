@@ -69,6 +69,12 @@ body {
     box-shadow: 0px 0px 17px 0px #ff990070;
 }
 
+input[type="checkbox"] {
+    accent-color: #ff9800;  
+}
+
+
+
 .form-container input[type="submit"] {
     background-color: orange;
     color: #fff;
