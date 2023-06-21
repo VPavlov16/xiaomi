@@ -83,6 +83,9 @@ if (isset($_POST['submit'])) {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .button-cart {
@@ -94,25 +97,37 @@ if (isset($_POST['submit'])) {
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 15px;
+            text-align: center;
+
         }
 
         .button {
-            background-color: #4CAF50;
+            background-color: #ff6900;
+            border: none;
             color: white;
             padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
             cursor: pointer;
+            -webkit-transition-duration: 0.4s; 
+            transition-duration: 0.4s;
+            border-radius: 5px;
+            width: 100%;
+            margin: 0 10px;
+            box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.255);
         }
-
-        .button:hover {
-            background-color: #45a049;
+        
+        .button:hover{
+            box-shadow: 2px 5px 11px 3px rgba(0, 0, 0, 0.599);
+            color: #252422;
         }
     </style>
 </head>
 <body>
-    <form method="post" action="finishOrder.php">
+    <form method="post" action="finishOrder.php" class="container">
         <input type="text" name="fname" placeholder="First name" required><br>
         <input type="text" name="lname" placeholder="Last name" required><br>
         <input type="text" name="address" placeholder="Address" required><br>
